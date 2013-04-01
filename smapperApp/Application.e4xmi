@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_X2C-sJoWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.ide.application" bindingContexts="_X2Dlx5oWEeKBDZZACqhG_Q">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_X2DlwJoWEeKBDZZACqhG_Q" label="com.senatov.smapperApp" width="500" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_X2EM1JoWEeKBDZZACqhG_Q">
+      <children xsi:type="advanced:Perspective" xmi:id="_X2EM1ZoWEeKBDZZACqhG_Q">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_X2EM1poWEeKBDZZACqhG_Q">
+          <children xsi:type="basic:PartStack" xmi:id="_X2EM15oWEeKBDZZACqhG_Q">
+            <children xsi:type="basic:Part" xmi:id="_X2EM2JoWEeKBDZZACqhG_Q" contributionURI="bundleclass://com.senatov.smapperApp/com.senatov.smapperApp.parts.SamplePart" label="Sample Part"/>
+          </children>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_X2Dl15oWEeKBDZZACqhG_Q" elementId="menu:org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_X2Dl2JoWEeKBDZZACqhG_Q" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2Dl2ZoWEeKBDZZACqhG_Q" label="Open" iconURI="platform:/plugin/com.senatov.smapperApp/icons/sample.gif" command="_X2DlzpoWEeKBDZZACqhG_Q"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2EM0JoWEeKBDZZACqhG_Q" label="Save" iconURI="platform:/plugin/com.senatov.smapperApp/icons/save_edit.gif" command="_X2Dl0ZoWEeKBDZZACqhG_Q"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2EM0ZoWEeKBDZZACqhG_Q" label="Quit" command="_X2DlypoWEeKBDZZACqhG_Q"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_X2EM0poWEeKBDZZACqhG_Q" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2EM05oWEeKBDZZACqhG_Q" label="About" command="_X2Dl1JoWEeKBDZZACqhG_Q"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_X2EM2ZoWEeKBDZZACqhG_Q">
+      <children xsi:type="menu:ToolBar" xmi:id="_X2EM2poWEeKBDZZACqhG_Q" elementId="toolbar:org.eclipse.ui.main.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_X2EM25oWEeKBDZZACqhG_Q" iconURI="platform:/plugin/com.senatov.smapperApp/icons/sample.gif" command="_X2DlzpoWEeKBDZZACqhG_Q"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_X2EM3JoWEeKBDZZACqhG_Q" iconURI="platform:/plugin/com.senatov.smapperApp/icons/save_edit.gif" command="_X2Dl0ZoWEeKBDZZACqhG_Q"/>
+      </children>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_X2Dly5oWEeKBDZZACqhG_Q" contributionURI="bundleclass://com.senatov.smapperApp/com.senatov.smapperApp.handlers.QuitHandler" command="_X2DlypoWEeKBDZZACqhG_Q"/>
+  <handlers xmi:id="_X2Dlz5oWEeKBDZZACqhG_Q" contributionURI="bundleclass://com.senatov.smapperApp/com.senatov.smapperApp.handlers.OpenHandler" command="_X2DlzpoWEeKBDZZACqhG_Q"/>
+  <handlers xmi:id="_X2Dl0poWEeKBDZZACqhG_Q" contributionURI="bundleclass://com.senatov.smapperApp/com.senatov.smapperApp.handlers.SaveHandler" command="_X2Dl0ZoWEeKBDZZACqhG_Q"/>
+  <handlers xmi:id="_X2Dl1ZoWEeKBDZZACqhG_Q" contributionURI="bundleclass://com.senatov.smapperApp/com.senatov.smapperApp.handlers.AboutHandler" command="_X2Dl1JoWEeKBDZZACqhG_Q"/>
+  <bindingTables xmi:id="_X2DlzJoWEeKBDZZACqhG_Q" bindingContext="_X2Dlx5oWEeKBDZZACqhG_Q">
+    <bindings xmi:id="_X2DlzZoWEeKBDZZACqhG_Q" keySequence="M1+Q" command="_X2DlypoWEeKBDZZACqhG_Q"/>
+    <bindings xmi:id="_X2Dl0JoWEeKBDZZACqhG_Q" keySequence="M1+O" command="_X2DlzpoWEeKBDZZACqhG_Q"/>
+    <bindings xmi:id="_X2Dl05oWEeKBDZZACqhG_Q" keySequence="M1+S" command="_X2Dl0ZoWEeKBDZZACqhG_Q"/>
+    <bindings xmi:id="_X2Dl1poWEeKBDZZACqhG_Q" keySequence="M1+A" command="_X2Dl1JoWEeKBDZZACqhG_Q"/>
+  </bindingTables>
+  <rootContext xmi:id="_X2Dlx5oWEeKBDZZACqhG_Q" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_X2DlyJoWEeKBDZZACqhG_Q" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_X2DlyZoWEeKBDZZACqhG_Q" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_X2DlypoWEeKBDZZACqhG_Q" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
+  <commands xmi:id="_X2DlzpoWEeKBDZZACqhG_Q" elementId="com.senatov.smapperApp.open" commandName="openCommand"/>
+  <commands xmi:id="_X2Dl0ZoWEeKBDZZACqhG_Q" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
+  <commands xmi:id="_X2Dl1JoWEeKBDZZACqhG_Q" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <addons xmi:id="_X2DlwZoWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_X2DlwpoWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_X2Dlw5oWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_X2DlxJoWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_X2DlxZoWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_X2DlxpoWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>

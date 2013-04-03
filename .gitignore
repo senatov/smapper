@@ -1,1 +1,8 @@
-com
+.metadata 
+RemoteSystemsTempFiles 
+/.metadata
+/RemoteSystemsTempFiles
+/smapperApp/.settings
+/smapperApp/bin
+/smapperApp/.classpath
+/smapperApp/.project

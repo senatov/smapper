@@ -8,3 +8,4 @@ target
 #ignore eclipse
 .settings 
 log/*
+/log

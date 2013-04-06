@@ -1,4 +1,0 @@
-/**
- * @author senatovi
- */
-package com;

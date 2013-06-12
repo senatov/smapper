@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <category
+            name="Sample File Import"
+            id="com.senatov.smapper.importWizards.sampleCategory">
+      </category>
+      <wizard
+            name="ImportTree"
+            icon="icons/sample.gif"
+            category="com.senatov.smapper.importWizards.sampleCategory"
+            class="com.senatov.smapper.importWizards.ImportWizard"
+            id="com.senatov.smapper.importWizards.ImportWizard">
+         <description>
+            Import a file from the local file system into the workspace.
+         </description>
+      </wizard>
+   </extension>
+
+</plugin>

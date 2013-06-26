@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_X2C-sJoWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.ide.application" bindingContexts="_X2Dlx5oWEeKBDZZACqhG_Q">
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_X2DlwJoWEeKBDZZACqhG_Q" label="com.senatov.smapperApp" width="500" height="400">
-    <children xsi:type="advanced:PerspectiveStack" xmi:id="_X2EM1JoWEeKBDZZACqhG_Q">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_X2DlwJoWEeKBDZZACqhG_Q" selectedElement="_X2EM1JoWEeKBDZZACqhG_Q" label="com.senatov.smapperApp" width="500" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_X2EM1JoWEeKBDZZACqhG_Q" selectedElement="_X2EM1ZoWEeKBDZZACqhG_Q">
       <children xsi:type="advanced:Perspective" xmi:id="_X2EM1ZoWEeKBDZZACqhG_Q">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_X2EM1poWEeKBDZZACqhG_Q">
-          <children xsi:type="basic:PartStack" xmi:id="_X2EM15oWEeKBDZZACqhG_Q">
-            <children xsi:type="basic:Part" xmi:id="_X2EM2JoWEeKBDZZACqhG_Q" contributionURI="bundleclass://com.senatov.smapperApp/com.senatov.smapperApp.parts.SamplePart" label="Sample Part"/>
+        <children xsi:type="basic:PartSashContainer" xmi:id="_X2EM1poWEeKBDZZACqhG_Q" selectedElement="_X2EM15oWEeKBDZZACqhG_Q" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_X2EM15oWEeKBDZZACqhG_Q" selectedElement="_X2EM2JoWEeKBDZZACqhG_Q">
+            <children xsi:type="basic:Part" xmi:id="_X2EM2JoWEeKBDZZACqhG_Q" contributionURI="bundleclass://com.senatov.smapperApp/com.senatov.smapperApp.parts.SamplePart" label="Beispiel Example" closeable="true">
+              <menus xmi:id="_eI3HYNuPEeK4V71wgTQT4Q" elementId="com.senatov.smapperapp.menu.0">
+                <children xsi:type="menu:HandledMenuItem" xmi:id="_eqrbANuPEeK4V71wgTQT4Q" elementId="com.senatov.smapperapp.handledmenuitem.0" label="aaaa" type="Radio"/>
+              </menus>
+              <toolbar xmi:id="_LRIzcNuPEeK4V71wgTQT4Q" elementId="com.senatov.smapperapp.toolbar.0"/>
+            </children>
           </children>
         </children>
       </children>

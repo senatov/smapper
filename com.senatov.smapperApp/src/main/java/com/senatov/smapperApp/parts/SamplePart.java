@@ -1,13 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2010 IBM Corporation and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *     IBM Corporation - initial API and implementation
- *******************************************************************************/
 package com.senatov.smapperApp.parts;
 
 import javax.annotation.PostConstruct;
@@ -20,22 +10,14 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Label;
 
-import com.senatov.smapperApp.parts.model.TreeContentProvider;
 import com.senatov.smapperApp.parts.model.FileTreeLabelProvider;
+import com.senatov.smapperApp.parts.model.TreeContentProvider;
 
 /**
  * The Class SamplePart.
  */
 public class SamplePart {
-
-	/** The label. */
-	private Label label;
-
-	/** The tree viewer. */
-	CheckboxTreeViewer treeViewer;
-
 	/**
 	 * Creates the composite.
 	 * 
@@ -44,24 +26,37 @@ public class SamplePart {
 	 */
 	@PostConstruct
 	public void createComposite(Composite parent) {
-		parent.setLayout(new GridLayout());
+		GridLayout gridLayout = new GridLayout();
+		gridLayout.numColumns = 3;
+		parent.setLayout(gridLayout);
+		// 1
+		createTree(parent);
 
-		label = new Label(parent, SWT.NONE);
-		label.setText("Sample table");
-		Composite composite = new Composite(parent, SWT.NONE);
+		// 2
+		createTree(parent);
+	}
+
+	/**
+	 * Creates the first tree.
+	 * 
+	 * @param pParent
+	 *            the parent
+	 */
+	private void createTree(Composite pParent) {
+		Composite composite = new Composite(pParent, SWT.BAR);
 		composite.setLayout(new GridLayout(1, false));
-		treeViewer = new CheckboxTreeViewer(composite);
-		treeViewer.getTree().setLayoutData(new GridData(GridData.FILL_BOTH));
-		treeViewer.setContentProvider(new TreeContentProvider());
-		treeViewer.setLabelProvider(new FileTreeLabelProvider());
-		treeViewer.setInput("root"); // pass a non-null that will be ignored
-
+		final CheckboxTreeViewer pTreeViewer = new CheckboxTreeViewer(composite);
+		pTreeViewer.setAutoExpandLevel(2);
+		pTreeViewer.getTree().setLayoutData(new GridData(GridData.FILL_BOTH));
+		pTreeViewer.setContentProvider(new TreeContentProvider());
+		pTreeViewer.setLabelProvider(new FileTreeLabelProvider());
+		pTreeViewer.setInput("root"); // pass a non-null that will be ignored
 		// When user checks a checkbox in the tree, check all its children
-		treeViewer.addCheckStateListener(new ICheckStateListener() {
+		pTreeViewer.addCheckStateListener(new ICheckStateListener() {
 			@Override
 			public void checkStateChanged(CheckStateChangedEvent event) {
 				if (event.getChecked()) {
-					treeViewer.setSubtreeChecked(event.getElement(), true);
+					pTreeViewer.setSubtreeChecked(event.getElement(), true);
 				}
 			}
 		});
@@ -72,6 +67,7 @@ public class SamplePart {
 	 */
 	@Focus
 	public void setFocus() {
-		treeViewer.getTree().setFocus();
+		// treeViewer_right.getTree().setFocus();
+		// treeViewer_right.getTree().setFocus();
 	}
 }

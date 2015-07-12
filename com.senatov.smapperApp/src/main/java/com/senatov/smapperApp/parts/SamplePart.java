@@ -20,7 +20,7 @@ import com.senatov.smapperApp.parts.model.TreeContentProvider;
 public class SamplePart {
 	/**
 	 * Creates the composite.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent
 	 */
@@ -31,14 +31,13 @@ public class SamplePart {
 		parent.setLayout(gridLayout);
 		// 1
 		createTree(parent);
-
 		// 2
 		createTree(parent);
 	}
 
 	/**
 	 * Creates the first tree.
-	 * 
+	 *
 	 * @param pParent
 	 *            the parent
 	 */
@@ -67,7 +66,7 @@ public class SamplePart {
 	 */
 	@Focus
 	public void setFocus() {
-		// treeViewer_right.getTree().setFocus();
-		// treeViewer_right.getTree().setFocus();
+//		treeViewer_right.getTree().setFocus();
+//		treeViewer_right.getTree().setFocus();
 	}
 }

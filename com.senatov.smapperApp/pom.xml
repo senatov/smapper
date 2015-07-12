@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -13,7 +11,6 @@
 		<name>Iakov Senatov</name>
 	</organization>
 
-
 	<groupId>smapperApp</groupId>
 	<artifactId>com.senatov.smapperApp</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
@@ -23,9 +20,9 @@
 	<description>Bean's mapper</description>
 
 	<properties>
-		<org.springframework.version>3.0.5.RELEASE</org.springframework.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<tycho-version>0.17.0</tycho-version>
+		<tycho-version>0.23.0</tycho-version>
+		<org.springframework.version>4.1.7.RELEASE</org.springframework.version>
 	</properties>
 
 	<dependencies>
@@ -53,8 +50,6 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.5</version>
 		</dependency>
-
-
 	</dependencies>
 
 	<scm>
@@ -64,6 +59,11 @@
 	</scm>
 
 	<repositories>
+		<repository>
+			<id>spring-milestone</id>
+			<name>Spring Portfolio Milestone Repository</name>
+			<url>http://s3.amazonaws.com/maven.springframework.org/milestone</url>
+		</repository>
 
 		<repository>
 			<id>juno</id>
@@ -97,19 +97,32 @@
 
 
 		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-toolchains-plugin</artifactId>
+				<version>1.0</version>
+				<configuration>
+					<toolchains>
+						<jdk>
+							<version>1.8</version>
+							<vendor>sun</vendor>
+						</jdk>
+					</toolchains>
+				</configuration>
+			</plugin>
+
+
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-maven-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
 			</plugin>
-
-
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
 				<version>${tycho-version}</version>
-
 				<configuration>
 					<environments>
 						<environment>
@@ -130,9 +143,6 @@
 					</environments>
 				</configuration>
 			</plugin>
-
-
-
 		</plugins>
 	</build>
 </project>

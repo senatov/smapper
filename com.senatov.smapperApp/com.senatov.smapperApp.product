@@ -8,11 +8,13 @@
    </configIni>
 
    <launcherArgs>
-      <programArgs>-clearPersistedState</programArgs>
-      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+      <programArgs>-clearPersistedState
+      </programArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
    </launcherArgs>
 
-   <windowImages/>
+   <windowImages i16="/com.senatov.smapperApp/icons/16x16.gif" i32="/com.senatov.smapperApp/icons/32x32.gif" i64="/com.senatov.smapperApp/icons/64x64.gif" i128="/com.senatov.smapperApp/icons/128x128.gif" i256="/com.senatov.smapperApp/icons/256x256.gif"/>
 
    <splash
       location="ch.qos.logback.slf4j"
@@ -104,5 +106,13 @@
       <plugin id="org.w3c.dom.svg"/>
    </plugins>
 
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+      <file path="/com.senatov.smapperApp/css/default.css"/>
+   </cssInfo>
 
 </product>

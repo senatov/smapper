@@ -3,7 +3,11 @@
       id="com.senatov.smapper.feature"
       label="Feature"
       version="1.0.0.qualifier"
-      provider-name="SENATOV">
+      provider-name="SENATOV"
+      os="win32"
+      ws="win32"
+      nl="de_DE,en"
+      arch="x86_64">
 
    <description url="http://www.example.com/description">
       Iakov Senatov. 2013

@@ -11,7 +11,8 @@ Require-Bundle: javax.inject;bundle-version="1.0.0",
  org.eclipse.e4.ui.workbench;bundle-version="0.11.0",
  org.eclipse.e4.core.di;bundle-version="1.2.0",
  org.eclipse.e4.ui.di;bundle-version="0.10.1",
- org.eclipse.e4.core.contexts;bundle-version="1.2.0"
+ org.eclipse.e4.core.contexts;bundle-version="1.2.0",
+ org.eclipse.ui.intro
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: javax.annotation;version="1.0.0",
  org.apache.log4j;version="[1.1.0,1.7.0)",
@@ -19,3 +20,4 @@ Import-Package: javax.annotation;version="1.0.0",
  org.eclipse.e4.ui.model.application.ui,
  org.eclipse.ui.plugin
 Bundle-Activator: com.senatov.smapperApp.Activator
+Bundle-ActivationPolicy: lazy

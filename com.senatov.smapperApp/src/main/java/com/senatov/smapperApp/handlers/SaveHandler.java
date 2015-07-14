@@ -1,12 +1,11 @@
-/*******************************************************************************
- * Copyright (c) 2010 IBM Corporation and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * Contributors:
- * IBM Corporation - initial API and implementation
- *******************************************************************************/
+/*
+ * JDK: 1.8.0_45
+ * @author I. Senatov (Iakov)
+ * DATE: 15.07.2015 01:22:50
+ * PRJ: com.senatov.smapperApp
+ * PACKAGE:com.senatov.smapperApp.handlers
+ * FILE: SaveHandler.java
+ */
 
 
 package com.senatov.smapperApp.handlers;
@@ -17,6 +16,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import javax.inject.Named;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
@@ -27,17 +27,20 @@ import org.eclipse.e4.ui.model.application.MContribution;
 import org.eclipse.e4.ui.model.application.ui.MDirtyable;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
-import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.swt.widgets.Shell;
 
 
 
 public class SaveHandler {
 	
+	private static final Logger LOG = Logger.getLogger(SaveHandler.class );
+	
+	
+	
 	@CanExecute
-	public boolean canExecute(
-	                @Named(IServiceConstants.ACTIVE_PART ) MDirtyable dirtyable) {
-					
+	public boolean canExecute(@Named(IServiceConstants.ACTIVE_PART ) MDirtyable dirtyable) {
+		
+		LOG.debug("execute()" );
 		if(dirtyable == null ) { return false; }
 		return dirtyable.isDirty();
 	}
@@ -54,17 +57,11 @@ public class SaveHandler {
 		final IEclipseContext pmContext = context.createChild();
 		final ProgressMonitorDialog dialog = new ProgressMonitorDialog(shell );
 		dialog.open();
-		dialog.run(true, true, new IRunnableWithProgress() {
-			
-			@Override
-			public void run(IProgressMonitor monitor )
-		                    throws InvocationTargetException, InterruptedException {
-							
-				pmContext.set(IProgressMonitor.class.getName(), monitor );
-				if(contribution != null ) {
-					final Object clientObject = contribution.getObject();
-					ContextInjectionFactory.invoke(clientObject, Persist.class, pmContext, null );
-				}
+		dialog.run(true, true, monitor -> {
+			pmContext.set(IProgressMonitor.class.getName(), monitor );
+			if(contribution != null ) {
+				final Object clientObject = contribution.getObject();
+				ContextInjectionFactory.invoke(clientObject, Persist.class, pmContext, null );
 			}
 		} );
 		pmContext.dispose();

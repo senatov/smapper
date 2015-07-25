@@ -1,7 +1,7 @@
 /*
  * JDK: 1.8.0_45
  * @author I. Senatov (Iakov)
- * DATE: 15.07.2015 01:23:20
+ * DATE: 23.07.2015 12:47:52
  * PRJ: com.senatov.smapperApp
  * PACKAGE:com.senatov.smapperApp.parts
  * FILE: SamplePart.java
@@ -33,11 +33,11 @@ import com.senatov.smapperApp.parts.model.TreeContentProvider;
  * The Class SamplePart.
  */
 public class SamplePart {
-	
+
 	private static final Logger LOG = Logger.getLogger(SamplePart.class );
-	
-	
-	
+
+
+
 	/**
 	 * Creates the composite.
 	 *
@@ -47,26 +47,26 @@ public class SamplePart {
 	 */
 	@PostConstruct
 	public void createComposite(Composite parent ) {
-		
+
 		LOG.debug("createComposite()" );
 		final GridLayout gridLayout = new GridLayout();
-		gridLayout.numColumns = 3;
-		parent.setLayout(gridLayout );
+		gridLayout.numColumns = 2;
 		// 1
-		createTree(parent );
+		createLTree(parent );
 		// 2
-		createTree(parent );
+		createRTree(parent );
+		parent.setLayout(gridLayout );
 	}
-	
-	
-	
+
+
+
 	/**
 	 * Creates the first tree.
 	 *
 	 * @param pParent the parent
 	 */
-	private void createTree(Composite pParent ) {
-		
+	private void createLTree(Composite pParent ) {
+
 		LOG.debug("createTree()" );
 		final Composite composite = new Composite(pParent, SWT.BAR );
 		composite.setLayout(new GridLayout(1, false ) );
@@ -83,15 +83,41 @@ public class SamplePart {
 			}
 		} );
 	}
-	
-	
-	
+
+
+
+	/**
+	 * Creates the first tree.
+	 *
+	 * @param pParent the parent
+	 */
+	private void createRTree(Composite pParent ) {
+
+		LOG.debug("createRTree()" );
+		final Composite composite = new Composite(pParent, SWT.BAR );
+		composite.setLayout(new GridLayout(1, false ) );
+		final CheckboxTreeViewer pTreeViewer = new CheckboxTreeViewer(composite );
+		pTreeViewer.setAutoExpandLevel(2 );
+		pTreeViewer.getTree().setLayoutData(new GridData(GridData.FILL_BOTH ) );
+		pTreeViewer.setContentProvider(new TreeContentProvider() );
+		pTreeViewer.setLabelProvider(new FileTreeLabelProvider() );
+		pTreeViewer.setInput("root" ); // pass a non-null that will be ignored
+		// When user checks a checkbox in the tree, check all its children
+		pTreeViewer.addCheckStateListener(event -> {
+			if(event.getChecked() ) {
+				pTreeViewer.setSubtreeChecked(event.getElement(), true );
+			}
+		} );
+	}
+
+
+
 	/**
 	 * Sets the focus.
 	 */
 	@Focus
 	public void setFocus() {
-		
+
 		LOG.debug("setFocus()" );
 	}
 }

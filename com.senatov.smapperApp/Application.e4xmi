@@ -16,13 +16,16 @@
       </children>
     </children>
     <mainMenu xmi:id="_X2Dl15oWEeKBDZZACqhG_Q" elementId="menu:org.eclipse.ui.main.menu">
-      <children xsi:type="menu:Menu" xmi:id="_X2Dl2JoWEeKBDZZACqhG_Q" label="File">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2Dl2ZoWEeKBDZZACqhG_Q" label="Open" iconURI="platform:/plugin/com.senatov.smapperApp/icons/sample.gif" command="_X2DlzpoWEeKBDZZACqhG_Q"/>
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2EM0JoWEeKBDZZACqhG_Q" label="Save" iconURI="platform:/plugin/com.senatov.smapperApp/icons/save_edit.gif" command="_X2Dl0ZoWEeKBDZZACqhG_Q"/>
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2EM0ZoWEeKBDZZACqhG_Q" label="Quit" command="_X2DlypoWEeKBDZZACqhG_Q"/>
+      <children xsi:type="menu:Menu" xmi:id="_X2Dl2JoWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.file.menu" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2Dl2ZoWEeKBDZZACqhG_Q" label="Open" iconURI="platform:/plugin/com.senatov.smapperApp/icons/open16x16.png" command="_X2DlzpoWEeKBDZZACqhG_Q"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2EM0JoWEeKBDZZACqhG_Q" label="Save" iconURI="platform:/plugin/com.senatov.smapperApp/icons/open16x16.png" command="_X2Dl0ZoWEeKBDZZACqhG_Q"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2EM0ZoWEeKBDZZACqhG_Q" label="Quit" iconURI="platform:/plugin/com.senatov.smapperApp/icons/quit16x16.png" command="_X2DlypoWEeKBDZZACqhG_Q"/>
       </children>
-      <children xsi:type="menu:Menu" xmi:id="_X2EM0poWEeKBDZZACqhG_Q" label="Help">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2EM05oWEeKBDZZACqhG_Q" label="About" command="_X2Dl1JoWEeKBDZZACqhG_Q"/>
+      <children xsi:type="menu:Menu" xmi:id="_X2EM0poWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.help.menu" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2EM05oWEeKBDZZACqhG_Q" label="About" iconURI="platform:/plugin/com.senatov.smapperApp/icons/help16x16.png" command="_X2Dl1JoWEeKBDZZACqhG_Q"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_5TJb0DLPEeWxmd6uXcJasg" elementId="com.senatov.smapperapp.find.menu" label="Search">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_RAuEYDLQEeWxmd6uXcJasg" elementId="com.senatov.smapperapp.finddialog.menu" label="Find Field" iconURI="platform:/plugin/com.senatov.smapperApp/icons/find16x16.png" tooltip="find field in DB Tables" command="__-d-8DK8EeW4oqH0JNQYUA"/>
       </children>
     </mainMenu>
     <trimBars xmi:id="_X2EM2ZoWEeKBDZZACqhG_Q">
@@ -32,10 +35,11 @@
       </children>
     </trimBars>
   </children>
-  <handlers xmi:id="_X2Dly5oWEeKBDZZACqhG_Q" contributionURI="bundleclass://com.senatov.smapperApp/com.senatov.smapperApp.handlers.QuitHandler" command="_X2DlypoWEeKBDZZACqhG_Q"/>
-  <handlers xmi:id="_X2Dlz5oWEeKBDZZACqhG_Q" contributionURI="bundleclass://com.senatov.smapperApp/com.senatov.smapperApp.handlers.OpenHandler" command="_X2DlzpoWEeKBDZZACqhG_Q"/>
-  <handlers xmi:id="_X2Dl0poWEeKBDZZACqhG_Q" contributionURI="bundleclass://com.senatov.smapperApp/com.senatov.smapperApp.handlers.SaveHandler" command="_X2Dl0ZoWEeKBDZZACqhG_Q"/>
-  <handlers xmi:id="_X2Dl1ZoWEeKBDZZACqhG_Q" contributionURI="bundleclass://com.senatov.smapperApp/com.senatov.smapperApp.handlers.AboutHandler" command="_X2Dl1JoWEeKBDZZACqhG_Q"/>
+  <handlers xmi:id="_X2Dly5oWEeKBDZZACqhG_Q" elementId="com.senatov.smapperApp.quit" contributionURI="bundleclass://com.senatov.smapperApp/com.senatov.smapperApp.handlers.QuitHandler" command="_X2DlypoWEeKBDZZACqhG_Q"/>
+  <handlers xmi:id="_X2Dlz5oWEeKBDZZACqhG_Q" elementId="com.senatov.smapperApp.open" contributionURI="bundleclass://com.senatov.smapperApp/com.senatov.smapperApp.handlers.OpenHandler" command="_X2DlzpoWEeKBDZZACqhG_Q"/>
+  <handlers xmi:id="_X2Dl0poWEeKBDZZACqhG_Q" elementId="com.senatov.smapperApp.save" contributionURI="bundleclass://com.senatov.smapperApp/com.senatov.smapperApp.handlers.SaveHandler" command="_X2Dl0ZoWEeKBDZZACqhG_Q"/>
+  <handlers xmi:id="_X2Dl1ZoWEeKBDZZACqhG_Q" elementId="com.senatov.smapperApp.about" contributionURI="bundleclass://com.senatov.smapperApp/com.senatov.smapperApp.handlers.AboutHandler" command="_X2Dl1JoWEeKBDZZACqhG_Q"/>
+  <handlers xmi:id="_QqnMIDK9EeW4oqH0JNQYUA" elementId="com.senatov.smapperApp.find" contributionURI="bundleclass://com.senatov.smapperApp/com.senatov.smapperApp.handlers.FindHandler" command="__-d-8DK8EeW4oqH0JNQYUA"/>
   <bindingTables xmi:id="_X2DlzJoWEeKBDZZACqhG_Q" bindingContext="_X2Dlx5oWEeKBDZZACqhG_Q">
     <bindings xmi:id="_X2DlzZoWEeKBDZZACqhG_Q" keySequence="M1+Q" command="_X2DlypoWEeKBDZZACqhG_Q"/>
     <bindings xmi:id="_X2Dl0JoWEeKBDZZACqhG_Q" keySequence="M1+O" command="_X2DlzpoWEeKBDZZACqhG_Q"/>
@@ -50,6 +54,7 @@
   <commands xmi:id="_X2DlzpoWEeKBDZZACqhG_Q" elementId="com.senatov.smapperApp.open" commandName="openCommand"/>
   <commands xmi:id="_X2Dl0ZoWEeKBDZZACqhG_Q" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
   <commands xmi:id="_X2Dl1JoWEeKBDZZACqhG_Q" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <commands xmi:id="__-d-8DK8EeW4oqH0JNQYUA" elementId="com.senatov.smapperApp.find" commandName="findCommand"/>
   <addons xmi:id="_X2DlwZoWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_X2DlwpoWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_X2Dlw5oWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>

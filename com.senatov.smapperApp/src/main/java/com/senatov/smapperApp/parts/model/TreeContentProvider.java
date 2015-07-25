@@ -1,7 +1,7 @@
 /*
  * JDK: 1.8.0_45
  * @author I. Senatov (Iakov)
- * DATE: 12.07.2015 22:36:11
+ * DATE: 23.07.2015 01:39:36
  * PRJ: com.senatov.smapperApp
  * PACKAGE:com.senatov.smapperApp.parts.model
  * FILE: TreeContentProvider.java
@@ -58,8 +58,12 @@ public class TreeContentProvider implements ITreeContentProvider {
 	@Override
 	public boolean hasChildren(Object arg0 ) {
 		
+		boolean bRet = false;
 		Object[] obj = getChildren(arg0 );
-		return obj == null ? false : obj.length > 0;
+		if(obj != null && obj.length > 0 ) {
+			bRet = true;
+		}
+		return bRet;
 	}
 	
 	

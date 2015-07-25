@@ -1,7 +1,7 @@
 /*
  * JDK: 1.8.0_45
  * @author I. Senatov (Iakov)
- * DATE: 15.07.2015 01:22:50
+ * DATE: 25.07.2015 13:13:48
  * PRJ: com.senatov.smapperApp
  * PACKAGE:com.senatov.smapperApp.handlers
  * FILE: SaveHandler.java
@@ -26,6 +26,7 @@ import org.eclipse.e4.ui.di.Persist;
 import org.eclipse.e4.ui.model.application.MContribution;
 import org.eclipse.e4.ui.model.application.ui.MDirtyable;
 import org.eclipse.e4.ui.services.IServiceConstants;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.swt.widgets.Shell;
 
@@ -43,6 +44,15 @@ public class SaveHandler {
 		LOG.debug("execute()" );
 		if(dirtyable == null ) { return false; }
 		return dirtyable.isDirty();
+	}
+	
+	
+	
+	@Execute
+	public void execute(@Named(IServiceConstants.ACTIVE_SHELL ) Shell shell) {
+		
+		LOG.debug("execute()" );
+		MessageDialog.openInformation(shell, "Save command info:", "Save is clicked" );
 	}
 	
 	

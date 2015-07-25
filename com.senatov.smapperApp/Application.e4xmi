@@ -23,10 +23,10 @@
         <children xsi:type="menu:HandledMenuItem" xmi:id="_X2EM0JoWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.save.menu" label="Save" iconURI="platform:/plugin/com.senatov.smapperApp/icons/open16x16.png" command="_X2Dl0ZoWEeKBDZZACqhG_Q"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_X2EM0ZoWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.quit.menu" label="Quit" iconURI="platform:/plugin/com.senatov.smapperApp/icons/quit16x16.png" command="_X2DlypoWEeKBDZZACqhG_Q"/>
       </children>
-      <children xsi:type="menu:Menu" xmi:id="_X2EM0poWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.help.menu" label="Help">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2EM05oWEeKBDZZACqhG_Q" label="About" iconURI="platform:/plugin/com.senatov.smapperApp/icons/help16x16.png" command="_X2Dl1JoWEeKBDZZACqhG_Q"/>
+      <children xsi:type="menu:Menu" xmi:id="_X2EM0poWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.help.menu" label="Help" iconURI="platform:/plugin/com.senatov.smapperApp/icons/info16x16.png">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2EM05oWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.about.menu" label="About" iconURI="platform:/plugin/com.senatov.smapperApp/icons/help16x16.png" command="_X2Dl1JoWEeKBDZZACqhG_Q"/>
       </children>
-      <children xsi:type="menu:Menu" xmi:id="_5TJb0DLPEeWxmd6uXcJasg" elementId="com.senatov.smapperapp.find.menu" label="Search">
+      <children xsi:type="menu:Menu" xmi:id="_5TJb0DLPEeWxmd6uXcJasg" elementId="com.senatov.smapperapp.find.menu" label="Search" iconURI="platform:/plugin/com.senatov.smapperApp/icons/search16x16.png">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_RAuEYDLQEeWxmd6uXcJasg" elementId="com.senatov.smapperapp.finddialog.menu" label="Find Field" iconURI="platform:/plugin/com.senatov.smapperApp/icons/find16x16.png" tooltip="find field in DB Tables" command="__-d-8DK8EeW4oqH0JNQYUA"/>
       </children>
     </mainMenu>
@@ -34,6 +34,7 @@
       <children xsi:type="menu:ToolBar" xmi:id="_X2EM2poWEeKBDZZACqhG_Q" elementId="toolbar:org.eclipse.ui.main.toolbar">
         <children xsi:type="menu:HandledToolItem" xmi:id="_X2EM25oWEeKBDZZACqhG_Q" iconURI="platform:/plugin/com.senatov.smapperApp/icons/open16x16.png" command="_X2DlzpoWEeKBDZZACqhG_Q"/>
         <children xsi:type="menu:HandledToolItem" xmi:id="_X2EM3JoWEeKBDZZACqhG_Q" iconURI="platform:/plugin/com.senatov.smapperApp/icons/save16x16.png" command="_X2Dl0ZoWEeKBDZZACqhG_Q"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_RPmTQDLjEeWxmd6uXcJasg" iconURI="platform:/plugin/com.senatov.smapperApp/icons/find16x16.png" command="__-d-8DK8EeW4oqH0JNQYUA"/>
       </children>
     </trimBars>
   </children>

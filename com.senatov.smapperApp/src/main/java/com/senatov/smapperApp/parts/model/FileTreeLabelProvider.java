@@ -1,7 +1,7 @@
 /*
  * JDK: 1.8.0_45
  * @author I. Senatov (Iakov)
- * DATE: 12.07.2015 22:36:11
+ * DATE: 25.07.2015 18:04:24
  * PRJ: com.senatov.smapperApp
  * PACKAGE:com.senatov.smapperApp.parts.model
  * FILE: FileTreeLabelProvider.java
@@ -44,12 +44,35 @@ public class FileTreeLabelProvider implements ILabelProvider {
 		LOG.debug("FileTreeLabelProvider ()" );
 		listeners = new ArrayList<ILabelProviderListener>();
 		try {
-			file = new Image(null, new FileInputStream("images/file.gif" ) );
-			dir = new Image(null, new FileInputStream("images/directory.gif" ) );
+			file = new Image(null, new FileInputStream(getPath("file.gif" ) ) );
+			dir = new Image(null, new FileInputStream(getPath("directory.gif" ) ) );
 		}
 		catch(final FileNotFoundException e ) {
 			LOG.error(e.getMessage() );
 		}
+	}
+	
+	
+	
+	/**
+	 * create path to gif file.
+	 * <br>
+	 * <br>
+	 * <b>author</b> iase27698054 2015-03-16
+	 *
+	 * @param strPath
+	 * @return
+	 */
+	private String getPath(String strGifFileName ) {
+		
+		LOG.debug("getPath ()" );
+		StringBuffer sbBuff = new StringBuffer(0x50 );
+		sbBuff.append(getClass().getProtectionDomain().getCodeSource().getLocation().getPath() );
+		sbBuff.append(File.separator );
+		sbBuff.append("images" );
+		sbBuff.append(File.separator );
+		sbBuff.append(strGifFileName );
+		return sbBuff.toString();
 	}
 	
 	

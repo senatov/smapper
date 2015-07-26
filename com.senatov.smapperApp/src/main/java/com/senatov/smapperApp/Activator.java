@@ -1,7 +1,7 @@
 /*
  * JDK: 1.8.0_45
  * @author I. Senatov (Iakov)
- * DATE: 14.07.2015 22:36:44
+ * DATE: 26.07.2015 19:06:50
  * PRJ: com.senatov.smapperApp
  * PACKAGE:com.senatov.smapperApp
  * FILE: Activator.java
@@ -40,8 +40,8 @@ import com.senatov.smapperApp.util.PluginLogListener;
  */
 public class Activator extends AbstractUIPlugin implements BundleActivator {
 	
-	private static final String LOG4J_PROPERTIES = "META-INF/log4j.properties";
 	private static final String LOG4J_FILE_PATTTERN = "%d{ISO8601} [%t] %-5p %c %x - %m%n";
+	private static final String LOG4J_PROPERTIES = "META-INF/log4j.properties";
 	private static final Logger LOG = Logger.getLogger(Activator.class );
 	public static final String PLUGIN_ID = "com.senatov.smapperApp";
 	final private List<PluginLogListener> pluginLogHooks = new ArrayList<PluginLogListener>();
@@ -84,22 +84,60 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 		
 		final String log4jfile = LOG4J_PROPERTIES;
 		final URL confURL = getBundle().getEntry(log4jfile );
-		// Define file appender with layout and output log file name
+		String strConfigFile = FileLocator.toFileURL(confURL ).getFile();
+		PropertyConfigurator.configure(strConfigFile );
+		String strLogPath = getLoggingFileFullPath(getBundle().getSymbolicName() );
 		final PatternLayout layout = new PatternLayout(LOG4J_FILE_PATTTERN );
-		final String logPath = getClass().getProtectionDomain().getCodeSource().getLocation().getPath() + "logs"
-		                + File.separator + "addtBook.log";
-		final RollingFileAppender fileAppender = new RollingFileAppender(layout, logPath );
-		PropertyConfigurator.configure(FileLocator.toFileURL(confURL ).getFile() );
-		LOG.debug("Logging using log4j and configuration " + FileLocator.toFileURL(confURL ).getFile() );
+		final RollingFileAppender fileAppender = new RollingFileAppender(layout, strLogPath );
 		Logger.getRootLogger().addAppender(fileAppender );
-		hookPluginLoggers(context );
+		// Location resolvedURL = Platform.getLocation();
 		LOG.info("contextInitialized()" );
 		LOG.info("Log4j initialized with " + confURL );
+		hookPluginLoggers(context ); // You need to add this method to hook other plugins, described later...
 	}
 	
 	
 	
-	// Hook all loaded bundles into the log4j framework
+	/**
+	 * <b>author</b> iase27698054 2015-03-16
+	 *
+	 * @param strLogFileName
+	 * @return
+	 * @throws IOException
+	 */
+	private String getLoggingFileFullPath(String strLogFileName ) throws IOException {
+		
+		StringBuffer sbRet = new StringBuffer(0xFF );
+		sbRet.append(getRootPath() );
+		sbRet.append("logs" );
+		sbRet.append(File.separator );
+		sbRet.append(strLogFileName );
+		sbRet.append(".log" );
+		return sbRet.toString();
+	}
+	
+	
+	
+	/**
+	 * <br>
+	 * <br>
+	 * <b>author</b> iase27698054 2015-03-16
+	 *
+	 * @return
+	 * @throws IOException
+	 */
+	private String getRootPath() throws IOException {
+		
+		return FileLocator.toFileURL(getBundle().getEntry("/" ) ).getPath();
+	}
+	
+	
+	
+	/**
+	 * Hook all loaded bundles into the log4j framework.
+	 *
+	 * @param context the context
+	 */
 	private void hookPluginLoggers(final BundleContext context ) {
 		
 		for(final Bundle bundle : context.getBundles() ) {

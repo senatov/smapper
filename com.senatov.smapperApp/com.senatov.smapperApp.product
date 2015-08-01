@@ -220,7 +220,8 @@
    </configurations>
 
    <preferencesInfo>
-      <targetfile overwrite="false"/>
+      <sourcefile path="P:\smapper\sm.epf"/>
+      <targetfile overwrite="false" path="/com.senatov.smapperApp/plugin_customization.ini"/>
    </preferencesInfo>
 
    <cssInfo>

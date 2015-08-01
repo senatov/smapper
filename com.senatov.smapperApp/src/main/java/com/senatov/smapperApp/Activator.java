@@ -40,6 +40,8 @@ import com.senatov.smapperApp.util.PluginLogListener;
  */
 public class Activator extends AbstractUIPlugin implements BundleActivator {
 	
+	private static final String LOG2 = ".log";
+	private static final String LOGS = "logs";
 	private static final String LOG4J_FILE_PATTTERN = "%d{ISO8601} [%t] %-5p %c %x - %m%n";
 	private static final String LOG4J_PROPERTIES = "META-INF/log4j.properties";
 	private static final Logger LOG = Logger.getLogger(Activator.class );
@@ -109,10 +111,10 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 		
 		StringBuffer sbRet = new StringBuffer(0xFF );
 		sbRet.append(getRootPath() );
-		sbRet.append("logs" );
+		sbRet.append(LOGS );
 		sbRet.append(File.separator );
 		sbRet.append(strLogFileName );
-		sbRet.append(".log" );
+		sbRet.append(LOG2 );
 		return sbRet.toString();
 	}
 	

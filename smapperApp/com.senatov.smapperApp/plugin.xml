@@ -13,7 +13,7 @@
          </property>
          <property
                name="applicationCSS"
-               value="platform:/plugin/com.senatov.smapperApp/css/default.css">
+               value="platform:/plugin/com.senatov.smapper.app/css/default.css">
          </property>
          <property
                name="appName"

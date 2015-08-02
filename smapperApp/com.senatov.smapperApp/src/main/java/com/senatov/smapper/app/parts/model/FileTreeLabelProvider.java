@@ -2,13 +2,13 @@
  * JDK: 1.8.0_45
  * @author I. Senatov (Iakov)
  * DATE: 25.07.2015 18:04:24
- * PRJ: com.senatov.smapperApp
- * PACKAGE:com.senatov.smapperApp.parts.model
+ * PRJ: com.senatov.smapper.app
+ * PACKAGE:com.senatov.smapper.app.parts.model
  * FILE: FileTreeLabelProvider.java
  */
 
 
-package com.senatov.smapperApp.parts.model;
+package com.senatov.smapper.app.parts.model;
 
 
 

@@ -2,13 +2,13 @@
  * JDK: 1.8.0_45
  * @author I. Senatov (Iakov)
  * DATE: 23.07.2015 12:47:52
- * PRJ: com.senatov.smapperApp
- * PACKAGE:com.senatov.smapperApp.parts
+ * PRJ: com.senatov.smapper.app
+ * PACKAGE:com.senatov.smapper.app.parts
  * FILE: SamplePart.java
  */
 
 
-package com.senatov.smapperApp.parts;
+package com.senatov.smapper.app.parts;
 
 
 
@@ -24,8 +24,8 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 
-import com.senatov.smapperApp.parts.model.FileTreeLabelProvider;
-import com.senatov.smapperApp.parts.model.TreeContentProvider;
+import com.senatov.smapper.app.parts.model.FileTreeLabelProvider;
+import com.senatov.smapper.app.parts.model.TreeContentProvider;
 
 
 

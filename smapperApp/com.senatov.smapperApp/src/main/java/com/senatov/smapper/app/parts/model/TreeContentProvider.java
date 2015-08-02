@@ -2,13 +2,13 @@
  * JDK: 1.8.0_45
  * @author I. Senatov (Iakov)
  * DATE: 23.07.2015 01:39:36
- * PRJ: com.senatov.smapperApp
- * PACKAGE:com.senatov.smapperApp.parts.model
+ * PRJ: com.senatov.smapper.app
+ * PACKAGE:com.senatov.smapper.app.parts.model
  * FILE: TreeContentProvider.java
  */
 
 
-package com.senatov.smapperApp.parts.model;
+package com.senatov.smapper.app.parts.model;
 
 
 
@@ -34,7 +34,6 @@ public class TreeContentProvider implements ITreeContentProvider {
 	@Override
 	public Object[] getChildren(Object arg0 ) {
 		
-		LOG.debug("getChildren()");
 		return ((File ) arg0 ).listFiles();
 	}
 	

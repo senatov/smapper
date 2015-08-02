@@ -2,13 +2,13 @@
  * JDK: 1.8.0_45
  * @author I. Senatov (Iakov)
  * DATE: 25.07.2015 13:14:34
- * PRJ: com.senatov.smapperApp
- * PACKAGE:com.senatov.smapperApp.handlers
+ * PRJ: com.senatov.smapper.app
+ * PACKAGE:com.senatov.smapper.app.handlers
  * FILE: OpenHandler.java
  */
 
 
-package com.senatov.smapperApp.handlers;
+package com.senatov.smapper.app.handlers;
 
 
 

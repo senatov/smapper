@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: com.senatov.smapperApp.sMapper
-Bundle-SymbolicName: com.senatov.smapperApp;singleton:=true
-Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: com.senatov.smapperApp.Activator
+Bundle-Name: com.senatov.smapper.app.sMapper
+Bundle-SymbolicName: com.senatov.smapper.app;singleton:=true
+Bundle-Version: 1.0.2.qualifier
+Bundle-Activator: com.senatov.smapper.app.Activator
 Bundle-Vendor: senatov
 Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.8.0,5.0.0)",
  org.eclipse.jface;bundle-version="3.8.102",
@@ -20,15 +20,15 @@ Import-Package: javax.annotation;version="1.0.0",
  org.eclipse.e4.ui.model.application.ui,
  org.eclipse.ui.plugin
 Bundle-ActivationPolicy: lazy
-Export-Package: com.senatov.smapperApp;uses:="org.osgi.framework,org.eclipse.jface.resource,org.eclipse.ui.plugin",
- com.senatov.smapperApp.handlers;
+Export-Package: com.senatov.smapper.app;uses:="org.osgi.framework,org.eclipse.jface.resource,org.eclipse.ui.plugin",
+ com.senatov.smapper.app.handlers;
   uses:="org.eclipse.e4.ui.model.application.ui,
    org.eclipse.e4.core.contexts,
    org.eclipse.e4.ui.model.application,
    org.eclipse.swt.widgets,
    org.eclipse.e4.ui.workbench",
+ com.senatov.smapper.app.parts;uses:="org.eclipse.swt.widgets",
+ com.senatov.smapper.app.parts.model;uses:="org.eclipse.swt.graphics,org.eclipse.jface.viewers",
+ com.senatov.smapper.app.util;uses:="org.eclipse.core.runtime,org.apache.log4j",
  com.senatov.smapperApp.handlers.test,
- com.senatov.smapperApp.parts;uses:="org.eclipse.swt.widgets",
- com.senatov.smapperApp.parts.model;uses:="org.eclipse.swt.graphics,org.eclipse.jface.viewers",
- com.senatov.smapperApp.parts.test,
- com.senatov.smapperApp.util;uses:="org.eclipse.core.runtime,org.apache.log4j"
+ com.senatov.smapperApp.parts.test

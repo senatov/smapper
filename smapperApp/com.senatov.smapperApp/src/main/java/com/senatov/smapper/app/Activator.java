@@ -2,13 +2,13 @@
  * JDK: 1.8.0_45
  * @author I. Senatov (Iakov)
  * DATE: 26.07.2015 19:06:50
- * PRJ: com.senatov.smapperApp
- * PACKAGE:com.senatov.smapperApp
+ * PRJ: com.senatov.smapper.app
+ * PACKAGE:com.senatov.smapper.app
  * FILE: Activator.java
  */
 
 
-package com.senatov.smapperApp;
+package com.senatov.smapper.app;
 
 
 
@@ -31,7 +31,7 @@ import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-import com.senatov.smapperApp.util.PluginLogListener;
+import com.senatov.smapper.app.util.PluginLogListener;
 
 
 
@@ -45,7 +45,7 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 	private static final String LOG4J_FILE_PATTTERN = "%d{ISO8601} [%t] %-5p %c %x - %m%n";
 	private static final String LOG4J_PROPERTIES = "META-INF/log4j.properties";
 	private static final Logger LOG = Logger.getLogger(Activator.class );
-	public static final String PLUGIN_ID = "com.senatov.smapperApp";
+	public static final String PLUGIN_ID = "com.senatov.smapper.app";
 	final private List<PluginLogListener> pluginLogHooks = new ArrayList<PluginLogListener>();
 	private static Activator plugin;
 	

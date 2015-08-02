@@ -1,4 +1,4 @@
-package com.senatov.smapperApp.util;
+package com.senatov.smapper.app.util;
 
 
 import org.apache.log4j.Level;

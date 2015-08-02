@@ -1,5 +1,5 @@
 
-package com.senatov.smapperApp.handlers;
+package com.senatov.smapper.app.handlers;
 
 import javax.inject.Named;
 

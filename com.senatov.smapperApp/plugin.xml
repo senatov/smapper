@@ -52,7 +52,7 @@
          point="org.eclipse.ui.intro">
       <intro
             class="org.eclipse.ui.intro.config.CustomizableIntroPart"
-            icon="icons/128x128.ico"
+            icon="$nl$/icons/128x128.ico"
             id="com.senatov.smapperApp.intro">
       </intro>
       <introProductBinding
@@ -69,7 +69,7 @@
          <presentation
                home-page-id="root">
             <implementation
-                  kind="html"
+                  kind="swt"
                   os="win32,linux,macosx"
                   style="content/shared.css">
             </implementation>

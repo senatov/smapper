@@ -1,25 +1,34 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: sMapper
+Bundle-Name: com.senatov.smapperApp.sMapper
 Bundle-SymbolicName: com.senatov.smapperApp;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.senatov.smapperApp.Activator
 Bundle-Vendor: senatov
-Require-Bundle: javax.inject;bundle-version="1.0.0",
- org.eclipse.core.runtime;bundle-version="[3.8.0,5.0.0)",
+Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.8.0,5.0.0)",
  org.eclipse.jface;bundle-version="3.8.102",
  org.eclipse.e4.ui.services;bundle-version="0.10.3",
  org.eclipse.e4.ui.workbench;bundle-version="0.11.0",
  org.eclipse.e4.core.di;bundle-version="1.2.0",
  org.eclipse.e4.ui.di;bundle-version="0.10.1",
- org.eclipse.e4.core.contexts;bundle-version="1.2.0",
- org.eclipse.ui.intro
+ org.eclipse.e4.core.contexts;bundle-version="1.2.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: javax.annotation;version="1.0.0",
  javax.inject;version="1.0.0",
- org.apache.commons.io;version="2.2.0",
  org.apache.log4j;version="1.2.15",
  org.eclipse.e4.ui.model.application,
  org.eclipse.e4.ui.model.application.ui,
  org.eclipse.ui.plugin
 Bundle-ActivationPolicy: lazy
+Export-Package: com.senatov.smapperApp;uses:="org.osgi.framework,org.eclipse.jface.resource,org.eclipse.ui.plugin",
+ com.senatov.smapperApp.handlers;
+  uses:="org.eclipse.e4.ui.model.application.ui,
+   org.eclipse.e4.core.contexts,
+   org.eclipse.e4.ui.model.application,
+   org.eclipse.swt.widgets,
+   org.eclipse.e4.ui.workbench",
+ com.senatov.smapperApp.handlers.test,
+ com.senatov.smapperApp.parts;uses:="org.eclipse.swt.widgets",
+ com.senatov.smapperApp.parts.model;uses:="org.eclipse.swt.graphics,org.eclipse.jface.viewers",
+ com.senatov.smapperApp.parts.test,
+ com.senatov.smapperApp.util;uses:="org.eclipse.core.runtime,org.apache.log4j"

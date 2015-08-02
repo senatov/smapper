@@ -34,6 +34,7 @@ public class TreeContentProvider implements ITreeContentProvider {
 	@Override
 	public Object[] getChildren(Object arg0 ) {
 		
+		LOG.debug("getChildren()");
 		return ((File ) arg0 ).listFiles();
 	}
 	

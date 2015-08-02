@@ -2,7 +2,7 @@
 <feature
       id="com.senatov.smapper.feature"
       label="Feature"
-      version="1.0.0.qualifier"
+      version="1.0.2.qualifier"
       provider-name="SENATOV"
       os="win32"
       ws="win32"

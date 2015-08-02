@@ -72,11 +72,13 @@
 			<url>http://s3.amazonaws.com/maven.springframework.org/milestone</url>
 		</repository>
 
+
 		<repository>
-			<id>mars</id>
-			<url>http://download.eclipse.org/releases/mars/</url>
+			<id>eclipse-mars</id>
+			<url>http://download.eclipse.org/releases/mars</url>
 			<layout>p2</layout>
 		</repository>
+
 
 		<repository>
 			<id>com.springsource.repository.bundles.snapshot</id>

@@ -10,15 +10,15 @@
       arch="x86_64">
 
    <description url="http://www.example.com/description">
-      Iakov Senatov. 2015
+      Iakov Senatov. 2015. Eclipse Public License 1.0
    </description>
 
    <copyright url="http://www.example.com/copyright">
-      Iakov Senatov 2015
+      Iakov Senatov 2015. Eclipse Public License 1.0
    </copyright>
 
    <license url="http://www.example.com/license">
-      Copyleft
+      Eclipse Public License 1.0
    </license>
 
    <requires>

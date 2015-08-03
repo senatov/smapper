@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.senatov.smapper.parent</groupId>
     <artifactId>com.senatov.smapper.parent.app</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.3-SNAPSHOT</version>
     <relativePath>../</relativePath>
   </parent>
   <groupId>com.senatov.smapper</groupId>

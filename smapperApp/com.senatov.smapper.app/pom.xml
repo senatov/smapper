@@ -3,13 +3,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.senatov.smapper</groupId>
-    <artifactId>smapper</artifactId>
+    <groupId>com.senatov.smapper.parent</groupId>
+    <artifactId>com.senatov.smapper.parent.app</artifactId>
     <version>1.0.2-SNAPSHOT</version>
-    <relativePath>../../</relativePath>
+    <relativePath>../</relativePath>
   </parent>
   <groupId>com.senatov.smapper</groupId>
   <artifactId>com.senatov.smapper.app</artifactId>
-  <version>1.0.2-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
 </project>

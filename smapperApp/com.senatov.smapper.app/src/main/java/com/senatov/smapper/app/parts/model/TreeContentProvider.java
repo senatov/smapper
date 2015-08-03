@@ -34,6 +34,7 @@ public class TreeContentProvider implements ITreeContentProvider {
 	@Override
 	public Object[] getChildren(Object arg0 ) {
 		
+		LOG.debug("getChildren()");
 		return ((File ) arg0 ).listFiles();
 	}
 	
@@ -46,6 +47,7 @@ public class TreeContentProvider implements ITreeContentProvider {
 	@Override
 	public Object getParent(Object arg0 ) {
 		
+		LOG.debug("getParent()");
 		return ((File ) arg0 ).getParentFile();
 	}
 	
@@ -58,6 +60,7 @@ public class TreeContentProvider implements ITreeContentProvider {
 	@Override
 	public boolean hasChildren(Object arg0 ) {
 		
+		LOG.debug("hasChildren()");
 		boolean bRet = false;
 		Object[] obj = getChildren(arg0 );
 		if(obj != null && obj.length > 0 ) {
@@ -75,6 +78,7 @@ public class TreeContentProvider implements ITreeContentProvider {
 	@Override
 	public Object[] getElements(Object arg0 ) {
 		
+		LOG.debug("getElements()");
 		return File.listRoots();
 	}
 	
@@ -86,7 +90,7 @@ public class TreeContentProvider implements ITreeContentProvider {
 	 */
 	@Override
 	public void dispose() {
-	
+		LOG.debug("dispose()");
 	}
 	
 	
@@ -98,6 +102,6 @@ public class TreeContentProvider implements ITreeContentProvider {
 	 */
 	@Override
 	public void inputChanged(Viewer arg0, Object arg1, Object arg2 ) {
-	
+		LOG.debug("inputChanged()");
 	}
 }

@@ -10,15 +10,15 @@
       arch="x86_64">
 
    <description url="http://www.example.com/description">
-      Iakov Senatov. 2013
+      Iakov Senatov. 2015
    </description>
 
    <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
+      Iakov Senatov 2015
    </copyright>
 
    <license url="http://www.example.com/license">
-      [Enter License Description here.]
+      Copyleft
    </license>
 
    <requires>
@@ -182,13 +182,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.core.runtime.compatibility.auth"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.core.runtime.compatibility.registry"
          download-size="0"
          install-size="0"
@@ -337,6 +330,10 @@
 
    <plugin
          id="com.ibm.icu"
+         os="win32"
+         ws="win32"
+         nl="de_DE"
+         arch="x86_64"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -442,7 +439,7 @@
          unpack="false"/>
 
    <plugin
-         id="com.senatov.smapperApp"
+         id="com.senatov.smapper.app"
          download-size="0"
          install-size="0"
          version="0.0.0"

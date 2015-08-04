@@ -3,31 +3,28 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
     http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.senatov.smapper.parent</groupId>
-	<artifactId>com.senatov.smapper.parent.app</artifactId>
+	<artifactId>app</artifactId>
 	<version>1.0.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<modules>
-		<module>com.senatov.smapper.feature</module>
-		<module>com.senatov.smapper.app</module>
-	</modules>
-
 	<properties>
 		<tycho.version>0.23.1</tycho.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<mars-repo.url>http://download.eclipse.org/releases/mars</mars-repo.url>
 	</properties>
-
 	<repositories>
 		<repository>
 			<id>mars</id>
 			<url>${mars-repo.url}</url>
 			<layout>p2</layout>
 		</repository>
+		<repository>
+			<id>marsTest</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/eclipse/updates/3.6-JUnit-Tests/</url>
+		</repository>
 	</repositories>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -37,30 +34,22 @@
 				<extensions>true</extensions>
 			</plugin>
 
+
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
 				<version>${tycho.version}</version>
+
 				<configuration>
 					<environments>
 						<environment>
-							<os>linux</os>
-							<ws>gtk</ws>
-							<arch>x86</arch>
-						</environment>
-						<environment>
-							<os>linux</os>
-							<ws>gtk</ws>
-							<arch>x86_64</arch>
-						</environment>
-						<environment>
 							<os>win32</os>
 							<ws>win32</ws>
 							<arch>x86</arch>
 						</environment>
 						<environment>
-							<os>win32</os>
-							<ws>win32</ws>
+							<os>linux</os>
+							<ws>gtk</ws>
 							<arch>x86_64</arch>
 						</environment>
 						<environment>
@@ -71,6 +60,53 @@
 					</environments>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-versions-plugin</artifactId>
+				<version>${tycho.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.3</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<aggregate>true</aggregate>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-surefire-plugin</artifactId>
+				<version>${tycho.version}</version>
+			</plugin>
 		</plugins>
 	</build>
-</project> 
+	<name>Iakov Senatov</name>
+	<url>https://github.com/senatov/smapper</url>
+	<description>sMapper</description>
+	<organization>
+		<url>https://github.com/senatov/smapper</url>
+		<name>Iakov Senatov</name>
+	</organization>
+</project>

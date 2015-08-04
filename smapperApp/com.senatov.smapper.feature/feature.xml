@@ -2,8 +2,9 @@
 <feature
       id="com.senatov.smapper.feature"
       label="Feature"
-      version="1.0.2.qualifier"
+      version="1.0.3.qualifier"
       provider-name="SENATOV"
+      plugin="com.senatov.smapper.app"
       os="win32"
       ws="win32"
       nl="de_DE,en"
@@ -20,6 +21,10 @@
    <license url="http://www.example.com/license">
       Eclipse Public License 1.0
    </license>
+
+   <url>
+      <update label="gitHub" url="https://github.com/senatov/smapper.git"/>
+   </url>
 
    <requires>
       <import plugin="org.eclipse.core.variables" version="3.1.0" match="compatible"/>
@@ -139,6 +144,14 @@
       <import feature="com.ibh.systems.build.tycho" version="0.5.2.201309301416"/>
    </requires>
 
+  <plugin
+         id="com.ibh.systems.build.tycho.mavenize"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+  
+  
    <plugin
          id="org.eclipse.equinox.util"
          download-size="0"

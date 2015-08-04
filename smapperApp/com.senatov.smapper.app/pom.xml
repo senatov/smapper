@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.senatov.smapper.parent</groupId>
-    <artifactId>com.senatov.smapper.parent.app</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
-    <relativePath>../</relativePath>
-  </parent>
-  <groupId>com.senatov.smapper</groupId>
-  <artifactId>com.senatov.smapper.app</artifactId>
-  <packaging>eclipse-plugin</packaging>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>com.senatov.smapper.app</artifactId>
+	<packaging>eclipse-plugin</packaging>
+	<parent>
+		<groupId>com.senatov.smapper.parent</groupId>
+		<artifactId>app</artifactId>
+		<version>1.0.3-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<groupId>com.senatov.smapper</groupId>
+	<version>1.0.3</version>
+	<modules>
+		<module>com.senatov.smapper.feature</module>
+	</modules>	
 </project>

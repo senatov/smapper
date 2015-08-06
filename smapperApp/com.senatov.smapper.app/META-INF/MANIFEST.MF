@@ -11,7 +11,8 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.8.0,5.0.0)",
  org.eclipse.e4.ui.workbench;bundle-version="0.11.0",
  org.eclipse.e4.core.di;bundle-version="1.2.0",
  org.eclipse.e4.ui.di;bundle-version="0.10.1",
- org.eclipse.e4.core.contexts;bundle-version="1.2.0"
+ org.eclipse.e4.core.contexts;bundle-version="1.2.0",
+ org.junit
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: javax.annotation;version="1.0.0",
  javax.inject;version="1.0.0",
@@ -29,6 +30,5 @@ Export-Package: com.senatov.smapper.app;uses:="org.osgi.framework,org.eclipse.jf
    org.eclipse.e4.ui.workbench",
  com.senatov.smapper.app.parts;uses:="org.eclipse.swt.widgets",
  com.senatov.smapper.app.parts.model;uses:="org.eclipse.swt.graphics,org.eclipse.jface.viewers",
- com.senatov.smapper.app.util;uses:="org.eclipse.core.runtime,org.apache.log4j",
- com.senatov.smapperApp.handlers.test,
- com.senatov.smapperApp.parts.test
+ com.senatov.smapper.app.util;uses:="org.eclipse.core.runtime,org.apache.log4j"
+ 

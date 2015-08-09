@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.senatov.smapper</groupId>
+	<artifactId>parent</artifactId>
+	<version>1.0.7-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>com.senatov.smapper.extensions</name>
+	<description>Parent project for the com.senatov.smapper project set</description>
+	<url>https://github.com/senatov/smapper</url>
+	<licenses>
+		<license>
+			<name>Eclipse Public License v1.0</name>
+			<url>http://www.eclipse.org/legal/epl-v10.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+
+	<repositories>
+		<repository>
+			<id>mars</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/mars/</url>
+		</repository>
+	</repositories>
+
+	<scm>
+		<connection>scm:git:github.com/senatov/smapper.git</connection>
+		<developerConnection>scm:senatogit:git@github.com/senatov/smapper.git</developerConnection>
+		<url>https://github.com/senatov/smapper.git</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>javaentwiclker@gmail.com</id>
+			<name>Iakov Senatov</name>
+			<organization>SolutionsIQ, Inc.</organization>
+			<organizationUrl>http://www.solutionsiq.com/</organizationUrl>
+			<roles>
+				<role>model</role>
+			</roles>
+			<url>https://www.linkedin.com/profile/view?id=231425940</url>
+		</developer>
+	</developers>
+
+	<properties>
+		<tycho-version>0.23.1</tycho-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+
+	<profiles>
+		<profile>
+			<id>default</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>tycho-packaging-plugin</artifactId>
+						<version>${tycho-version}</version>
+						<configuration>
+							<archiveSite>true</archiveSite>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>target-platform-configuration</artifactId>
+						<version>${tycho-version}</version>
+					</plugin>
+				</plugins>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-jarsigner-plugin</artifactId>
+							<version>1.4</version>
+							<executions>
+								<execution>
+									<id>sign</id>
+									<goals>
+										<goal>sign</goal>
+									</goals>
+								</execution>
+								<execution>
+									<id>verify</id>
+									<goals>
+										<goal>verify</goal>
+									</goals>
+								</execution>
+							</executions>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+		<profile>
+			<id>test</id>
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>tycho-surefire-plugin</artifactId>
+						<version>${tycho-version}</version>
+						<configuration>
+							<useUIHarness>true</useUIHarness>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<resolver>p2</resolver>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<modules>
+		<module>features</module>
+		<module>plugins</module>
+	</modules>
+</project>

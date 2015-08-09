@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: SmapperApp
-Bundle-SymbolicName: com.senatov.smapperApp;singleton:=true
+Bundle-SymbolicName: com.senatov.smapper.smapperApp;singleton:=true
 Bundle-Version: 1.0.7.qualifier
 Bundle-Activator: com.senatov.smapperApp.Activator
-Bundle-Vendor: senatov
+Bundle-Vendor: javaentwickler@gmail.com
 Require-Bundle: javax.inject;bundle-version="1.0.0",
  org.eclipse.core.runtime;bundle-version="[3.8.0,5.0.0)",
  org.eclipse.jface;bundle-version="3.8.102",

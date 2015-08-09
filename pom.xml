@@ -139,7 +139,7 @@
 		</plugins>
 	</build>
 	<modules>
-		<module>features</module>
 		<module>plugins</module>
+		<module>features</module>
 	</modules>
 </project>

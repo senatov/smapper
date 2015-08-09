@@ -54,6 +54,6 @@
 		</plugins>
 	</build>
 	<modules>
-		<module>com.senatov.smapperApp</module>
+		<module>com.senatov.smapper.smapperApp</module>
 	</modules>
 </project>

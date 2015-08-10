@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_X2C-sJoWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.ide.application" bindingContexts="_X2Dlx5oWEeKBDZZACqhG_Q">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_X2DlwJoWEeKBDZZACqhG_Q" selectedElement="_X2EM1JoWEeKBDZZACqhG_Q" label="com.senatov.smapperapp" width="500" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_X2EM1JoWEeKBDZZACqhG_Q" selectedElement="_X2EM1ZoWEeKBDZZACqhG_Q">
+      <children xsi:type="advanced:Perspective" xmi:id="_X2EM1ZoWEeKBDZZACqhG_Q">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_X2EM1poWEeKBDZZACqhG_Q" selectedElement="_X2EM15oWEeKBDZZACqhG_Q" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_X2EM15oWEeKBDZZACqhG_Q" selectedElement="_X2EM2JoWEeKBDZZACqhG_Q">
+            <children xsi:type="basic:Part" xmi:id="_X2EM2JoWEeKBDZZACqhG_Q" contributionURI="bundleclass://com.senatov.smapperapp/com.senatov.smapperapp.parts.SamplePart" label="Beispiel Example" closeable="true">
+              <menus xmi:id="_eI3HYNuPEeK4V71wgTQT4Q" elementId="com.senatov.smapperapp.menu.0">
+                <children xsi:type="menu:HandledMenuItem" xmi:id="_eqrbANuPEeK4V71wgTQT4Q" elementId="com.senatov.smapperapp.handledmenuitem.0" label="aaaa" type="Radio"/>
+              </menus>
+              <toolbar xmi:id="_LRIzcNuPEeK4V71wgTQT4Q" elementId="com.senatov.smapperapp.toolbar.0"/>
+            </children>
+          </children>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_X2Dl15oWEeKBDZZACqhG_Q" elementId="menu:org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_X2Dl2JoWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.file.menu" label="File" iconURI="platform:/plugin/com.senatov.smapperapp/icons/open16x16.png" tooltip="open">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2Dl2ZoWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.open.menu" label="Open configs" iconURI="platform:/plugin/com.senatov.smapperapp/icons/open16x16.png" command="_X2DlzpoWEeKBDZZACqhG_Q"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_1DbrYDLVEeWxmd6uXcJasg" elementId="com.senatov.smapperapp.opendb.menu" label="Open DB connection" iconURI="platform:/plugin/com.senatov.smapperapp/icons/open16x16.png" command="_X2DlzpoWEeKBDZZACqhG_Q"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_AZwqcDLWEeWxmd6uXcJasg" elementId="com.senatov.smapperapp.menuseparator.0"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2EM0JoWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.save.menu" label="Save" iconURI="platform:/plugin/com.senatov.smapperapp/icons/open16x16.png" command="_X2Dl0ZoWEeKBDZZACqhG_Q"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2EM0ZoWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.quit.menu" label="Quit" iconURI="platform:/plugin/com.senatov.smapperapp/icons/quit16x16.png" command="_X2DlypoWEeKBDZZACqhG_Q"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_X2EM0poWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.help.menu" label="Help" iconURI="platform:/plugin/com.senatov.smapperapp/icons/info16x16.png">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_X2EM05oWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.about.menu" label="About" iconURI="platform:/plugin/com.senatov.smapperapp/icons/help16x16.png" command="_X2Dl1JoWEeKBDZZACqhG_Q"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_5TJb0DLPEeWxmd6uXcJasg" elementId="com.senatov.smapperapp.find.menu" label="Search" iconURI="platform:/plugin/com.senatov.smapperapp/icons/search16x16.png">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_RAuEYDLQEeWxmd6uXcJasg" elementId="com.senatov.smapperapp.finddialog.menu" label="Find Field" iconURI="platform:/plugin/com.senatov.smapperapp/icons/find16x16.png" tooltip="find field in DB Tables" command="__-d-8DK8EeW4oqH0JNQYUA"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_X2EM2ZoWEeKBDZZACqhG_Q">
+      <children xsi:type="menu:ToolBar" xmi:id="_X2EM2poWEeKBDZZACqhG_Q" elementId="toolbar:org.eclipse.ui.main.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_X2EM25oWEeKBDZZACqhG_Q" iconURI="platform:/plugin/com.senatov.smapperapp/icons/open16x16.png" command="_X2DlzpoWEeKBDZZACqhG_Q"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_X2EM3JoWEeKBDZZACqhG_Q" iconURI="platform:/plugin/com.senatov.smapperapp/icons/save16x16.png" command="_X2Dl0ZoWEeKBDZZACqhG_Q"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_RPmTQDLjEeWxmd6uXcJasg" iconURI="platform:/plugin/com.senatov.smapperapp/icons/find16x16.png" command="__-d-8DK8EeW4oqH0JNQYUA"/>
+      </children>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_X2Dly5oWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.quit" contributionURI="bundleclass://com.senatov.smapperapp/com.senatov.smapperapp.handlers.QuitHandler" command="_X2DlypoWEeKBDZZACqhG_Q"/>
+  <handlers xmi:id="_X2Dlz5oWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.open" contributionURI="bundleclass://com.senatov.smapperapp/com.senatov.smapperapp.handlers.OpenHandler" command="_X2DlzpoWEeKBDZZACqhG_Q"/>
+  <handlers xmi:id="_X2Dl0poWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.save" contributionURI="bundleclass://com.senatov.smapperapp/com.senatov.smapperapp.handlers.SaveHandler" command="_X2Dl0ZoWEeKBDZZACqhG_Q"/>
+  <handlers xmi:id="_X2Dl1ZoWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.about" contributionURI="bundleclass://com.senatov.smapperapp/com.senatov.smapperapp.handlers.AboutHandler" command="_X2Dl1JoWEeKBDZZACqhG_Q"/>
+  <handlers xmi:id="_QqnMIDK9EeW4oqH0JNQYUA" elementId="com.senatov.smapperapp.find" contributionURI="bundleclass://com.senatov.smapperapp/com.senatov.smapperapp.handlers.FindHandler" command="__-d-8DK8EeW4oqH0JNQYUA"/>
+  <handlers xmi:id="_OFYs8DLWEeWxmd6uXcJasg" elementId="com.senatov.smapperapp.opendb" contributionURI="bundleclass://com.senatov.smapperapp/com.senatov.smapperapp.handlers.OpenDBHandler" command="_URXuEDLWEeWxmd6uXcJasg"/>
+  <bindingTables xmi:id="_X2DlzJoWEeKBDZZACqhG_Q" bindingContext="_X2Dlx5oWEeKBDZZACqhG_Q">
+    <bindings xmi:id="_X2DlzZoWEeKBDZZACqhG_Q" keySequence="M1+Q" command="_X2DlypoWEeKBDZZACqhG_Q"/>
+    <bindings xmi:id="_X2Dl0JoWEeKBDZZACqhG_Q" keySequence="M1+O" command="_X2DlzpoWEeKBDZZACqhG_Q"/>
+    <bindings xmi:id="_X2Dl05oWEeKBDZZACqhG_Q" keySequence="M1+S" command="_X2Dl0ZoWEeKBDZZACqhG_Q"/>
+    <bindings xmi:id="_X2Dl1poWEeKBDZZACqhG_Q" keySequence="M1+A" command="_X2Dl1JoWEeKBDZZACqhG_Q"/>
+  </bindingTables>
+  <rootContext xmi:id="_X2Dlx5oWEeKBDZZACqhG_Q" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_X2DlyJoWEeKBDZZACqhG_Q" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_X2DlyZoWEeKBDZZACqhG_Q" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_X2DlypoWEeKBDZZACqhG_Q" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
+  <commands xmi:id="_X2DlzpoWEeKBDZZACqhG_Q" elementId="com.senatov.smapperapp.open" commandName="openCommand"/>
+  <commands xmi:id="_X2Dl0ZoWEeKBDZZACqhG_Q" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
+  <commands xmi:id="_X2Dl1JoWEeKBDZZACqhG_Q" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <commands xmi:id="__-d-8DK8EeW4oqH0JNQYUA" elementId="com.senatov.smapperapp.find" commandName="findCommand"/>
+  <commands xmi:id="_URXuEDLWEeWxmd6uXcJasg" elementId="com.senatov.smapperapp.opendb" commandName="openDBCommand"/>
+  <addons xmi:id="_X2DlwZoWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_X2DlwpoWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_X2Dlw5oWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_X2DlxJoWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_X2DlxZoWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_X2DlxpoWEeKBDZZACqhG_Q" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>

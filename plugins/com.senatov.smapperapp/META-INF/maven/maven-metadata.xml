@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.senatov.smapper</groupId>
+  <artifactId>features</artifactId>
+  <version>1.0.7-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <localCopy>true</localCopy>
+    </snapshot>
+    <lastUpdated>20150809230817</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0.7-SNAPSHOT</value>
+        <updated>20150809230817</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

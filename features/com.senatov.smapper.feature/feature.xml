@@ -2,7 +2,7 @@
 <feature
       id="com.senatov.smapper.feature"
       label="Feature"
-      version="1.0.7.qualifier"
+      version="1.0.10.qualifier"
       provider-name="SENATOV"
       os="win32"
       ws="win32"
@@ -180,13 +180,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.core.runtime.compatibility.auth"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.core.runtime.compatibility.registry"
          download-size="0"
          install-size="0"
@@ -335,6 +328,10 @@
 
    <plugin
          id="com.ibm.icu"
+         os="win32"
+         ws="win32"
+         nl="de,en,ru"
+         arch="x86_64"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -360,13 +357,6 @@
          install-size="0"
          version="0.0.0"
          fragment="true"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.core.databinding.observable"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
          unpack="false"/>
 
    <plugin

@@ -13,6 +13,7 @@ package com.senatov.smapperApp;
 import static org.junit.Assert.assertTrue;
 
 
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -27,6 +28,9 @@ import org.junit.Test;
  */
 public class ActivatorTest {
 
+	private static final Logger LOG = Logger.getLogger(ActivatorTest.class);
+
+
 	/**
 	 * Sets the up before class.
 	 *
@@ -34,6 +38,7 @@ public class ActivatorTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		LOG.debug("setUpBeforeClass ()");
 	}
 
 
@@ -44,6 +49,7 @@ public class ActivatorTest {
 	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
+		LOG.debug("  ()");
 	}
 
 
@@ -54,6 +60,7 @@ public class ActivatorTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
+		LOG.debug("  ()");
 	}
 
 
@@ -64,6 +71,7 @@ public class ActivatorTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		LOG.debug("  ()");
 	}
 
 
@@ -72,6 +80,7 @@ public class ActivatorTest {
 	 */
 	@Test
 	public void testActivator() {
+		LOG.debug("  ()");
 		assertTrue("Not yet implemented", true);
 	}
 
@@ -81,6 +90,7 @@ public class ActivatorTest {
 	 */
 	@Test
 	public void testStartBundleContext() {
+		LOG.debug("  ()");
 		assertTrue("Not yet implemented", true);
 	}
 
@@ -90,6 +100,7 @@ public class ActivatorTest {
 	 */
 	@Test
 	public void testStopBundleContext() {
+		LOG.debug("  ()");
 		assertTrue("Not yet implemented", true);
 	}
 
@@ -99,6 +110,7 @@ public class ActivatorTest {
 	 */
 	@Test
 	public void testGetDefault() {
+		LOG.debug("  ()");
 		assertTrue("Not yet implemented", true);
 	}
 
@@ -108,6 +120,7 @@ public class ActivatorTest {
 	 */
 	@Test
 	public void testGetImageDescriptor() {
+		LOG.debug("  ()");
 		assertTrue("Not yet implemented", true);
 	}
 

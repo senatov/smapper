@@ -13,6 +13,7 @@ package com.senatov.smapperApp.handlers;
 import static org.junit.Assert.assertTrue;
 
 
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -22,6 +23,9 @@ import org.junit.Test;
 
 
 public class SaveHandlerTest {
+
+	private static final Logger LOG = Logger.getLogger(SaveHandlerTest.class);
+
 
 	/**
 	 * Sets the up before class.

@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
+	<artifactId>com.senatov.smapperApp</artifactId>
 	<packaging>eclipse-plugin</packaging>
-	<name>com.senatov.smapper.maingui</name>
-	<description>com.senatov.smapper.app
- plug-in project</description>
+	<name>the main GUI</name>
+	<description>com.senatov.smapper.app plug-in project</description>
 
 	<parent>
 		<groupId>com.senatov.smapper</groupId>
 		<artifactId>com.senatov.smapper.plugins</artifactId>
-		<version>1.0.7-SNAPSHOT</version>
+		<version>1.0.10-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
 	<build>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -52,5 +54,22 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	<artifactId>maingui</artifactId>
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jxr-plugin</artifactId>
+				<version>2.5</version>
+				<reportSets>
+					<reportSet>
+						<id>aggregate</id>
+						<reports>
+							<report>aggregate</report>
+							<report>test-aggregate</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
 </project>

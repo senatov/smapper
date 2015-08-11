@@ -13,6 +13,7 @@ package com.senatov.smapperApp.handlers;
 import static org.junit.Assert.assertTrue;
 
 
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -21,11 +22,13 @@ import org.junit.Test;
 
 
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class OpenHandlerTest.
  */
 public class OpenHandlerTest {
+
+	private static final Logger LOG = Logger.getLogger(OpenHandlerTest.class);
+
 
 	/**
 	 * Sets the up before class.

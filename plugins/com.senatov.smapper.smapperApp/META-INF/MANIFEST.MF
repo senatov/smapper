@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: SmapperApp
 Bundle-SymbolicName: com.senatov.smapperApp;singleton:=true
-Bundle-Version: 1.0.7.qualifier
+Bundle-Version: 1.0.10.qualifier
 Bundle-Activator: com.senatov.smapperApp.Activator
 Bundle-Vendor: senatov
 Require-Bundle: javax.inject;bundle-version="1.0.0",
@@ -15,7 +15,7 @@ Require-Bundle: javax.inject;bundle-version="1.0.0",
  org.eclipse.e4.core.contexts;bundle-version="1.2.0",
  org.eclipse.ui.intro,
  org.apache.commons.io;bundle-version="2.2.0",
- org.junit;bundle-version="4.12.0"
+ org.junit;bundle-version="4.12.0";visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: javax.annotation;version="1.0.0",
  javax.inject;version="1.0.0",

@@ -13,6 +13,7 @@ package com.senatov.smapperApp.handlers;
 import static org.junit.Assert.assertTrue;
 
 
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -26,6 +27,9 @@ import org.junit.Test;
  * The Class QuitHandlerTest.
  */
 public class QuitHandlerTest {
+
+	private static final Logger LOG = Logger.getLogger(QuitHandlerTest.class);
+
 
 	/**
 	 * Sets the up before class.

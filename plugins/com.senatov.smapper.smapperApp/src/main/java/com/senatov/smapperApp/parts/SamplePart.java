@@ -12,6 +12,8 @@ package com.senatov.smapperApp.parts;
 
 
 
+import java.io.IOException;
+
 import javax.annotation.PostConstruct;
 
 import org.apache.log4j.Logger;
@@ -27,14 +29,11 @@ import com.senatov.smapperApp.parts.model.TreeContentProvider;
 
 
 
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class SamplePart.
  */
 public class SamplePart {
 
-	/** The Constant LOG. */
 	private static final Logger LOG = Logger.getLogger(SamplePart.class );
 
 
@@ -42,7 +41,9 @@ public class SamplePart {
 	/**
 	 * Creates the composite.
 	 *
-	 * @param parent            the parent
+	 * @param parent
+	 *            the parent
+	 * @throws IOException
 	 */
 	@PostConstruct
 	public void createComposite(Composite parent ) {

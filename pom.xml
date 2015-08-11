@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.senatov.smapper</groupId>
 	<artifactId>parent</artifactId>
-	<version>1.0.7-SNAPSHOT</version>
+	<version>1.0.10-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>com.senatov.smapper.extensions</name>
 	<description>Parent project for the com.senatov.smapper project set</description>
@@ -51,6 +51,14 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+	</dependencies>
 
 
 	<profiles>
@@ -113,7 +121,7 @@
 						<version>${tycho-version}</version>
 						<configuration>
 							<testRuntime>p2Installed</testRuntime>	
-							<useUIHarness>true</useUIHarness>				
+							<useUIHarness>true</useUIHarness>
 						</configuration>
 					</plugin>
 				</plugins>
@@ -140,7 +148,7 @@
 		</plugins>
 	</build>
 	<modules>
-		<module>plugins</module>
 		<module>features</module>
+		<module>plugins</module>
 	</modules>
 </project>

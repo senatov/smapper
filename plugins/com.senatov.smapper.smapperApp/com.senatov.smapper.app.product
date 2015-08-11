@@ -4,7 +4,7 @@
 <product name="smapper" uid="com.senatov.smapper.app.product" id="com.senatov.smapperApp.product" application="org.eclipse.e4.ui.workbench.swt.E4Application" version="1.0.7.qualifier" useFeatures="false" includeLaunchers="true">
 
    <aboutInfo>
-      <image path="/com.senatov.smapper.plugins/com.senatov.smapper.smapperApp/icons/256x256.gif"/>
+      <image path="/com.senatov.smapperApp/icons/256x256.gif"/>
       <text>
          Universal Mapper
       </text>
@@ -18,7 +18,7 @@
       </vmArgsMac>
    </launcherArgs>
 
-   <windowImages i16="/com.senatov.smapper.plugins/com.senatov.smapper.smapperApp/icons/16x16.gif" i32="/com.senatov.smapper.plugins/com.senatov.smapper.smapperApp/icons/32x32.gif" i48="/com.senatov.smapper.plugins/com.senatov.smapper.smapperApp/icons/48x48.gif" i64="/com.senatov.smapper.plugins/com.senatov.smapper.smapperApp/icons/64x64.gif" i128="/com.senatov.smapper.plugins/com.senatov.smapper.smapperApp/icons/128x128.gif" i256="/com.senatov.smapper.plugins/com.senatov.smapper.smapperApp/icons/256x256.gif"/>
+   <windowImages i16="/com.senatov.smapperApp/icons/16x16.gif" i32="/com.senatov.smapperApp/icons/32x32.gif" i48="/com.senatov.smapperApp/icons/48x48.gif" i64="/com.senatov.smapperApp/icons/64x64.gif" i128="/com.senatov.smapperApp/icons/128x128.gif" i256="/com.senatov.smapperApp/icons/256x256.gif"/>
 
    <splash
       location="ch.qos.logback.slf4j"

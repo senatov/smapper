@@ -10,6 +10,6 @@
     <parent>
         <groupId>com.senatov.smapper</groupId>
         <artifactId>features</artifactId>
-        <version>1.0.7-SNAPSHOT</version>
+        <version>1.0.10-SNAPSHOT</version>
     </parent>
 </project>

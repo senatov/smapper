@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.senatov.smapper</groupId>
 	<artifactId>parent</artifactId>
-	<version>1.0.7-SNAPSHOT</version>
+	<version>1.0.10-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>com.senatov.smapper.extensions</name>
 	<description>Parent project for the com.senatov.smapper project set</description>

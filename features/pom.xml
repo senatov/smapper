@@ -9,7 +9,7 @@
   <parent>
   	<groupId>com.senatov.smapper</groupId>
   	<artifactId>parent</artifactId>
-  	<version>1.0.7-SNAPSHOT</version>
+  	<version>1.0.10-SNAPSHOT</version>
   </parent>
   <modules>
   	<module>com.senatov.smapper.feature</module>

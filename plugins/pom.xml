@@ -12,8 +12,9 @@
 
 	<parent>
 		<groupId>com.senatov.smapper</groupId>
-		<artifactId>parent</artifactId>
+		<artifactId>com.senatov.smapper.parent</artifactId>
 		<version>1.0.10-SNAPSHOT</version>
+		<relativePath>..</relativePath>
 	</parent>
 
 

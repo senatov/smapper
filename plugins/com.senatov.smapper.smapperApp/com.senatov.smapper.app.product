@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="smapper" uid="com.senatov.smapper.app.product" id="com.senatov.smapperApp.product" application="org.eclipse.e4.ui.workbench.swt.E4Application" version="1.0.10.qualifier" useFeatures="false" includeLaunchers="true">
+<product name="smapper" uid="com.senatov.smapper.smapperApp.product" id="com.senatov.smapperApp.product" application="org.eclipse.e4.ui.workbench.swt.E4Application" version="1.0.10.qualifier" useFeatures="false" includeLaunchers="true">
 
    <aboutInfo>
-      <image path="/com.senatov.smapperApp/icons/256x256.gif"/>
+      <image path="/com.senatov.smapper.smapperApp/icons/256x256.gif"/>
       <text>
          Universal Mapper
       </text>
@@ -18,7 +18,7 @@
       </vmArgsMac>
    </launcherArgs>
 
-   <windowImages i16="/com.senatov.smapperApp/icons/16x16.gif" i32="/com.senatov.smapperApp/icons/32x32.gif" i48="/com.senatov.smapperApp/icons/48x48.gif" i64="/com.senatov.smapperApp/icons/64x64.gif" i128="/com.senatov.smapperApp/icons/128x128.gif" i256="/com.senatov.smapperApp/icons/256x256.gif"/>
+   <windowImages i16="/com.senatov.smapper.smapperApp/icons/16x16.gif" i32="/com.senatov.smapper.smapperApp/icons/32x32.gif" i48="/com.senatov.smapper.smapperApp/icons/48x48.gif" i64="/com.senatov.smapper.smapperApp/icons/64x64.gif" i128="/com.senatov.smapper.smapperApp/icons/128x128.gif" i256="/com.senatov.smapper.smapperApp/icons/256x256.gif"/>
 
    <splash
       location="ch.qos.logback.slf4j"
@@ -26,19 +26,19 @@
    <launcher name="smapper_exe">
       <solaris/>
       <win useIco="false">
-         <ico path="/com.senatov.smapperApp/icons/64x64.ico"/>
+         <ico path="/com.senatov.smapper.smapperApp/icons/64x64.ico"/>
          <bmp
-            winSmallHigh="/com.senatov.smapperApp/icons/16x16.ico"
-            winSmallLow="/com.senatov.smapperApp/icons/16x16.ico"
-            winMediumHigh="/com.senatov.smapperApp/icons/32x32.ico"
-            winMediumLow="/com.senatov.smapperApp/icons/32x32.ico"
-            winLargeHigh="/com.senatov.smapperApp/icons/48x48.ico"
-            winLargeLow="/com.senatov.smapperApp/icons/48x48.ico"
-            winExtraLargeHigh="/com.senatov.smapperApp/icons/256x256.ico"/>
+            winSmallHigh="/com.senatov.smapper.smapperApp/icons/16x16.ico"
+            winSmallLow="/com.senatov.smapper.smapperApp/icons/16x16.ico"
+            winMediumHigh="/com.senatov.smapper.smapperApp/icons/32x32.ico"
+            winMediumLow="/com.senatov.smapper.smapperApp/icons/32x32.ico"
+            winLargeHigh="/com.senatov.smapper.smapperApp/icons/48x48.ico"
+            winLargeLow="/com.senatov.smapper.smapperApp/icons/48x48.ico"
+            winExtraLargeHigh="/com.senatov.smapper.smapperApp/icons/256x256.ico"/>
       </win>
    </launcher>
 
-   <intro introId="com.senatov.smapperApp.intro"/>
+   <intro introId="com.senatov.smapper.smapperApp.intro"/>
 
    <vm>
       <windows include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</windows>
@@ -66,6 +66,7 @@
       <plugin id="org.apache.batik.util.gui"/>
       <plugin id="org.apache.commons.jxpath"/>
       <plugin id="org.apache.commons.logging"/>
+      <plugin id="org.apache.felix.gogo.runtime"/>
       <plugin id="org.apache.log4j"/>
       <plugin id="org.apache.lucene.analysis"/>
       <plugin id="org.apache.lucene.core"/>
@@ -73,6 +74,7 @@
       <plugin id="org.apache.xml.resolver"/>
       <plugin id="org.apache.xml.serializer"/>
       <plugin id="org.eclipse.ant.core"/>
+      <plugin id="org.eclipse.compare"/>
       <plugin id="org.eclipse.compare.core"/>
       <plugin id="org.eclipse.core.commands"/>
       <plugin id="org.eclipse.core.contenttype"/>
@@ -81,6 +83,7 @@
       <plugin id="org.eclipse.core.databinding.observable"/>
       <plugin id="org.eclipse.core.databinding.property"/>
       <plugin id="org.eclipse.core.expressions"/>
+      <plugin id="org.eclipse.core.externaltools"/>
       <plugin id="org.eclipse.core.filebuffers"/>
       <plugin id="org.eclipse.core.filesystem"/>
       <plugin id="org.eclipse.core.filesystem.java7" fragment="true"/>
@@ -94,6 +97,8 @@
       <plugin id="org.eclipse.core.runtime.compatibility.auth"/>
       <plugin id="org.eclipse.core.runtime.compatibility.registry" fragment="true"/>
       <plugin id="org.eclipse.core.variables"/>
+      <plugin id="org.eclipse.debug.core"/>
+      <plugin id="org.eclipse.debug.ui"/>
       <plugin id="org.eclipse.e4.core.commands"/>
       <plugin id="org.eclipse.e4.core.contexts"/>
       <plugin id="org.eclipse.e4.core.di"/>
@@ -130,6 +135,8 @@
       <plugin id="org.eclipse.equinox.event"/>
       <plugin id="org.eclipse.equinox.http.jetty"/>
       <plugin id="org.eclipse.equinox.http.servlet"/>
+      <plugin id="org.eclipse.equinox.launcher"/>
+      <plugin id="org.eclipse.equinox.launcher.win32.win32.x86_64" fragment="true"/>
       <plugin id="org.eclipse.equinox.p2.core"/>
       <plugin id="org.eclipse.equinox.p2.engine"/>
       <plugin id="org.eclipse.equinox.p2.metadata"/>
@@ -141,8 +148,17 @@
       <plugin id="org.eclipse.equinox.security"/>
       <plugin id="org.eclipse.equinox.security.win32.x86_64" fragment="true"/>
       <plugin id="org.eclipse.equinox.util"/>
+      <plugin id="org.eclipse.fx.osgi" fragment="true"/>
       <plugin id="org.eclipse.help"/>
       <plugin id="org.eclipse.help.base"/>
+      <plugin id="org.eclipse.jdt.compiler.apt" fragment="true"/>
+      <plugin id="org.eclipse.jdt.compiler.tool" fragment="true"/>
+      <plugin id="org.eclipse.jdt.core"/>
+      <plugin id="org.eclipse.jdt.core.manipulation"/>
+      <plugin id="org.eclipse.jdt.debug"/>
+      <plugin id="org.eclipse.jdt.debug.ui"/>
+      <plugin id="org.eclipse.jdt.launching"/>
+      <plugin id="org.eclipse.jdt.ui"/>
       <plugin id="org.eclipse.jem.util"/>
       <plugin id="org.eclipse.jetty.http"/>
       <plugin id="org.eclipse.jetty.io"/>
@@ -154,9 +170,12 @@
       <plugin id="org.eclipse.jface.databinding"/>
       <plugin id="org.eclipse.jface.text"/>
       <plugin id="org.eclipse.ltk.core.refactoring"/>
+      <plugin id="org.eclipse.ltk.ui.refactoring"/>
       <plugin id="org.eclipse.m2e.archetype.common"/>
       <plugin id="org.eclipse.m2e.core"/>
       <plugin id="org.eclipse.m2e.core.ui"/>
+      <plugin id="org.eclipse.m2e.core.ui.phasesandgoals" fragment="true"/>
+      <plugin id="org.eclipse.m2e.launching"/>
       <plugin id="org.eclipse.m2e.logback.appender" fragment="true"/>
       <plugin id="org.eclipse.m2e.maven.indexer"/>
       <plugin id="org.eclipse.m2e.maven.runtime"/>
@@ -169,17 +188,23 @@
       <plugin id="org.eclipse.osgi.compatibility.state" fragment="true"/>
       <plugin id="org.eclipse.osgi.services"/>
       <plugin id="org.eclipse.osgi.util"/>
-      <plugin id="org.eclipse.stardust.ide.thirdparty.javax.activation"/>
-      <plugin id="org.eclipse.stardust.ide.thirdparty.javax.mail"/>
+      <plugin id="org.eclipse.search"/>
       <plugin id="org.eclipse.swt"/>
       <plugin id="org.eclipse.swt.win32.win32.x86_64" fragment="true"/>
+      <plugin id="org.eclipse.team.core"/>
+      <plugin id="org.eclipse.team.ui"/>
       <plugin id="org.eclipse.text"/>
       <plugin id="org.eclipse.ui"/>
       <plugin id="org.eclipse.ui.console"/>
+      <plugin id="org.eclipse.ui.editors"/>
+      <plugin id="org.eclipse.ui.externaltools"/>
       <plugin id="org.eclipse.ui.forms"/>
       <plugin id="org.eclipse.ui.ide"/>
       <plugin id="org.eclipse.ui.intro"/>
+      <plugin id="org.eclipse.ui.navigator"/>
+      <plugin id="org.eclipse.ui.navigator.resources"/>
       <plugin id="org.eclipse.ui.views"/>
+      <plugin id="org.eclipse.ui.views.properties.tabbed"/>
       <plugin id="org.eclipse.ui.win32" fragment="true"/>
       <plugin id="org.eclipse.ui.workbench"/>
       <plugin id="org.eclipse.ui.workbench.texteditor"/>
@@ -205,10 +230,10 @@
    </plugins>
 
    <configurations>
-      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="3" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="3" />
       <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
    </configurations>
@@ -218,7 +243,7 @@
    </preferencesInfo>
 
    <cssInfo>
-      <file path="/com.senatov.smapper.extensions/plugins/com.senatov.smapper.app/css/default.css"/>
+      <file path="/com.senatov.smapper.plugins/com.senatov.smapper.smapperApp/css/default.css"/>
    </cssInfo>
 
 </product>

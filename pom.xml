@@ -4,10 +4,10 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.senatov.smapper</groupId>
-	<artifactId>parent</artifactId>
+	<artifactId>com.senatov.smapper.parent</artifactId>
 	<version>1.0.10-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>com.senatov.smapper.extensions</name>
+	<name>com.senatov.smapper.parent</name>
 	<description>Parent project for the com.senatov.smapper project set</description>
 	<url>https://github.com/senatov/smapper</url>
 	<licenses>
@@ -23,7 +23,7 @@
 		<repository>
 			<id>mars</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/mars/</url>
+			<url>http://download.eclipse.org/releases/mars</url>
 		</repository>
 	</repositories>
 
@@ -31,14 +31,15 @@
 		<connection>scm:git:github.com/senatov/smapper.git</connection>
 		<developerConnection>scm:senatogit:git@github.com/senatov/smapper.git</developerConnection>
 		<url>https://github.com/senatov/smapper.git</url>
+		<tag>1.0.10</tag>
 	</scm>
 
 	<developers>
 		<developer>
 			<id>javaentwiclker@gmail.com</id>
 			<name>Iakov Senatov</name>
-			<organization>SolutionsIQ, Inc.</organization>
-			<organizationUrl>http://www.solutionsiq.com/</organizationUrl>
+			<organization>Freelance</organization>
+			<organizationUrl>https://www.linkedin.com/profile/view?id=231425940</organizationUrl>
 			<roles>
 				<role>model</role>
 			</roles>
@@ -155,6 +156,10 @@
 			</plugin>
 		</plugins>
 	</build>
+	<organization>
+		<name>freelance developer</name>
+		<url>http://go2Google.com</url>
+	</organization>
 	<modules>
 		<module>features</module>
 		<module>plugins</module>

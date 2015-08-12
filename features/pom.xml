@@ -8,10 +8,11 @@
 
   <parent>
   	<groupId>com.senatov.smapper</groupId>
-  	<artifactId>parent</artifactId>
+  	<artifactId>com.senatov.smapper.parent</artifactId>
   	<version>1.0.10-SNAPSHOT</version>
+  	<relativePath>..</relativePath>
   </parent>
   <modules>
-  	<module>com.senatov.smapper.feature</module>
+  	<module>com.senatov.smapper.feature1</module>
   </modules>
 </project>

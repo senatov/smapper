@@ -22,7 +22,6 @@ import org.junit.Test;
 
 
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class QuitHandlerTest.
  */
@@ -38,6 +37,8 @@ public class QuitHandlerTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		// merely a placeholder
+		assertTrue("Not yet implemented", true);
 	}
 
 
@@ -48,6 +49,8 @@ public class QuitHandlerTest {
 	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
+		// merely a placeholder
+		assertTrue("Not yet implemented", true);
 	}
 
 
@@ -58,6 +61,8 @@ public class QuitHandlerTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
+		// merely a placeholder
+		assertTrue("Not yet implemented", true);
 	}
 
 
@@ -68,6 +73,8 @@ public class QuitHandlerTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		// merely a placeholder
+		assertTrue("Not yet implemented", true);
 	}
 
 
@@ -77,7 +84,6 @@ public class QuitHandlerTest {
 	@Test
 	public void testExecute() {
 		assertTrue("Not yet implemented", true);
-		;
 	}
 
 }

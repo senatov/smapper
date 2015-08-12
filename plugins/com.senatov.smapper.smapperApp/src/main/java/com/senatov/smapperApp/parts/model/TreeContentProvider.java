@@ -23,7 +23,7 @@ import org.eclipse.jface.viewers.Viewer;
 /**
  * The Class TreeContentProvider.
  */
-// TODO: Auto-generated Javadoc
+
 public class TreeContentProvider implements ITreeContentProvider {
 
 	/** The Constant LOG. */

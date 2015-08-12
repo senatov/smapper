@@ -1,7 +1,7 @@
 /*
  * JDK: ver. 1.8_51
  * @author Iakov
- * DATE: 11.08.2015 11:57:02 2015 
+ * DATE: Aug 12, 2015 11:36:00 PM 2015 
  * PRJ: com.senatov.smapperApp
  * PACKAGE: com.senatov.smapperApp
  * FILE: ActivatorTest.java
@@ -22,7 +22,6 @@ import org.junit.Test;
 
 
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class ActivatorTest.
  */
@@ -38,6 +37,7 @@ public class ActivatorTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		// merely a placeholder
 		LOG.debug("setUpBeforeClass ()");
 	}
 
@@ -49,6 +49,8 @@ public class ActivatorTest {
 	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
+		// merely a placeholder
+		assertTrue(true);
 		LOG.debug("  ()");
 	}
 
@@ -60,7 +62,9 @@ public class ActivatorTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		LOG.debug("  ()");
+		// merely a placeholder
+		assertTrue(true);
+		LOG.debug("setUp ()");
 	}
 
 
@@ -71,7 +75,9 @@ public class ActivatorTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
-		LOG.debug("  ()");
+		// merely a placeholder
+		assertTrue(true);
+		LOG.debug("tearDown ()");
 	}
 
 
@@ -80,7 +86,8 @@ public class ActivatorTest {
 	 */
 	@Test
 	public void testActivator() {
-		LOG.debug("  ()");
+		// merely a placeholder
+		LOG.debug(" testActivator ()");
 		assertTrue("Not yet implemented", true);
 	}
 
@@ -90,7 +97,8 @@ public class ActivatorTest {
 	 */
 	@Test
 	public void testStartBundleContext() {
-		LOG.debug("  ()");
+		// merely a placeholder
+		LOG.debug("testStartBundleContext ()");
 		assertTrue("Not yet implemented", true);
 	}
 
@@ -100,7 +108,8 @@ public class ActivatorTest {
 	 */
 	@Test
 	public void testStopBundleContext() {
-		LOG.debug("  ()");
+		// merely a placeholder
+		LOG.debug(" testStopBundleContext ()");
 		assertTrue("Not yet implemented", true);
 	}
 
@@ -110,7 +119,8 @@ public class ActivatorTest {
 	 */
 	@Test
 	public void testGetDefault() {
-		LOG.debug("  ()");
+		// merely a placeholder
+		LOG.debug(" testGetDefault()");
 		assertTrue("Not yet implemented", true);
 	}
 
@@ -120,7 +130,8 @@ public class ActivatorTest {
 	 */
 	@Test
 	public void testGetImageDescriptor() {
-		LOG.debug("  ()");
+		// merely a placeholder
+		LOG.debug(" testGetImageDescriptor()");
 		assertTrue("Not yet implemented", true);
 	}
 

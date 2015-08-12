@@ -37,41 +37,49 @@ public class FindHandlerTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		// merely a placeholder
+		assertTrue("Not yet implemented", true);
 	}
 
 
 	/**
-	 * Tear down after class.
+	 * Tear down after class.merely a placeholder
 	 *
 	 * @throws Exception the exception
 	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
+		// merely a placeholder
+		assertTrue("Not yet implemented", true);
 	}
 
 
 	/**
-	 * Sets the up.
+	 * Sets the up. merely a placeholder
 	 *
 	 * @throws Exception the exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		// merely a placeholder
+		assertTrue("Not yet implemented", true);
 	}
 
 
 	/**
-	 * Tear down.
-	 *
+	 * Tear down.merely a placeholder
+	 * 
 	 * @throws Exception the exception
 	 */
 	@After
 	public void tearDown() throws Exception {
+		// merely a placeholder
+		assertTrue("Not yet implemented", true);
 	}
 
 
 	/**
-	 * Test execute.
+	 * Test execute. merely a placeholder
 	 */
 	@Test
 	public void testExecute() {

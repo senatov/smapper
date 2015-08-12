@@ -7,12 +7,12 @@
  * FILE: QuitHandler.java
  */
 
-
 package com.senatov.smapperApp.handlers;
 
 
 
 import javax.inject.Named;
+
 
 import org.apache.log4j.Logger;
 import org.eclipse.e4.core.di.annotations.Execute;
@@ -24,17 +24,15 @@ import org.eclipse.swt.widgets.Shell;
 
 
 public class QuitHandler {
-	
-	private static final Logger LOG = Logger.getLogger(QuitHandler.class );
-	
-	
-	
+
+	private static final Logger LOG = Logger.getLogger(QuitHandler.class);
+
+
 	@Execute
-	public void execute(IWorkbench workbench, @Named(IServiceConstants.ACTIVE_SHELL ) Shell shell) {
-		
-		LOG.debug("execute()" );
-		if(MessageDialog.openConfirm(shell, "Confirmation",
-		    "Do you want to exit?" ) ) {
+	public void execute(IWorkbench workbench, @Named(IServiceConstants.ACTIVE_SHELL) Shell shell) {
+
+		LOG.debug("execute()");
+		if (MessageDialog.openConfirm(shell, "Confirmation", "Do you want to exit?")) {
 			workbench.close();
 		}
 	}

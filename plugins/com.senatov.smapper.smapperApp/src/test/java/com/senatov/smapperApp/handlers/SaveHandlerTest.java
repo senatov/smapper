@@ -34,21 +34,29 @@ public class SaveHandlerTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		// merely a placeholder
+		assertTrue("Not yet implemented", true);
 	}
 
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
+		// merely a placeholder
+		assertTrue("Not yet implemented", true);
 	}
 
 
 	@Before
 	public void setUp() throws Exception {
+		// merely a placeholder
+		assertTrue("Not yet implemented", true);
 	}
 
 
 	@After
 	public void tearDown() throws Exception {
+		// merely a placeholder
+		assertTrue("Not yet implemented", true);
 	}
 
 

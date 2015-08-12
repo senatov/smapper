@@ -7,12 +7,12 @@
  * FILE: AboutHandler.java
  */
 
-
 package com.senatov.smapperApp.handlers;
 
 
 
 import javax.inject.Named;
+
 
 import org.apache.log4j.Logger;
 import org.eclipse.e4.core.di.annotations.Execute;
@@ -23,15 +23,14 @@ import org.eclipse.swt.widgets.Shell;
 
 
 public class AboutHandler {
-	
-	private static final Logger LOG = Logger.getLogger(AboutHandler.class );
-	
-	
-	
+
+	private static final Logger LOG = Logger.getLogger(AboutHandler.class);
+
+
 	@Execute
-	public void execute(@Named(IServiceConstants.ACTIVE_SHELL ) Shell shell) {
-		
-		LOG.debug("execute()" );
-		MessageDialog.openInformation(shell, "About", "Eclipse 4 Application example." );
+	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell) {
+
+		LOG.debug("execute()");
+		MessageDialog.openInformation(shell, "About", "Eclipse 4 Application example.");
 	}
 }

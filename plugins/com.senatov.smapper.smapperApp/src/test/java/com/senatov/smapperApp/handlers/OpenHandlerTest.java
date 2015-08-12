@@ -37,6 +37,8 @@ public class OpenHandlerTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		// merely a placeholder
+		assertTrue("Not yet implemented", true);
 	}
 
 
@@ -47,6 +49,8 @@ public class OpenHandlerTest {
 	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
+		// merely a placeholder
+		assertTrue("Not yet implemented", true);
 	}
 
 
@@ -57,6 +61,8 @@ public class OpenHandlerTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
+		// merely a placeholder
+		assertTrue("Not yet implemented", true);
 	}
 
 
@@ -67,6 +73,8 @@ public class OpenHandlerTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		// merely a placeholder
+		assertTrue("Not yet implemented", true);
 	}
 
 
@@ -75,6 +83,7 @@ public class OpenHandlerTest {
 	 */
 	@Test
 	public void testExecute() {
+		// merely a placeholder
 		assertTrue("Not yet implemented", true);
 	}
 

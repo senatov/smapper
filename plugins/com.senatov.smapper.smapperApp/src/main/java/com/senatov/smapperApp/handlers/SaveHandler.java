@@ -7,14 +7,15 @@
  * FILE: SaveHandler.java
  */
 
-
 package com.senatov.smapperApp.handlers;
 
 
 
 import java.lang.reflect.InvocationTargetException;
 
+
 import javax.inject.Named;
+
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -33,47 +34,44 @@ import org.eclipse.swt.widgets.Shell;
 
 
 public class SaveHandler {
-	
-	private static final Logger LOG = Logger.getLogger(SaveHandler.class );
-	
-	
-	
+
+	private static final Logger LOG = Logger.getLogger(SaveHandler.class);
+
+
 	@CanExecute
-	public boolean canExecute(@Named(IServiceConstants.ACTIVE_PART ) MDirtyable dirtyable) {
-		
-		LOG.debug("execute()" );
-		if(dirtyable == null ) { return false; }
+	public boolean canExecute(@Named(IServiceConstants.ACTIVE_PART) MDirtyable dirtyable) {
+
+		LOG.debug("execute()");
+		if (dirtyable == null) {
+			return false;
+		}
 		return dirtyable.isDirty();
 	}
-	
-	
-	
+
+
 	@Execute
-	public void execute(@Named(IServiceConstants.ACTIVE_SHELL ) Shell shell) {
-		
-		LOG.debug("execute()" );
-		MessageDialog.openInformation(shell, "Save command info:", "Save is clicked" );
+	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell) {
+
+		LOG.debug("execute()");
+		MessageDialog.openInformation(shell, "Save command info:", "Save is clicked");
 	}
-	
-	
-	
+
+
 	@Execute
-	public void execute(
-	                IEclipseContext context,
-	                @Named(IServiceConstants.ACTIVE_SHELL ) Shell shell,
-	                @Named(IServiceConstants.ACTIVE_PART ) final MContribution contribution)
-	                                throws InvocationTargetException, InterruptedException {
-									
+	public void execute(IEclipseContext context, @Named(IServiceConstants.ACTIVE_SHELL) Shell shell,
+			@Named(IServiceConstants.ACTIVE_PART)
+	final MContribution contribution) throws InvocationTargetException, InterruptedException {
+
 		final IEclipseContext pmContext = context.createChild();
-		final ProgressMonitorDialog dialog = new ProgressMonitorDialog(shell );
+		final ProgressMonitorDialog dialog = new ProgressMonitorDialog(shell);
 		dialog.open();
 		dialog.run(true, true, monitor -> {
-			pmContext.set(IProgressMonitor.class.getName(), monitor );
-			if(contribution != null ) {
+			pmContext.set(IProgressMonitor.class.getName(), monitor);
+			if (contribution != null) {
 				final Object clientObject = contribution.getObject();
-				ContextInjectionFactory.invoke(clientObject, Persist.class, pmContext, null );
+				ContextInjectionFactory.invoke(clientObject, Persist.class, pmContext, null);
 			}
-		} );
+		});
 		pmContext.dispose();
 	}
 }

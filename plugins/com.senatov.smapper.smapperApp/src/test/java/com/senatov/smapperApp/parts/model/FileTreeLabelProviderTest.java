@@ -13,6 +13,7 @@ package com.senatov.smapperApp.parts.model;
 import static org.junit.Assert.assertTrue;
 
 
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -23,18 +24,27 @@ import org.junit.Test;
 
 public class FileTreeLabelProviderTest {
 
+	private static final Logger LOG = Logger.getLogger(FileTreeLabelProviderTest.class);
+
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		// merely a placeholder
+		LOG.debug("setUpBeforeClass ()");
 	}
 
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
+		// merely a placeholder
+		LOG.debug("setUpBeforeClass ()");
 	}
 
 
 	@Before
 	public void setUp() throws Exception {
+		// merely a placeholder
+		LOG.debug("setUpBeforeClass ()");
 	}
 
 
@@ -45,11 +55,15 @@ public class FileTreeLabelProviderTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		// merely a placeholder
+		LOG.debug("setUpBeforeClass ()");
 	}
 
 
 	@Test
 	public void testFileTreeLabelProvider() {
+		// merely a placeholder
+		LOG.debug("setUpBeforeClass ()");
 		assertTrue("Not yet implemented", true);
 	}
 

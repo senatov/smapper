@@ -7,12 +7,12 @@
  * FILE: OpenHandler.java
  */
 
-
 package com.senatov.smapperApp.handlers;
 
 
 
 import javax.inject.Named;
+
 
 import org.apache.log4j.Logger;
 import org.eclipse.e4.core.di.annotations.Execute;
@@ -23,15 +23,14 @@ import org.eclipse.swt.widgets.Shell;
 
 
 public class OpenHandler {
-	
-	private static final Logger LOG = Logger.getLogger(OpenHandler.class );
-	
-	
-	
+
+	private static final Logger LOG = Logger.getLogger(OpenHandler.class);
+
+
 	@Execute
-	public void execute(@Named(IServiceConstants.ACTIVE_SHELL ) Shell shell) {
-		
-		LOG.debug("execute()" );
-		MessageDialog.openInformation(shell, "Open info:", "Open is clicked" );
+	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell) {
+
+		LOG.debug("execute()");
+		MessageDialog.openInformation(shell, "Open info:", "Open is clicked");
 	}
 }

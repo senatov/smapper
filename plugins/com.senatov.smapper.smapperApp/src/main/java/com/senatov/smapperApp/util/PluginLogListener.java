@@ -1,6 +1,7 @@
 package com.senatov.smapperApp.util;
 
 
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.ILog;
@@ -20,7 +21,6 @@ public class PluginLogListener implements ILogListener {
 	private Logger logger;
 
 
-
 	/**
 	 * Creates a new PluginLogListener. Saves the plug-in log and logger
 	 * instance. Adds itself to the plug-in log.
@@ -28,25 +28,23 @@ public class PluginLogListener implements ILogListener {
 	 * @param log the log
 	 * @param logger logger instance
 	 */
-	public PluginLogListener(ILog log, Logger logger ) {
+	public PluginLogListener(ILog log, Logger logger) {
 		this.log = log;
 		this.logger = logger;
-		log.addLogListener(this );
+		log.addLogListener(this);
 	}
-
 
 
 	/**
 	 * Removes itself from the plug-in log, reset instance variables.
 	 */
 	void dispose() {
-		if(this.log != null ) {
-			this.log.removeLogListener(this );
+		if (this.log != null) {
+			this.log.removeLogListener(this);
 			this.log = null;
 			this.logger = null;
 		}
 	}
-
 
 
 	/**
@@ -59,45 +57,44 @@ public class PluginLogListener implements ILogListener {
 	 * @param plugin plug-in id
 	 */
 	@Override
-	public void logging(IStatus status, String plugin ) {
-		if(null == this.logger || null == status ) return;
+	public void logging(IStatus status, String plugin) {
+		if (null == this.logger || null == status) return;
 		int severity = status.getSeverity();
 		Level level = Level.DEBUG;
-		if(severity == IStatus.ERROR ) {
+		if (severity == IStatus.ERROR) {
 			level = Level.ERROR;
 		}
-		else if(severity == IStatus.WARNING ) {
+		else if (severity == IStatus.WARNING) {
 			level = Level.WARN;
 		}
-		else if(severity == IStatus.INFO ) {
+		else if (severity == IStatus.INFO) {
 			level = Level.INFO;
 		}
-		else if(severity == IStatus.CANCEL ) {
+		else if (severity == IStatus.CANCEL) {
 			level = Level.FATAL;
 		}
 		else {
 			level = Level.DEBUG;
 		}
-		plugin = formatText(plugin );
-		String statusPlugin = formatText(status.getPlugin() );
-		String statusMessage = formatText(status.getMessage() );
+		plugin = formatText(plugin);
+		String statusPlugin = formatText(status.getPlugin());
+		String statusMessage = formatText(status.getMessage());
 		StringBuffer message = new StringBuffer();
-		if(plugin != null ) {
-			message.append(plugin );
-			message.append(" - " );
+		if (plugin != null) {
+			message.append(plugin);
+			message.append(" - ");
 		}
-		if(statusPlugin != null && (plugin == null || !statusPlugin.equals(plugin ) ) ) {
-			message.append(statusPlugin );
-			message.append(" - " );
+		if (statusPlugin != null && (plugin == null || !statusPlugin.equals(plugin))) {
+			message.append(statusPlugin);
+			message.append(" - ");
 		}
-		message.append(status.getCode() );
-		if(statusMessage != null ) {
-			message.append(" - " );
-			message.append(statusMessage );
+		message.append(status.getCode());
+		if (statusMessage != null) {
+			message.append(" - ");
+			message.append(statusMessage);
 		}
-		this.logger.log(level, message.toString(), status.getException() );
+		this.logger.log(level, message.toString(), status.getException());
 	}
-
 
 
 	/**
@@ -106,10 +103,10 @@ public class PluginLogListener implements ILogListener {
 	 * @param text the text
 	 * @return the string
 	 */
-	static private String formatText(String text ) {
-		if(text != null ) {
+	static private String formatText(String text) {
+		if (text != null) {
 			text = text.trim();
-			if(text.length() == 0 ) return null;
+			if (text.length() == 0) return null;
 		}
 		return text;
 	}

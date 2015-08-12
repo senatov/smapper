@@ -120,7 +120,7 @@
 						<artifactId>tycho-surefire-plugin</artifactId>
 						<version>${tycho-version}</version>
 						<configuration>
-							<testRuntime>p2Installed</testRuntime>	
+							<testRuntime>p2Installed</testRuntime>
 							<useUIHarness>true</useUIHarness>
 						</configuration>
 					</plugin>
@@ -143,6 +143,14 @@
 				<version>${tycho-version}</version>
 				<configuration>
 					<resolver>p2</resolver>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-packaging-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<format>'myprefix_'yyyyMMddHHmm</format>
 				</configuration>
 			</plugin>
 		</plugins>

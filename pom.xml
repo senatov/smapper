@@ -1,145 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+>
 	<modelVersion>4.0.0</modelVersion>
+
+	<version>1.0.0-SNAPSHOT</version>
 	<groupId>com.senatov.smapper</groupId>
-	<artifactId>com.senatov.smapper.parent</artifactId>
-	<version>1.0.10-SNAPSHOT</version>
+	<artifactId>parent_smapper</artifactId>
 	<packaging>pom</packaging>
-	<name>com.senatov.smapper.parent</name>
-	<description>Parent project for the com.senatov.smapper project set</description>
-	<url>https://github.com/senatov/smapper</url>
-	<licenses>
-		<license>
-			<name>Eclipse Public License v1.0</name>
-			<url>http://www.eclipse.org/legal/epl-v10.html</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
-
-
-	<repositories>
-		<repository>
-			<id>mars</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/mars</url>
-		</repository>
-	</repositories>
-
-	<scm>
-		<connection>scm:git:github.com/senatov/smapper.git</connection>
-		<developerConnection>scm:senatogit:git@github.com/senatov/smapper.git</developerConnection>
-		<url>https://github.com/senatov/smapper.git</url>
-		<tag>1.0.10</tag>
-	</scm>
-
-	<developers>
-		<developer>
-			<id>javaentwiclker@gmail.com</id>
-			<name>Iakov Senatov</name>
-			<organization>Freelance</organization>
-			<organizationUrl>https://www.linkedin.com/profile/view?id=231425940</organizationUrl>
-			<roles>
-				<role>model</role>
-			</roles>
-			<url>https://www.linkedin.com/profile/view?id=231425940</url>
-		</developer>
-	</developers>
-
+	<name>RCP Smapper Parent</name>
+	
 	<properties>
 		<tycho-version>0.23.1</tycho-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-		</dependency>
-	</dependencies>
-
-
-	<profiles>
-		<profile>
-			<id>default</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.eclipse.tycho</groupId>
-						<artifactId>tycho-packaging-plugin</artifactId>
-						<version>${tycho-version}</version>
-						<configuration>
-							<archiveSite>true</archiveSite>
-						</configuration>
-					</plugin>
-					<plugin>
-						<groupId>org.eclipse.tycho</groupId>
-						<artifactId>target-platform-configuration</artifactId>
-						<version>${tycho-version}</version>
-					</plugin>
-				</plugins>
-				<pluginManagement>
-					<plugins>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-jarsigner-plugin</artifactId>
-							<version>1.4</version>
-							<executions>
-								<execution>
-									<id>sign</id>
-									<goals>
-										<goal>sign</goal>
-									</goals>
-								</execution>
-								<execution>
-									<id>verify</id>
-									<goals>
-										<goal>verify</goal>
-									</goals>
-								</execution>
-							</executions>
-						</plugin>
-					</plugins>
-				</pluginManagement>
-			</build>
-		</profile>
-	</profiles>
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<target>
+						<artifact>
+							<groupId>example.group</groupId>
+							<artifactId>mars</artifactId>
+							<version>1.0.0-SNAPSHOT</version>
+						</artifact>
+					</target>
+					<environments>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-maven-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
 			</plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>target-platform-configuration</artifactId>
-				<version>${tycho-version}</version>
-				<configuration>
-					<resolver>p2</resolver>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-packaging-plugin</artifactId>
-				<version>${tycho-version}</version>
-				<configuration>
-					<format>'myprefix_'yyyyMMddHHmm</format>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
-	<organization>
-		<name>freelance developer</name>
-		<url>http://go2Google.com</url>
-	</organization>
 	<modules>
-		<module>features</module>
-		<module>plugins</module>
+		<module>com.senatov.smapper.RCPplatform</module>
+		<module>com.senatov.smapper.eclipse-repository</module>
+		<module>com.senatov.smapper.feature1</module>
+		<module>com.senatov.smapper.plugin</module>
+		<module>com.senatov.smapper.root-files</module>
+		<module>com.senatov.smapper.root-files-win</module>
 	</modules>
 </project>

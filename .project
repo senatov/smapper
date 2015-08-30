@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>com.senatov.smapper.parent</name>
+	<name>parent_smapper</name>
 	<comment></comment>
 	<projects>
-		<project>.e4css</project>
-		<project>com.senatov.smapper.features</project>
-		<project>com.senatov.smapper.plugins</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -22,7 +22,6 @@
    </license>
 
    <requires>
-      <import plugin="org.eclipse.core.variables" version="3.1.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime" version="3.2.0" match="compatible"/>
       <import plugin="org.eclipse.equinox.common" version="3.7.0" match="compatible"/>
       <import plugin="org.eclipse.equinox.registry" version="3.5.0" match="compatible"/>
@@ -99,18 +98,6 @@
       <import plugin="org.eclipse.core.commands" version="3.5.0" match="compatible"/>
       <import plugin="org.eclipse.emf.ecore.change" version="2.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.osgi" version="3.2.0" match="compatible"/>
-      <import plugin="javax.inject" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.core.runtime" version="3.8.0"/>
-      <import plugin="org.eclipse.jface" version="3.8.102" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.e4.ui.services" version="0.10.3" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.e4.ui.workbench" version="0.11.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.e4.core.di" version="1.2.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.e4.ui.di" version="0.10.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.e4.core.contexts" version="1.2.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui.intro"/>
-      <import plugin="org.apache.commons.io" version="2.2.0" match="greaterOrEqual"/>
-      <import plugin="org.apache.log4j"/>
-      <import plugin="org.eclipse.ui.workbench"/>
       <import plugin="org.w3c.dom.smil" version="1.0.0" match="equivalent"/>
       <import plugin="org.eclipse.core.databinding.observable" version="1.2.0" match="compatible"/>
       <import plugin="org.eclipse.core.filesystem" version="1.4.0" match="compatible"/>
@@ -135,6 +122,7 @@
       <import plugin="org.eclipse.core.filesystem" version="1.1.0" match="compatible"/>
       <import plugin="org.eclipse.compare.core" version="3.5.200" match="compatible"/>
       <import plugin="org.eclipse.swt" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.core.variables" version="3.1.0" match="compatible"/>
    </requires>
 
    <plugin
@@ -350,15 +338,6 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
-   <plugin
-         id="org.eclipse.equinox.weaving.hook"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         fragment="true"
-         unpack="false"/>
-
    <plugin
          id="org.eclipse.e4.ui.di"
          download-size="0"
@@ -424,13 +403,6 @@
 
    <plugin
          id="org.eclipse.equinox.event"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="com.senatov.smapperApp"
          download-size="0"
          install-size="0"
          version="0.0.0"

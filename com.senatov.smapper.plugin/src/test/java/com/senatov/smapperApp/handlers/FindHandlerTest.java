@@ -37,7 +37,7 @@ public class FindHandlerTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		// merely a placeholder
+		LOG.debug(" setUpBeforeClass() ");
 		assertTrue("Not yet implemented", true);
 	}
 

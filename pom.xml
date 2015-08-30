@@ -27,8 +27,8 @@
 				<configuration>
 					<target>
 						<artifact>
-							<groupId>example.group</groupId>
-							<artifactId>mars</artifactId>
+							<groupId>com.senatov.smapper</groupId>
+							<artifactId>rcp_target</artifactId>
 							<version>1.0.0-SNAPSHOT</version>
 						</artifact>
 					</target>

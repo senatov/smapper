@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: SmapperApp
-Bundle-SymbolicName: com.senatov.bundle;singleton:=true
+Bundle-Name: bundle
+Bundle-SymbolicName: com.senatov.smapper;singleton:=true
 Bundle-Version: 1.0.10.qualifier
 Bundle-Activator: com.senatov.smapperApp.Activator
 Bundle-Vendor: senatov

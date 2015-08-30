@@ -14,7 +14,7 @@ Contributors:
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>eclipse-repository</artifactId>
-	<packaging>com.senatov.smapper.eclipse-repository</packaging>
+	<packaging>eclipse-repository</packaging>
 	<name>RCP Example Product</name>
 
 	<parent>

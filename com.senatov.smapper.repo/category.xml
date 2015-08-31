@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.senatov.smapper.feature_1.0.13.qualifier.jar" id="com.senatov.smapper.feature1" version="1.0.13.qualifier">
+      <category name="com.senatov_category_id"/>
+   </feature>
+   <feature url="features/com.senatov.smapper.feature_1.0.11.qualifier.jar" id="com.senatov.smapper.feature" version="1.0.11.qualifier"/>
+</site>

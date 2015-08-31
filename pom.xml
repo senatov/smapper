@@ -26,7 +26,7 @@
 						<artifact>
 							<groupId>com.senatov.smapper</groupId>
 							<artifactId>rcp_target</artifactId>
-							<version>1.0.0-SNAPSHOT</version>
+							<version>0.0.0</version>
 						</artifact>
 					</target>
 					<environments>
@@ -57,11 +57,11 @@
 		</plugins>
 	</build>
 	<modules>
-		<module>com.senatov.smapper.plugin</module>
+		<module>com.senatov.smapper.rcp_target</module>
 		<module>com.senatov.smapper.feature1</module>
-		<module>com.senatov.smapper.RCPplatform</module>
+		<module>com.senatov.smapper.plugin</module>
+		<module>com.senatov.smapper.repo</module>
 		<module>com.senatov.smapper.root-files</module>
 		<module>com.senatov.smapper.root-files-win</module>
-		<module>com.senatov.smapper.repo</module>
 	</modules>
 </project>

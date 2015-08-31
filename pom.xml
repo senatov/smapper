@@ -25,8 +25,8 @@
 					<target>
 						<artifact>
 							<groupId>com.senatov.smapper</groupId>
-							<artifactId>rcp_target</artifactId>
-							<version>0.0.0</version>
+							<artifactId>mars</artifactId>
+							<version>1.0.11-SNAPSHOT</version>
 						</artifact>
 					</target>
 					<environments>

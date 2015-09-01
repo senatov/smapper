@@ -57,7 +57,7 @@
 		</plugins>
 	</build>
 	<modules>
-		<module>com.senatov.smapper.rcp_target</module>
+		
 		<module>com.senatov.smapper.feature1</module>
 		<module>com.senatov.smapper.plugin</module>
 		<module>com.senatov.smapper.repo</module>

@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<unit id='com.senatov.smapper.root-files' version='1.0.0'
+<unit id='root-files' version='1.0.11.qualifier'
 	singleton='false'>
 	<properties>
 		<property name='org.eclipse.equinox.p2.name' value='Root files for my product' />
 	</properties>
 	<requires>
-		<required namespace='org.eclipse.equinox.p2.iu' name='org.tycho.demo.rootfiles.win'
-			range='1.0.0.qualifier'>
+		<required namespace='org.eclipse.equinox.p2.iu' name='root-files-win'
+			range='1.0.11.qualifier'>
 			<filter>
 				(&amp;(osgi.arch=x86_64)(osgi.os=win32)(osgi.ws=win32))
 			</filter>

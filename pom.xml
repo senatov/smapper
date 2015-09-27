@@ -8,15 +8,25 @@
 	<artifactId>parent_smapper</artifactId>
 	<packaging>pom</packaging>
 	<name>RCP Smapper Parent</name>
-	
+
 	<properties>
 		<tycho-version>0.23.1</tycho-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
-
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
@@ -25,8 +35,8 @@
 					<target>
 						<artifact>
 							<groupId>com.senatov.smapper</groupId>
-							<artifactId>mars</artifactId>
-							<version>1.0.11-SNAPSHOT</version>
+							<artifactId>mars_taget_platform</artifactId>
+							<version>${project.version}</version>
 						</artifact>
 					</target>
 					<environments>
@@ -58,10 +68,13 @@
 	</build>
 	<modules>
 		
-		<module>com.senatov.smapper.feature1</module>
-		<module>com.senatov.smapper.plugin</module>
-		<module>com.senatov.smapper.repo</module>
+		
+		
 		<module>com.senatov.smapper.root-files</module>
 		<module>com.senatov.smapper.root-files-win</module>
+		<module>mars_taget_platform</module>
+		
+		<module>com.senatov.smapper.feature</module>
+		<module>com.senatov.smapper.plugin</module>
 	</modules>
 </project>

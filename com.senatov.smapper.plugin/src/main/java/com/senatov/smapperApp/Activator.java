@@ -17,13 +17,14 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.log4j.RollingFileAppender;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.ILog;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -40,7 +41,6 @@ import com.senatov.smapperApp.util.PluginLogListener;
  * The Class Activator.
  */
 public class Activator extends AbstractUIPlugin implements BundleActivator {
-
 	private static final String LOG2 = ".log";
 	private static final String LOGS = "logs";
 	private static final String LOG4J_FILE_PATTTERN = "%d{ISO8601} [%t] %-5p %c %x - %m%n";
@@ -85,12 +85,14 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 		final String log4jfile = LOG4J_PROPERTIES;
 		final URL confURL = getBundle().getEntry(log4jfile);
 		String strConfigFile = FileLocator.toFileURL(confURL).getFile();
+		BasicConfigurator.configure();
 		PropertyConfigurator.configure(strConfigFile);
 		String strLogPath = getLoggingFileFullPath(getBundle().getSymbolicName());
 		final PatternLayout layout = new PatternLayout(LOG4J_FILE_PATTTERN);
 		final RollingFileAppender fileAppender = new RollingFileAppender(layout, strLogPath);
 		Logger.getRootLogger().addAppender(fileAppender);
-		// Location resolvedURL = Platform.getLocation();
+		IPath resolvedURL = Platform.getLocation();
+		LOG.info("Resolved URL " + resolvedURL.toOSString());
 		LOG.info("Log4j initialized with " + confURL);
 		hookPluginLoggers(context); // You need to add this method to hook other
 									// plugins, described later...

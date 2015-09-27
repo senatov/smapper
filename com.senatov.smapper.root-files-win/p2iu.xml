@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-  <unit id='com.senatov.smapper.root-files-win' version='1.0.0.qualifier' singleton='false'>
+  <unit id='root-files-win' version='1.0.11.qualifier' singleton='false'>
     <properties>
       <property name='org.eclipse.equinox.p2.name' value='Root files for my product'/>
     </properties>

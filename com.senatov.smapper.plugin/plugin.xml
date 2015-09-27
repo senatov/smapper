@@ -54,6 +54,14 @@
       </perspective>
    </extension>
    <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="bundle.product"
+            name="smapper">
+      </product>
+   </extension>
+   <extension
          id="menu:org.eclipse.ui.main.menu"
          point="org.eclipse.ui.menus">
    </extension>
@@ -79,5 +87,14 @@
             productId="com.senatov.smapper.product"
             splashId="com.senatov.smapper.splashHandlers.browser">
       </splashHandlerProductBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.senatov.smapper.commands.sampleCommands"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+6">
+      </key>
    </extension>
 </plugin>

@@ -9,8 +9,6 @@
 
 package com.senatov.smapperApp;
 
-
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -32,10 +30,7 @@ import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-
 import com.senatov.smapperApp.util.PluginLogListener;
-
-
 
 /**
  * The Class Activator.
@@ -50,17 +45,16 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 	final private List<PluginLogListener> pluginLogHooks = new ArrayList<PluginLogListener>();
 	private static Activator plugin;
 
-
 	/**
-	 * The constructor
+	 * The constructor.
 	 */
 	public Activator() {
 		super();
 	}
 
-
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.
 	 * BundleContext )
 	 */
@@ -73,11 +67,11 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 		plugin = this;
 	}
 
-
 	/**
 	 * Inits the log4j.
 	 *
-	 * @throws IOException
+	 * @param context the context
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	private void initLog4j(BundleContext context) throws IOException {
 
@@ -98,13 +92,12 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 									// plugins, described later...
 	}
 
-
 	/**
-	 * <b>author</b> iase27698054 2015-03-16
+	 * <b>author</b> iase27698054 2015-03-16.
 	 *
-	 * @param strLogFileName
-	 * @return
-	 * @throws IOException
+	 * @param strLogFileName the str log file name
+	 * @return the logging file full path
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	private String getLoggingFileFullPath(String strLogFileName) throws IOException {
 
@@ -117,7 +110,6 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 		sbRet.append(LOG2);
 		return sbRet.toString();
 	}
-
 
 	/**
 	 * <br>
@@ -133,11 +125,11 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 		return FileLocator.toFileURL(getBundle().getEntry("/")).getPath();
 	}
 
-
 	/**
 	 * Hook all loaded bundles into the log4j framework.
 	 *
-	 * @param context the context
+	 * @param context
+	 *            the context
 	 */
 	private void hookPluginLoggers(final BundleContext context) {
 
@@ -149,9 +141,9 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 		}
 	}
 
-
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.
 	 * BundleContext )
 	 */
@@ -162,7 +154,6 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 		plugin = null;
 		super.stop(context);
 	}
-
 
 	/**
 	 * Returns the shared instance.
@@ -175,12 +166,12 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 		return plugin;
 	}
 
-
 	/**
 	 * Returns an image descriptor for the image file at the given plug-in
 	 * relative path
 	 *
-	 * @param path the path
+	 * @param path
+	 *            the path
 	 * @return the image descriptor
 	 */
 	public static ImageDescriptor getImageDescriptor(String path) {

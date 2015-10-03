@@ -90,11 +90,5 @@
    </extension>
    <extension
          point="org.eclipse.ui.bindings">
-      <key
-            commandId="com.senatov.smapper.commands.sampleCommands"
-            contextId="org.eclipse.ui.contexts.window"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="M1+6">
-      </key>
    </extension>
 </plugin>

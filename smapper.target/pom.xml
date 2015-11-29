@@ -6,12 +6,12 @@
 	<artifactId>smapper.target</artifactId>
 	<packaging>pom</packaging>
 
-<parent>
+	<parent>
 		<groupId>com.senatov.smapper</groupId>
 		<artifactId>smapper.parent</artifactId>
-		<version>DEV-SNAPSHOT</version>
-		<relativePath>../smapper.parent</relativePath>
+		<version>1.0.12-SNAPSHOT</version>
+		<relativePath>..</relativePath>
 	</parent>
-	
-	
+
+
 </project>

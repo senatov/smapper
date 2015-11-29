@@ -14,4 +14,7 @@
 	</parent>
 
 
+	<properties>
+		<encoding>UTF-8</encoding>
+	</properties>
 </project>

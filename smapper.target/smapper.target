@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target includeMode="feature" name="smapper" sequenceNumber="9">
+<locations>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.platform.ide" version="4.6.0.I20151029-1100"/>
+<unit id="org.eclipse.sdk.ide" version="4.6.0.I20151029-1100"/>
+<unit id="org.eclipse.equinox.sdk.feature.group" version="3.12.0.v20151023-1114"/>
+<unit id="org.eclipse.platform.sdk" version="4.6.0.I20151029-1100"/>
+<repository location="http://download.eclipse.org/eclipse/updates/4.6milestones"/>
+</location>
+</locations>
+</target>

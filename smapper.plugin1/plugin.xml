@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+      </application>
+   </extension>
+   <extension
+         id="perspective"
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.senatov.smapper.bundle.PerspectiveFactory1"
+            icon="icons/128x128.gif"
+            id="com.senatov.smapper.bundle.perspective1"
+            name="Just Perspective">
+         <description>
+            ssss description body text
+         </description>
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="bundle.product"
+            name="Smapper App.">
+      </product>
+   </extension>
+   <extension
+         id="menu:org.eclipse.ui.main.menu"
+         point="org.eclipse.ui.menus">
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="org.eclipse.ui.navigator.CommonNavigator"
+            icon="icons/sample.gif"
+            id="com.example.test"
+            name="My Common Navigator">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.splashHandlers">
+      <splashHandler
+            class="com.senatov.smapper.splashHandlers.BrowserSplashHandler"
+            id="com.senatov.smapper.splashHandlers.browser">
+      </splashHandler>
+      <splashHandlerProductBinding
+            productId="com.senatov.smapper.product"
+            splashId="com.senatov.smapper.splashHandlers.browser">
+      </splashHandlerProductBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+   </extension>
+</plugin>

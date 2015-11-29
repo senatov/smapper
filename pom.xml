@@ -4,122 +4,51 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 
-	<version>1.0.11-SNAPSHOT</version>
+	<version>DEV-SNAPSHOT</version>
 	<groupId>com.senatov.smapper</groupId>
 	<artifactId>parent_smapper</artifactId>
 	<packaging>pom</packaging>
 	<name>RCP Smapper Parent</name>
 
+	<prerequisites>
+		<maven>3.3.9</maven>
+	</prerequisites>
 	<properties>
-		<!-- Set Surefire Locale to de_DE for Tests -->
-		<argLineTestExecution>
-			-XX:MaxPermSize=512m -Xmx1024m
-			-Duser.language=de -Duser.region=DE -Duser.timezone=CET
-		</argLineTestExecution>
 		<tycho-version>0.24.0</tycho-version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<tycho-groupid>org.eclipse.tycho</tycho-groupid>
 	</properties>
 
-	<profiles>
-		<profile>
-			<id>java8</id>
-			<properties>
-				<maven.compiler.source>1.8</maven.compiler.source>
-				<maven.compiler.target>1.8</maven.compiler.target>
-			</properties>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-enforcer-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>enforce-versions</id>
-								<goals>
-									<goal>enforce</goal>
-								</goals>
-								<configuration>
-									<rules>
-										<requireJavaVersion>
-											<version>[1.8,2.00)</version>
-											<!-- any Java 8 version, but not Java 10 -->
-										</requireJavaVersion>
-									</rules>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
-
-
 	<build>
-		<defaultGoal>install</defaultGoal>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-				<includes>
-					<include>**/MANIFEST.MF</include>
-					<include>**/*.html</include>
-					<include>**/*.xml.template</include>
-					<include>**/*.xml</include>
-					<include>**/*.vm</include>
-
-					<!-- Whitelist for filtered properties files. Properties files which 
-						are filtered must only contain ASCII characters since Maven uses the project 
-						source encoding (UTF-8) to filter the resources, but properties files are 
-						per definition ISO-8859-1 encoded. Files added here must also be added to 
-						the blacklist below. -->
-					<include>**/client-release.properties</include>
-					<include>**/jndi.properties</include>
-					<include>**/system-checker.properties</include>
-					<include>**/jnlp.properties</include>
-				</includes>
-			</resource>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>false</filtering>
-				<excludes>
-					<exclude>**/MANIFEST.MF</exclude>
-					<exclude>**/*.html</exclude>
-					<exclude>**/*.xml.template</exclude>
-					<exclude>**/*.xml</exclude>
-					<exclude>**/*.vm</exclude>
-					<!-- Blacklist for filtered properties files. See comment on whitelist 
-						above. -->
-					<exclude>**/client-release.properties</exclude>
-					<exclude>**/jndi.properties</exclude>
-					<exclude>**/system-checker.properties</exclude>
-					<exclude>**/jnlp.properties</exclude>
-				</excludes>
-			</resource>
-		</resources>
-
-
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
+				<groupId>${tycho-groupid}</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
 			</plugin>
 			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
+				<groupId>${tycho-groupid}</groupId>
 				<artifactId>target-platform-configuration</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
+					<target>
+						<artifact>
+							<groupId>com.senatov</groupId>
+							<artifactId>com.senatov.smapper.target</artifactId>
+							<version>1.0.11-SNAPSHOT</version>
+							<classifier>smapper</classifier>
+						</artifact>
+					</target>
+					<resolver>p2</resolver>
 					<environments>
 						<environment>
 							<os>win32</os>
 							<ws>win32</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
 							<arch>x86_64</arch>
 						</environment>
 						<environment>
@@ -127,101 +56,9 @@
 							<ws>gtk</ws>
 							<arch>x86_64</arch>
 						</environment>
-						<environment>
-							<os>macosx</os>
-							<ws>cocoa</ws>
-							<arch>x86_64</arch>
-						</environment>
 					</environments>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-maven-plugin</artifactId>
-				<version>${tycho-version}</version>
-				<extensions>true</extensions>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>0.0.0</version>
-				<configuration>
-					<!-- Don't filter binary files (determined by file extension). This 
-						adds some extra safety if the resources plugin is otherwise configured incorrectly -->
-					<nonFilteredFileExtensions>
-						<nonFilteredFileExtension>GIF</nonFilteredFileExtension>
-						<nonFilteredFileExtension>JPG</nonFilteredFileExtension>
-						<nonFilteredFileExtension>PNG</nonFilteredFileExtension>
-						<nonFilteredFileExtension>TTF</nonFilteredFileExtension>
-						<nonFilteredFileExtension>bmp</nonFilteredFileExtension>
-						<nonFilteredFileExtension>class</nonFilteredFileExtension>
-						<nonFilteredFileExtension>exe</nonFilteredFileExtension>
-						<nonFilteredFileExtension>gif</nonFilteredFileExtension>
-						<nonFilteredFileExtension>jar</nonFilteredFileExtension>
-						<nonFilteredFileExtension>jasper</nonFilteredFileExtension>
-						<nonFilteredFileExtension>jpeg</nonFilteredFileExtension>
-						<nonFilteredFileExtension>jpg</nonFilteredFileExtension>
-						<nonFilteredFileExtension>keys</nonFilteredFileExtension>
-						<nonFilteredFileExtension>keystore</nonFilteredFileExtension>
-						<nonFilteredFileExtension>p12</nonFilteredFileExtension>
-						<nonFilteredFileExtension>pdf</nonFilteredFileExtension>
-						<nonFilteredFileExtension>png</nonFilteredFileExtension>
-						<nonFilteredFileExtension>psd</nonFilteredFileExtension>
-						<nonFilteredFileExtension>pspimage</nonFilteredFileExtension>
-						<nonFilteredFileExtension>ser</nonFilteredFileExtension>
-						<nonFilteredFileExtension>zip</nonFilteredFileExtension>
-					</nonFilteredFileExtensions>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>findbugs-maven-plugin</artifactId>
-				<configuration>
-					<maxHeap>2048</maxHeap>
-				</configuration>
-			</plugin>
-
-		</plugins>
-		<pluginManagement>
-			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>
-											org.apache.maven.plugins
-										</groupId>
-										<artifactId>
-											maven-resources-plugin
-										</artifactId>
-										<versionRange>
-											[0.0.0,)
-										</versionRange>
-										<goals>
-											<goal>testResources</goal>
-											<goal>resources</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
+		</plugins>	
 	</build>
-	<modules>
-		<module>com.senatov.smapper.plugin</module>
-	</modules>
 </project>

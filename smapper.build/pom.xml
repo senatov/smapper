@@ -12,13 +12,24 @@
 	<prerequisites>
 		<maven>3.3.9</maven>
 	</prerequisites>
-	
+
 	<properties>
 		<tycho-version>0.24.0</tycho-version>
 		<tycho-groupid>org.eclipse.tycho</tycho-groupid>
 	</properties>
 
 	<build>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-surefire-plugin</artifactId>
+					<version>0.24.0</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
 		<plugins>
 			<plugin>
 				<groupId>${tycho-groupid}</groupId>
@@ -26,18 +37,37 @@
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
 				<configuration>
-		            <encoding>UTF-8</encoding>
-		            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+					<encoding>UTF-8</encoding>
+					<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 					<source>1.8</source>
 					<target>1.8</target>
-		        </configuration>    
+				</configuration>
+			</plugin>
+		      <plugin>
+		        <groupId>org.eclipse.tycho</groupId>
+		        <artifactId>tycho-surefire-plugin</artifactId>
+		      </plugin>
+			<plugin>
+				<groupId>${tycho-groupid}</groupId>
+				<artifactId>tycho-packaging-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>timestamp-provider-groupid</groupId>
+						<artifactId>timestamp-provider-artifactid</artifactId>
+						<version>timestamp-provider-version</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<timestampProvider>custom</timestampProvider>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>${tycho-groupid}</groupId>
 				<artifactId>target-platform-configuration</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
-		            <encoding>UTF-8</encoding>
+					<encoding>UTF-8</encoding>
 					<target>
 						<artifact>
 							<groupId>com.senatov.smapper</groupId>
@@ -66,12 +96,12 @@
 					</environments>
 				</configuration>
 			</plugin>
-		</plugins>	
+		</plugins>
 	</build>
 	<modules>
 		<module>../smapper.feature</module>
+		<module>../smapper.plugin1</module>
 		<module>../smapper.repository</module>
 		<module>../smapper.target</module>
-		<module>../smapper.plugin1</module>
 	</modules>
 </project>

@@ -10,7 +10,7 @@
 		<groupId>com.senatov.smapper</groupId>
 		<artifactId>smapper.build</artifactId>
 		<version>1.0.12-SNAPSHOT</version>
-		<relativePath>..</relativePath>
+		<relativePath>../smapper.build</relativePath>
 	</parent>
 
 

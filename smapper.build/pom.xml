@@ -3,9 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-
 	<groupId>com.senatov.smapper</groupId>
-	<artifactId>smapper.parent</artifactId>
+	<artifactId>smapper.build</artifactId>
 	<packaging>pom</packaging>
 	<name>RCP Smapper Parent</name>
 	<version>1.0.12-SNAPSHOT</version>
@@ -70,9 +69,9 @@
 		</plugins>	
 	</build>
 	<modules>
-		<module>smapper.feature</module>
-		<module>smapper.repository</module>
-		<module>smapper.target</module>
-		<module>smapper.plugin1</module>
+		<module>../smapper.feature</module>
+		<module>../smapper.repository</module>
+		<module>../smapper.target</module>
+		<module>../smapper.plugin1</module>
 	</modules>
 </project>

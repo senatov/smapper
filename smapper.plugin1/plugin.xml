@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
    <extension
-         id="application"
+         id="smapper"
          point="org.eclipse.core.runtime.applications">
       <application
             cardinality="singleton-global"
+            icon="icons/32x32.gif"
             thread="main"
             visible="true">
+         <run
+               class="com.senatov.smapperApp.Application">
+         </run>
       </application>
    </extension>
    <extension
@@ -23,40 +27,19 @@
       </perspective>
    </extension>
    <extension
+         id="smapper"
          point="org.eclipse.core.runtime.products">
       <product
-            application="bundle.product"
-            name="Smapper App.">
+            application="smapper.plugin1.smapper"
+            name="Smapper product">
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/smapper.plugin1/css/default.css">
+         </property>
+         <property
+               name="Smapper App"
+               value="Smapper product">
+         </property>
       </product>
-   </extension>
-   <extension
-         id="menu:org.eclipse.ui.main.menu"
-         point="org.eclipse.ui.menus">
-   </extension>
-   <extension
-         point="org.eclipse.ui.commands">
-   </extension>
-   <extension
-         point="org.eclipse.ui.views">
-      <view
-            class="org.eclipse.ui.navigator.CommonNavigator"
-            icon="icons/sample.gif"
-            id="com.example.test"
-            name="My Common Navigator">
-      </view>
-   </extension>
-   <extension
-         point="org.eclipse.ui.splashHandlers">
-      <splashHandler
-            class="com.senatov.smapper.splashHandlers.BrowserSplashHandler"
-            id="com.senatov.smapper.splashHandlers.browser">
-      </splashHandler>
-      <splashHandlerProductBinding
-            productId="com.senatov.smapper.product"
-            splashId="com.senatov.smapper.splashHandlers.browser">
-      </splashHandlerProductBinding>
-   </extension>
-   <extension
-         point="org.eclipse.ui.bindings">
    </extension>
 </plugin>

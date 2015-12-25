@@ -16,10 +16,17 @@
 	<properties>
 		<tycho-version>0.24.0</tycho-version>
 		<tycho-groupid>org.eclipse.tycho</tycho-groupid>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
 	</properties>
-
+	<repositories>
+		<repository>
+			<id>eclipse-neon</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/eclipse/updates/4.6milestones/S-4.6M4-201512092300</url>
+		</repository>
+	</repositories>
 	<build>
-
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -27,10 +34,67 @@
 					<artifactId>tycho-surefire-plugin</artifactId>
 					<version>0.24.0</version>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>2.6</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.tycho</groupId>
+					<artifactId>maven-osgi-packaging-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<executions>
+						<execution>
+							<id>timestamp</id>
+							<phase>validate</phase>
+							<goals>
+								<goal>timestamp</goal>
+							</goals>
+						</execution>
+					</executions>
+					<!-- for some reason configuration won't work here, have to define in 
+						each module -->
+					<configuration>
+						<archive>
+							<addMavenDescriptor>false</addMavenDescriptor>
+						</archive>
+					</configuration>
+				</plugin>
 			</plugins>
 		</pluginManagement>
-
 		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>enforce-java</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireJavaVersion>
+									<version>${maven.compiler.target}</version>
+								</requireJavaVersion>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-repository-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<includeAllDependencies>true</includeAllDependencies>
+					<compress>true</compress>
+				</configuration>
+			</plugin>
+
 			<plugin>
 				<groupId>${tycho-groupid}</groupId>
 				<artifactId>tycho-maven-plugin</artifactId>
@@ -43,10 +107,10 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-		      <plugin>
-		        <groupId>org.eclipse.tycho</groupId>
-		        <artifactId>tycho-surefire-plugin</artifactId>
-		      </plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-surefire-plugin</artifactId>
+			</plugin>
 			<plugin>
 				<groupId>${tycho-groupid}</groupId>
 				<artifactId>tycho-packaging-plugin</artifactId>
@@ -98,6 +162,78 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+
+		<profile>
+			<id>macosx-jvm-flags</id>
+			<activation>
+				<os>
+					<family>mac</family>
+				</os>
+			</activation>
+			<properties>
+				<!-- tycho-surefire-plugin needs -XstartOnFirstThread on mac os -->
+				<os-jvm-flags>-XstartOnFirstThread</os-jvm-flags>
+			</properties>
+		</profile>
+		<profile>
+			<id>eclipse-mars</id>
+			<activation>
+				<property>
+					<name>eclipse-release</name>
+					<value>mars</value>
+				</property>
+			</activation>
+			<repositories>
+				<repository>
+					<id>mars</id>
+					<layout>p2</layout>
+					<url>http://download.eclipse.org/releases/mars/</url>
+				</repository>
+				<repository>
+					<id>swtbot</id>
+					<layout>p2</layout>
+					<url>http://download.eclipse.org/technology/swtbot/releases/2.3.0/</url>
+				</repository>
+			</repositories>
+		</profile>
+
+		<profile>
+			<id>eclipse-neon</id>
+			<activation>
+				<property>
+					<name>eclipse-release</name>
+					<value>neon</value>
+				</property>
+			</activation>
+			<repositories>
+				<repository>
+					<id>neon</id>
+					<layout>p2</layout>
+					<url>http://download.eclipse.org/eclipse/updates/4.6milestones/S-4.6M4-201512092300</url>
+				</repository>
+				<repository>
+					<id>swtbot</id>
+					<layout>p2</layout>
+					<url>http://download.eclipse.org/technology/swtbot/releases/2.3.0/</url>
+				</repository>
+			</repositories>
+		</profile>
+
+	</profiles>
+
+	<developers>
+		<developer>
+			<name>Iakov Senatov</name>
+			<roles>
+				<role>Owner</role>
+				<role>Developer</role>
+			</roles>
+		</developer>
+	</developers>
+
+
 	<modules>
 		<module>../smapper.feature</module>
 		<module>../smapper.plugin1</module>

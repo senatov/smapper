@@ -12,6 +12,4 @@
 		<version>1.0.12-SNAPSHOT</version>
 		<relativePath>../smapper.build</relativePath>
 	</parent>
-
-
 </project>

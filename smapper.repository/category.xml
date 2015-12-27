@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/smapper.feature.original_feature_0.0.0.jar" id="org.eclipse.smapper.original_feature" version="0.0.0">
+   <feature url="features/smapper.feature_1.0.12.qualifier.jar" id="smapper.feature" version="1.0.12.qualifier">
       <category name="smapper.category"/>
    </feature>
+   <bundle id="smapper.plugin1" version="1.0.12.qualifier">
+      <category name="smapper.category"/>
+   </bundle>
    <category-def name="smapper.category" label="smapper Category"/>
-   <repository-reference location="http://https://github.com/senatov/smapper.git" enabled="true" />
+   <repository-reference location="http://https://github.com/senatov/update" enabled="true" />
 </site>

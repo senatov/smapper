@@ -17,8 +17,8 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
 
-import org.apache.log4j.Logger;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.swt.graphics.Image;
@@ -30,7 +30,9 @@ import org.eclipse.swt.graphics.Image;
  */
 public class FileTreeLabelProvider implements ILabelProvider {
 
-	private static final Logger LOG = Logger.getLogger(FileTreeLabelProvider.class);
+	@Inject
+	private static org.eclipse.e4.core.services.log.Logger LOG;
+
 	private final List<ILabelProviderListener> listeners;
 	private Image file;
 	private Image dir;

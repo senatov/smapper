@@ -1,7 +1,7 @@
 /*
  * JDK: JDK 1.8_51
  * @author Iakov
- * DATE: 11.08.2015 11:53:22 2015 
+ * DATE: 11.08.2015 11:53:22 2015
  * PRJ: com.senatov.smapperApp
  * PACKAGE: com.senatov.smapperApp.handlers
  * FILE: FindHandlerTest.java
@@ -12,8 +12,8 @@ package com.senatov.smapperApp.handlers;
 
 import static org.junit.Assert.assertTrue;
 
+import javax.inject.Inject;
 
-import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -27,7 +27,8 @@ import org.junit.Test;
  */
 public class FindHandlerTest {
 
-	private static final Logger LOG = Logger.getLogger(FindHandlerTest.class);
+	@Inject
+	private static org.eclipse.e4.core.services.log.Logger LOG;
 
 
 	/**
@@ -68,7 +69,7 @@ public class FindHandlerTest {
 
 	/**
 	 * Tear down.merely a placeholder
-	 * 
+	 *
 	 * @throws Exception the exception
 	 */
 	@After

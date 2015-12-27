@@ -23,7 +23,7 @@
 		<repository>
 			<id>eclipse-neon</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/eclipse/updates/4.6milestones/S-4.6M4-201512092300</url>
+			<url>http://download.eclipse.org/eclipse/updates/4.6milestones</url>
 		</repository>
 	</repositories>
 	<build>
@@ -32,7 +32,7 @@
 				<plugin>
 					<groupId>org.eclipse.tycho</groupId>
 					<artifactId>tycho-surefire-plugin</artifactId>
-					<version>0.24.0</version>
+					<version>${tycho-version}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -40,33 +40,17 @@
 					<version>2.6</version>
 				</plugin>
 				<plugin>
-					<groupId>org.codehaus.tycho</groupId>
-					<artifactId>maven-osgi-packaging-plugin</artifactId>
-					<version>${tycho-version}</version>
-					<executions>
-						<execution>
-							<id>timestamp</id>
-							<phase>validate</phase>
-							<goals>
-								<goal>timestamp</goal>
-							</goals>
-						</execution>
-					</executions>
-					<!-- for some reason configuration won't work here, have to define in 
-						each module -->
-					<configuration>
-						<archive>
-							<addMavenDescriptor>false</addMavenDescriptor>
-						</archive>
-					</configuration>
-				</plugin>
+				      <groupId>org.eclipse.tycho</groupId>
+				      <artifactId>tycho-p2-repository-plugin</artifactId>
+				      <version>${tycho-version}</version>
+				</plugin>				
 			</plugins>
 		</pluginManagement>
 		<plugins>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>1.4.1</version>
 				<executions>
 					<execution>
 						<id>enforce-java</id>
@@ -83,16 +67,9 @@
 					</execution>
 				</executions>
 			</plugin>
-
-
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-p2-repository-plugin</artifactId>
-				<version>${tycho-version}</version>
-				<configuration>
-					<includeAllDependencies>true</includeAllDependencies>
-					<compress>true</compress>
-				</configuration>
 			</plugin>
 
 			<plugin>
@@ -103,8 +80,8 @@
 				<configuration>
 					<encoding>UTF-8</encoding>
 					<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -112,20 +89,20 @@
 				<artifactId>tycho-surefire-plugin</artifactId>
 			</plugin>
 			<plugin>
-				<groupId>${tycho-groupid}</groupId>
+				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-packaging-plugin</artifactId>
 				<version>${tycho-version}</version>
-				<dependencies>
-					<dependency>
-						<groupId>timestamp-provider-groupid</groupId>
-						<artifactId>timestamp-provider-artifactid</artifactId>
-						<version>timestamp-provider-version</version>
-					</dependency>
-				</dependencies>
 				<configuration>
-					<timestampProvider>custom</timestampProvider>
+					<archive>
+						<addMavenDescriptor>true</addMavenDescriptor>
+					</archive>
+					<sourceReferences>
+						<generate>true</generate>
+						<customValue>scm:myscm:customSourceReferenceValue</customValue>
+					</sourceReferences>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>${tycho-groupid}</groupId>
 				<artifactId>target-platform-configuration</artifactId>
@@ -211,7 +188,7 @@
 				<repository>
 					<id>neon</id>
 					<layout>p2</layout>
-					<url>http://download.eclipse.org/eclipse/updates/4.6milestones/S-4.6M4-201512092300</url>
+					<url>http://download.eclipse.org/eclipse/updates/4.6milestones</url>
 				</repository>
 				<repository>
 					<id>swtbot</id>

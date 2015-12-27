@@ -13,7 +13,7 @@
 		<relativePath>../smapper.build</relativePath>
 	</parent>
 
-	<build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>${tycho-groupid}</groupId>

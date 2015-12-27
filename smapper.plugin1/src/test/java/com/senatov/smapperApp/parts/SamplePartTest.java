@@ -1,7 +1,7 @@
 /*
  * JDK: ver. 1.8_51
  * @author Iakov
- * DATE: Aug 12, 2015 11:42:41 PM 2015 
+ * DATE: Aug 12, 2015 11:42:41 PM 2015
  * PRJ: com.senatov.smapperApp
  * PACKAGE: com.senatov.smapperApp.parts
  * FILE: SamplePartTest.java
@@ -12,8 +12,8 @@ package com.senatov.smapperApp.parts;
 
 import static org.junit.Assert.assertTrue;
 
+import javax.inject.Inject;
 
-import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -27,9 +27,8 @@ import org.junit.Test;
  */
 public class SamplePartTest {
 
-	/** The Constant LOG. */
-	private static final Logger LOG = Logger.getLogger(SamplePartTest.class);
-
+	@Inject
+	private static org.eclipse.e4.core.services.log.Logger LOG;
 
 	/**
 	 * Sets the up before class.

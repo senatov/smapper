@@ -11,11 +11,11 @@ package com.senatov.smapperApp.handlers;
 
 
 
+import javax.inject.Inject;
 import javax.inject.Named;
 
-
-import org.apache.log4j.Logger;
 import org.eclipse.e4.core.di.annotations.Execute;
+import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Shell;
@@ -24,7 +24,8 @@ import org.eclipse.swt.widgets.Shell;
 
 public class QuitHandler {
 
-	private static final Logger LOG = Logger.getLogger(QuitHandler.class);
+	@Inject
+	private static Logger LOG;
 
 
 	@Execute

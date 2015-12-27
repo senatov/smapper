@@ -13,11 +13,9 @@ package com.senatov.smapperApp.handlers;
 
 import java.lang.reflect.InvocationTargetException;
 
-
+import javax.inject.Inject;
 import javax.inject.Named;
 
-
-import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
@@ -35,13 +33,14 @@ import org.eclipse.swt.widgets.Shell;
 
 public class SaveHandler {
 
-	private static final Logger LOG = Logger.getLogger(SaveHandler.class);
+	@Inject
+	private static org.eclipse.e4.core.services.log.Logger LOG;
 
 
 	@CanExecute
 	public boolean canExecute(@Named(IServiceConstants.ACTIVE_PART) MDirtyable dirtyable) {
 
-		LOG.debug("execute()");
+		LOG.info("execute()");
 		if (dirtyable == null) {
 			return false;
 		}
@@ -59,9 +58,9 @@ public class SaveHandler {
 
 	@Execute
 	public void execute(IEclipseContext context, @Named(IServiceConstants.ACTIVE_SHELL) Shell shell,
-			@Named(IServiceConstants.ACTIVE_PART)
-	final MContribution contribution) throws InvocationTargetException, InterruptedException {
-
+			@Named(IServiceConstants.ACTIVE_PART) final MContribution contribution)
+					throws InvocationTargetException, InterruptedException {
+		LOG.debug("execute()");
 		final IEclipseContext pmContext = context.createChild();
 		final ProgressMonitorDialog dialog = new ProgressMonitorDialog(shell);
 		dialog.open();

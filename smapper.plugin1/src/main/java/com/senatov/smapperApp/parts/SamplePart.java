@@ -13,18 +13,16 @@ package com.senatov.smapperApp.parts;
 
 import java.io.IOException;
 
-
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 
-
-import org.apache.log4j.Logger;
+import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.jface.viewers.CheckboxTreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-
 
 import com.senatov.smapperApp.parts.model.FileTreeLabelProvider;
 import com.senatov.smapperApp.parts.model.TreeContentProvider;
@@ -36,7 +34,8 @@ import com.senatov.smapperApp.parts.model.TreeContentProvider;
  */
 public class SamplePart {
 
-	private static final Logger LOG = Logger.getLogger(SamplePart.class);
+	@Inject
+	private static Logger LOG;
 
 
 	/**

@@ -1,7 +1,7 @@
 /*
  * JDK: ver. 1.8_51
  * @author Iakov
- * DATE: 11.08.2015 16:21:05 2015 
+ * DATE: 11.08.2015 16:21:05 2015
  * PRJ: maingui
  * PACKAGE: com.senatov.smapperApp.parts.model
  * FILE: TreeContentProvider.java
@@ -13,8 +13,9 @@ package com.senatov.smapperApp.parts.model;
 
 import java.io.File;
 
+import javax.inject.Inject;
 
-import org.apache.log4j.Logger;
+import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
@@ -26,9 +27,8 @@ import org.eclipse.jface.viewers.Viewer;
 
 public class TreeContentProvider implements ITreeContentProvider {
 
-	/** The Constant LOG. */
-	private static final Logger LOG = Logger.getLogger(TreeContentProvider.class);
-
+	@Inject
+	private static Logger LOG;
 
 	/*
 	 * <br><br><b>author</b> iase27698054 2015-03-15

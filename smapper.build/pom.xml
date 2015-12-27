@@ -140,66 +140,6 @@
 		</plugins>
 	</build>
 
-	<profiles>
-
-		<profile>
-			<id>macosx-jvm-flags</id>
-			<activation>
-				<os>
-					<family>mac</family>
-				</os>
-			</activation>
-			<properties>
-				<!-- tycho-surefire-plugin needs -XstartOnFirstThread on mac os -->
-				<os-jvm-flags>-XstartOnFirstThread</os-jvm-flags>
-			</properties>
-		</profile>
-		<profile>
-			<id>eclipse-mars</id>
-			<activation>
-				<property>
-					<name>eclipse-release</name>
-					<value>mars</value>
-				</property>
-			</activation>
-			<repositories>
-				<repository>
-					<id>mars</id>
-					<layout>p2</layout>
-					<url>http://download.eclipse.org/releases/mars/</url>
-				</repository>
-				<repository>
-					<id>swtbot</id>
-					<layout>p2</layout>
-					<url>http://download.eclipse.org/technology/swtbot/releases/2.3.0/</url>
-				</repository>
-			</repositories>
-		</profile>
-
-		<profile>
-			<id>eclipse-neon</id>
-			<activation>
-				<property>
-					<name>eclipse-release</name>
-					<value>neon</value>
-				</property>
-			</activation>
-			<repositories>
-				<repository>
-					<id>neon</id>
-					<layout>p2</layout>
-					<url>http://download.eclipse.org/eclipse/updates/4.6milestones</url>
-				</repository>
-				<repository>
-					<id>swtbot</id>
-					<layout>p2</layout>
-					<url>http://download.eclipse.org/technology/swtbot/releases/2.3.0/</url>
-				</repository>
-			</repositories>
-		</profile>
-
-	</profiles>
-
 	<developers>
 		<developer>
 			<name>Iakov Senatov</name>

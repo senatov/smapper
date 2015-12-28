@@ -9,21 +9,23 @@
 
 package com.senatov.smapperApp;
 
-import javax.inject.Inject;
+import javax.annotation.PostConstruct;
 
-import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
+
+import com.ichir.eclipse.logger.api.ILogger;
+import com.ichir.eclipse.logger.api.LoggerFactory;
 
 /**
  * The Class Activator.
  */
 public class Activator extends AbstractUIPlugin implements BundleActivator {
 
-	@Inject
-	private static Logger LOG;
+	private static final ILogger LOG = LoggerFactory.getLogger(Activator.class);
 
 	public static final String PLUGIN_ID = "com.senatov.smapperApp";
 	private static Activator plugin;
@@ -85,4 +87,10 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 		LOG.debug("getImageDescriptor()");
 		return imageDescriptorFromPlugin(PLUGIN_ID, path);
 	}
+
+	@PostConstruct
+	public void createControls(Composite parent) {
+		System.out.println(this.getClass().getSimpleName() + " @PostConstruct method called.");
+	}
+
 }

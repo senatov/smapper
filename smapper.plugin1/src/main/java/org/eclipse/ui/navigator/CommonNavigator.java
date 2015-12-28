@@ -3,21 +3,26 @@ package org.eclipse.ui.navigator;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.part.ViewPart;
 
+import com.ichir.eclipse.logger.api.ILogger;
+import com.ichir.eclipse.logger.api.LoggerFactory;
+
 public class CommonNavigator extends ViewPart {
 
+	private static final ILogger LOG = LoggerFactory.getLogger(CommonNavigator.class);
+
 	public CommonNavigator() {
-		// TODO Auto-generated constructor stub
+		LOG.debug("CommonNavigator ()");
 	}
 
 	@Override
 	public void createPartControl(Composite parent) {
-		// TODO Auto-generated method stub
+		LOG.debug("createPartControl ()");
 
 	}
 
 	@Override
 	public void setFocus() {
-		// TODO Auto-generated method stub
+		LOG.debug("setFocus ()");
 
 	}
 

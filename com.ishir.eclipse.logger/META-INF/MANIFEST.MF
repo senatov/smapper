@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Logger
+Bundle-SymbolicName: com.ichir.eclipse.logger
+Bundle-Version: 1.0.0
+Bundle-Activator: com.ichir.eclipse.logger.Activator
+Bundle-Vendor: mahieddine.ichir@free.fr
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: com.ichir.eclipse.logger.api
+Bundle-ClassPath: .,
+ lib/slf4j-log4j12-1.6.1.jar,
+ lib/log4j-1.2.15.jar,
+ lib/slf4j-api-1.6.1.jar

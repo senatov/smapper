@@ -13,7 +13,6 @@ package com.senatov.smapperApp.handlers;
 
 import java.lang.reflect.InvocationTargetException;
 
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -29,12 +28,13 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.swt.widgets.Shell;
 
+import com.ichir.eclipse.logger.api.ILogger;
+import com.ichir.eclipse.logger.api.LoggerFactory;
 
 
 public class SaveHandler {
 
-	@Inject
-	private static org.eclipse.e4.core.services.log.Logger LOG;
+	private static final ILogger LOG = LoggerFactory.getLogger(SaveHandler.class);
 
 
 	@CanExecute

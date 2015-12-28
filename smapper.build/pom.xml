@@ -19,6 +19,17 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 	</properties>
+	
+    <developers>
+        <developer>
+            <name>Iakov Senatov</name>
+            <roles>
+                <role>Owner</role>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>	
+	
 	<repositories>
 		<repository>
 			<id>eclipse-neon</id>
@@ -139,17 +150,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<developers>
-		<developer>
-			<name>Iakov Senatov</name>
-			<roles>
-				<role>Owner</role>
-				<role>Developer</role>
-			</roles>
-		</developer>
-	</developers>
-
 
 	<modules>
 		<module>../smapper.feature</module>

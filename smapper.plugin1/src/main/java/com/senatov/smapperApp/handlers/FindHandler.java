@@ -3,21 +3,20 @@ package com.senatov.smapperApp.handlers;
 
 
 
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.eclipse.e4.core.di.annotations.Execute;
-import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Shell;
 
+import com.ichir.eclipse.logger.api.ILogger;
+import com.ichir.eclipse.logger.api.LoggerFactory;
 
 
 public class FindHandler {
 
-	@Inject
-	private static Logger LOG;
+	private static final ILogger LOG = LoggerFactory.getLogger(FindHandler.class);
 
 
 	@Execute

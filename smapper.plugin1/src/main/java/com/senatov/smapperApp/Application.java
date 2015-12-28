@@ -7,19 +7,24 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 
+import com.ichir.eclipse.logger.api.ILogger;
+import com.ichir.eclipse.logger.api.LoggerFactory;
+
 /**
  * This class controls all aspects of the application's execution
  */
 public class Application implements IApplication {
 
+	private static final ILogger LOG = LoggerFactory.getLogger(Application.class);
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.equinox.app.IApplication#start(org.eclipse.equinox.app.
 	 * IApplicationContext)
 	 */
 	@Override
 	public Object start(IApplicationContext context) throws Exception {
+		LOG.debug("start()");
 		Display display = PlatformUI.createDisplay();
 		try {
 			int returnCode = PlatformUI.createAndRunWorkbench(display, new ApplicationWorkbenchAdvisor());
@@ -36,11 +41,12 @@ public class Application implements IApplication {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.equinox.app.IApplication#stop()
 	 */
 	@Override
 	public void stop() {
+		LOG.debug("stop()");
 		if (!PlatformUI.isWorkbenchRunning()) {
 			return;
 		}

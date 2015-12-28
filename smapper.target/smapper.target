@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="smapper" sequenceNumber="10">
+<?pde version="3.8"?><target name="smapper" sequenceNumber="14">
 <locations>
 <location path="${eclipse_home}" type="Profile"/>
-<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.platform.sdk" version="4.6.0.I20151209-2300"/>
-<repository location="http://download.eclipse.org/eclipse/updates/4.6milestones"/>
-</location>
 </locations>
 <environment>
+<os>win32</os>
+<ws>win32</ws>
 <arch>x86_64</arch>
+<nl>-</nl>
 </environment>
 <launcherArgs>
 <vmArgs>-Doomph.update.url=http://download.eclipse.org/oomph/updates/milestone/latest -Doomph.redirection.index.redirection=index:/-&gt;http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/ -Xms1200m -Xmx3072m</vmArgs>

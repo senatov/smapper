@@ -7,13 +7,19 @@ Bundle-Activator: com.senatov.smapperApp.Activator
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: senatov
-Require-Bundle: org.eclipse.e4.ui.model.workbench;bundle-version="1.2.0",
+Require-Bundle: org.eclipse.e4.core.services;bundle-version="2.0.0",
+ org.eclipse.e4.ui.services;bundle-version="1.2.0",
+ org.eclipse.e4.ui.model.workbench;bundle-version="1.2.0",
  org.eclipse.e4.core.di;bundle-version="1.6.0",
  org.eclipse.core.runtime;bundle-version="3.12.0",
- org.eclipse.e4.ui.services;bundle-version="1.2.0",
  org.eclipse.e4.ui.di;bundle-version="1.1.0",
  org.eclipse.ui;bundle-version="3.107.0",
  org.eclipse.e4.core.contexts;bundle-version="1.5.0",
- org.eclipse.e4.core.services;bundle-version="2.0.0"
-Import-Package: org.junit;version="4.12.0"
+ com.ichir.eclipse.logger;bundle-version="1.0.0"
+Import-Package: org.eclipse.ui.views.properties.tabbed,
+ org.junit;version="4.12.0",
+ org.slf4j;version="1.7.2",
+ org.slf4j.agent;version="1.7.2",
+ org.slf4j.bridge;version="1.7.2",
+ org.slf4j.helpers;version="1.7.2"
 

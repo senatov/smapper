@@ -14,12 +14,7 @@ Require-Bundle: org.eclipse.e4.core.services;bundle-version="2.0.0",
  org.eclipse.core.runtime;bundle-version="3.12.0",
  org.eclipse.e4.ui.di;bundle-version="1.1.0",
  org.eclipse.ui;bundle-version="3.107.0",
- org.eclipse.e4.core.contexts;bundle-version="1.5.0",
- com.ichir.eclipse.logger;bundle-version="1.0.0"
-Import-Package: org.eclipse.ui.views.properties.tabbed,
- org.junit;version="4.12.0",
- org.slf4j;version="1.7.2",
- org.slf4j.agent;version="1.7.2",
- org.slf4j.bridge;version="1.7.2",
- org.slf4j.helpers;version="1.7.2"
+ org.eclipse.e4.core.contexts;bundle-version="1.5.0"
+Import-Package: org.apache.log4j;version="1.2.15",
+ org.junit;version="4.12.0"
 

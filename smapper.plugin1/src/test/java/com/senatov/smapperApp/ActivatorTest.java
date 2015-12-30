@@ -8,8 +8,6 @@
  */
 package com.senatov.smapperApp;
 
-
-
 import static org.junit.Assert.assertTrue;
 
 import javax.inject.Inject;

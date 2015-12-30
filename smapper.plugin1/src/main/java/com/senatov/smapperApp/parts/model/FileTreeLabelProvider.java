@@ -17,13 +17,10 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.swt.graphics.Image;
-
-import com.ichir.eclipse.logger.api.ILogger;
-import com.ichir.eclipse.logger.api.LoggerFactory;
-
 
 
 /**
@@ -31,7 +28,7 @@ import com.ichir.eclipse.logger.api.LoggerFactory;
  */
 public class FileTreeLabelProvider implements ILabelProvider {
 
-	private static final ILogger LOG = LoggerFactory.getLogger(FileTreeLabelProvider.class);
+	private static final Logger LOG = Logger.getLogger(FileTreeLabelProvider.class);
 
 	private final List<ILabelProviderListener> listeners;
 	private Image file;

@@ -11,21 +11,19 @@ package com.senatov.smapperApp;
 
 import javax.annotation.PostConstruct;
 
+import org.apache.log4j.Logger;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-import com.ichir.eclipse.logger.api.ILogger;
-import com.ichir.eclipse.logger.api.LoggerFactory;
-
 /**
  * The Class Activator.
  */
 public class Activator extends AbstractUIPlugin implements BundleActivator {
 
-	private static final ILogger LOG = LoggerFactory.getLogger(Activator.class);
+	private static final Logger LOG = Logger.getLogger(Activator.class);
 
 	public static final String PLUGIN_ID = "com.senatov.smapperApp";
 	private static Activator plugin;

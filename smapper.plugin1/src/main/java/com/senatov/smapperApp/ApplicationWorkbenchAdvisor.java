@@ -1,13 +1,11 @@
 package com.senatov.smapperApp;
 
+import org.apache.log4j.Logger;
 import org.eclipse.ui.application.WorkbenchAdvisor;
-
-import com.ichir.eclipse.logger.api.ILogger;
-import com.ichir.eclipse.logger.api.LoggerFactory;
 
 public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 
-	private static final ILogger LOG = LoggerFactory.getLogger(ApplicationWorkbenchAdvisor.class);
+	private static final Logger LOG = Logger.getLogger(ApplicationWorkbenchAdvisor.class);
 
 	@Override
 	public String getInitialWindowPerspectiveId() {

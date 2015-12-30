@@ -13,11 +13,9 @@ package com.senatov.smapperApp.parts.model;
 
 import java.io.File;
 
+import org.apache.log4j.Logger;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-
-import com.ichir.eclipse.logger.api.ILogger;
-import com.ichir.eclipse.logger.api.LoggerFactory;
 
 
 
@@ -27,7 +25,7 @@ import com.ichir.eclipse.logger.api.LoggerFactory;
 
 public class TreeContentProvider implements ITreeContentProvider {
 
-	private static final ILogger LOG = LoggerFactory.getLogger(TreeContentProvider.class);
+	private static final Logger LOG = Logger.getLogger(TreeContentProvider.class);
 
 	/*
 	 * <br><br><b>author</b> iase27698054 2015-03-15

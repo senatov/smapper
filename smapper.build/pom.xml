@@ -154,7 +154,5 @@
 	<modules>
 		<module>../smapper.feature</module>
 		<module>../smapper.plugin1</module>
-		<module>../smapper.repository</module>
-		<module>../smapper.target</module>
 	</modules>
 </project>

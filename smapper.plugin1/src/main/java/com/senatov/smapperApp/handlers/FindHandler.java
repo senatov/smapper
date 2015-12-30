@@ -5,18 +5,17 @@ package com.senatov.smapperApp.handlers;
 
 import javax.inject.Named;
 
+import org.apache.log4j.Logger;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Shell;
 
-import com.ichir.eclipse.logger.api.ILogger;
-import com.ichir.eclipse.logger.api.LoggerFactory;
 
 
 public class FindHandler {
 
-	private static final ILogger LOG = LoggerFactory.getLogger(FindHandler.class);
+	private static final Logger LOG = Logger.getLogger(FindHandler.class);
 
 
 	@Execute

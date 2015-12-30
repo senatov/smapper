@@ -15,6 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import javax.inject.Named;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
@@ -28,13 +29,10 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.swt.widgets.Shell;
 
-import com.ichir.eclipse.logger.api.ILogger;
-import com.ichir.eclipse.logger.api.LoggerFactory;
-
 
 public class SaveHandler {
 
-	private static final ILogger LOG = LoggerFactory.getLogger(SaveHandler.class);
+	private static final Logger LOG = Logger.getLogger(SaveHandler.class);
 
 
 	@CanExecute

@@ -1,21 +1,20 @@
 package com.senatov.smapperApp;
 
 
+import org.apache.log4j.Logger;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 
-import com.ichir.eclipse.logger.api.ILogger;
-import com.ichir.eclipse.logger.api.LoggerFactory;
 
 /**
  * This class controls all aspects of the application's execution
  */
 public class Application implements IApplication {
 
-	private static final ILogger LOG = LoggerFactory.getLogger(Application.class);
+	private static final Logger LOG = Logger.getLogger(Application.class);
 	/*
 	 * (non-Javadoc)
 	 *

@@ -30,7 +30,7 @@
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            application="net.sdruskat.blog.rcp.asynclog4j2.application"
+            application="smapper.plugin1.smapper"
             name="peroduct for smapper">
          <property
                name="appName"

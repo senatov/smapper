@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Smapper App
 Bundle-SymbolicName: smapper.plugin1;singleton:=true
-Bundle-Version: 1.0.12.qualifier
+Bundle-Version: 1.1.0
 Bundle-Activator: com.senatov.smapperApp.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: senatov

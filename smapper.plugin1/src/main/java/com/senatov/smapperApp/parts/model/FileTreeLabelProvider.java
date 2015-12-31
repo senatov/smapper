@@ -38,6 +38,7 @@ public class FileTreeLabelProvider implements ILabelProvider {
 	/**
 	 * Instantiates a new file tree label provider.
 	 */
+	@SuppressWarnings("resource")
 	public FileTreeLabelProvider() {
 		LOG.debug("FileTreeLabelProvider ()");
 		listeners = new ArrayList<ILabelProviderListener>();

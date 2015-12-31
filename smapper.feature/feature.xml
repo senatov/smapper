@@ -2,7 +2,7 @@
 <feature
       id="smapper.feature"
       label="App Feature"
-      version="1.0.12.qualifier"
+      version="1.1.0"
       provider-name="Iakov Senatov">
 
    <description url="http://www.example.com/description">

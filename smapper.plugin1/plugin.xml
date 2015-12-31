@@ -27,18 +27,18 @@
       </perspective>
    </extension>
    <extension
-         id="smapper"
+         id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            application="smapper.plugin1.smapper"
-            name="Smapper product">
+            application="net.sdruskat.blog.rcp.asynclog4j2.application"
+            name="peroduct for smapper">
+         <property
+               name="appName"
+               value="peroduct for smapper">
+         </property>
          <property
                name="applicationCSS"
                value="platform:/plugin/smapper.plugin1/css/default.css">
-         </property>
-         <property
-               name="Smapper App"
-               value="Smapper product">
          </property>
       </product>
    </extension>

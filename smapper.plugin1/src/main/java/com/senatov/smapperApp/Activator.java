@@ -9,6 +9,7 @@
 
 package com.senatov.smapperApp;
 
+
 import javax.annotation.PostConstruct;
 
 import org.apache.log4j.Logger;
@@ -23,7 +24,7 @@ import org.osgi.framework.BundleContext;
  */
 public class Activator extends AbstractUIPlugin implements BundleActivator {
 
-	private static final Logger LOG = Logger.getLogger(Activator.class);
+	private static final Logger LOG = Logger.getLogger(Application.class);
 
 	public static final String PLUGIN_ID = "com.senatov.smapperApp";
 	private static Activator plugin;

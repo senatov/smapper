@@ -18,6 +18,7 @@
 		<tycho-groupid>org.eclipse.tycho</tycho-groupid>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
+		<сbi.version>1.0.0</сbi.version>
 	</properties>
 
 	<developers>
@@ -159,16 +160,16 @@
 			    <directorRuntime>standalone</directorRuntime>
 			    <products>
 			      <product>
-			        <id>smapper.plugin1.product</id>
+			        <id>smapper.plugin1</id>
 			      </product>
 	   	        </products>
 			  </configuration>
 			</plugin>			
-
 		</plugins>
 	</build>
 	<modules>
 		<module>../smapper.feature</module>
 		<module>../smapper.plugin1</module>
+		<module>../smapper.product</module>
 	</modules>
 </project>

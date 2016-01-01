@@ -5,5 +5,5 @@ Bundle-SymbolicName: smapper.product
 Bundle-Version: 1.1.0.qualifier
 Bundle-Vendor: Iakov Senatov
 Require-Bundle: org.eclipse.core.runtime
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

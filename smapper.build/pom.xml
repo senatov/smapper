@@ -7,7 +7,7 @@
 	<artifactId>smapper.build</artifactId>
 	<packaging>pom</packaging>
 	<name>RCP Smapper Parent</name>
-	<version>1.1.0</version>
+	<version>1.1.0-SNAPSHOT</version>
 
 	<prerequisites>
 		<maven>3.3.9</maven>
@@ -18,7 +18,7 @@
 		<tycho-groupid>org.eclipse.tycho</tycho-groupid>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
-		<сbi.version>1.0.0</сbi.version>
+		<сbi.version>1.1.0</сbi.version>
 	</properties>
 
 	<developers>
@@ -160,7 +160,7 @@
 			    <directorRuntime>standalone</directorRuntime>
 			    <products>
 			      <product>
-			        <id>smapper.plugin1</id>
+			        <id>smapper.product</id>
 			      </product>
 	   	        </products>
 			  </configuration>

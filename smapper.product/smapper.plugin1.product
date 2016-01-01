@@ -37,6 +37,7 @@
    </launcher>
 
    <vm>
+      <windows include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</windows>
    </vm>
 
    <plugins>
@@ -109,6 +110,10 @@
       <plugin id="org.w3c.dom.svg"/>
       <plugin id="smapper.plugin1"/>
    </plugins>
+
+   <features>
+      <feature id="smapper.feature" version="1.1.0"/>
+   </features>
 
    <configurations>
       <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />

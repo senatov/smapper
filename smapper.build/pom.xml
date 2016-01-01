@@ -69,6 +69,7 @@
 							<goal>enforce</goal>
 						</goals>
 						<configuration>
+							<encoding>UTF-8</encoding>
 							<rules>
 								<requireJavaVersion>
 									<version>${maven.compiler.target}</version>
@@ -99,6 +100,7 @@
 				<artifactId>tycho-packaging-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
+					<encoding>UTF-8</encoding>
 					<archive>
 						<addMavenDescriptor>true</addMavenDescriptor>
 					</archive>
@@ -123,6 +125,27 @@
 						</environment>
 					</environments>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-director-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<!-- install the product using the p2 director -->
+						<id>materialize-products</id>
+						<goals>
+							<goal>materialize-products</goal>
+						</goals>
+					</execution>
+					<execution>
+						<!-- create zip file with the installed product -->
+						<id>archive-products</id>
+						<goals>
+							<goal>archive-products</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

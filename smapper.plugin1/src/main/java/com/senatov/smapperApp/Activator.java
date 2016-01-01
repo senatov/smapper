@@ -19,6 +19,8 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
+import com.senatov.smapper.util.Utl;
+
 /**
  * The Class Activator.
  */
@@ -33,6 +35,7 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 	 */
 	public Activator() {
 		super();
+		Utl.initLog4j();
 	}
 
 	/*

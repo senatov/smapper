@@ -91,7 +91,7 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 	}
 
 	@PostConstruct
-	public void createControls(Composite parent) {
+	public void createControls(@SuppressWarnings("unused") Composite parent) {
 		System.out.println(this.getClass().getSimpleName() + " @PostConstruct method called.");
 	}
 

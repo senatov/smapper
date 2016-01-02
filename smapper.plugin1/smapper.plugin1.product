@@ -14,15 +14,19 @@
    </configIni>
 
    <launcherArgs>
+      <programArgsWin>-debug -consoleLog
+      </programArgsWin>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
+      <vmArgsWin>-XstartonFirstThread
+      </vmArgsWin>
    </launcherArgs>
 
    <windowImages i16="/smapper.plugin1/icons/16x16.gif" i32="/smapper.plugin1/icons/32x32.gif" i48="/smapper.plugin1/icons/48x48.gif" i64="/smapper.plugin1/icons/64x64.gif" i128="/smapper.plugin1/icons/128x128.gif" i256="/smapper.plugin1/icons/256x256.gif"/>
 
    <splash
       location="smapper.plugin1" />
-   <launcher>
+   <launcher name="rcpapp">
       <solaris/>
       <win useIco="false">
          <bmp
@@ -110,10 +114,6 @@
       <plugin id="org.w3c.dom.svg"/>
       <plugin id="smapper.plugin1"/>
    </plugins>
-
-   <features>
-      <feature id="smapper.feature" version="1.1.0"/>
-   </features>
 
    <configurations>
       <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />

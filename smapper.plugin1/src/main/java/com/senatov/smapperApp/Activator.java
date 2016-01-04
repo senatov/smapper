@@ -26,7 +26,7 @@ import com.senatov.smapper.util.Utl;
  */
 public class Activator extends AbstractUIPlugin implements BundleActivator {
 
-	private static final Logger LOG = Logger.getLogger(Application.class);
+	private static final Logger LOG = Logger.getLogger(Activator.class);
 
 	public static final String PLUGIN_ID = "com.senatov.smapperApp";
 	private static Activator plugin;

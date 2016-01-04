@@ -9,7 +9,7 @@
             thread="main"
             visible="true">
          <run
-               class="com.senatov.smapperApp.Application">
+               class="com.senatov.smapperApp.Activator">
          </run>
       </application>
    </extension>
@@ -51,6 +51,22 @@
          <property
                name="windowImages"
                value="icons/16x16.gif,icons/32x32.gif,icons/48x48.gif,icons/64x64.gif,icons/128x128.gif,icons/256x256.gif">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="8080FF">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,252,445,20">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
          </property>
       </product>
    </extension>

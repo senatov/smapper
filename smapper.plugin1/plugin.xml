@@ -41,7 +41,7 @@
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            application="smapper.plugin1.smapper"
             name="Product for smapper">
          <property
                name="appName"
@@ -53,7 +53,7 @@
          </property>
          <property
                name="aboutImage"
-               value="icons/256x256.gif">
+               value="icons/128x128.gif">
          </property>
          <property
                name="aboutText"
@@ -80,5 +80,32 @@
                value="plugin_customization.ini">
          </property>
       </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro">
+      <intro
+            class="org.eclipse.ui.intro.config.CustomizableIntroPart"
+            id="smapper.plugin1.intro">
+      </intro>
+      <introProductBinding
+            introId="smapper.plugin1.intro"
+            productId="smapper.plugin1.product">
+      </introProductBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.config">
+      <config
+            content="introContent.xml"
+            id="smapper.plugin1.introConfigId"
+            introId="smapper.plugin1.intro">
+         <presentation
+               home-page-id="root">
+            <implementation
+                  kind="html"
+                  os="win32,linux,macosx"
+                  style="content/shared.css">
+            </implementation>
+         </presentation>
+      </config>
    </extension>
 </plugin>

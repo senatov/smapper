@@ -41,7 +41,7 @@
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            application="smapper.plugin1.smapper"
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
             name="Product for smapper">
          <property
                name="appName"

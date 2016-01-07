@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Product for smapper" uid="smapper.plugin1.product" id="smapper.plugin1.product" application="org.eclipse.e4.ui.workbench.swt.E4Application" version="1.1.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="Product for smapper" uid="smapper.plugin1.product" id="smapper.plugin1.products.ext.product" application="smapper.plugin1.smapper.ext.application" version="1.1.0.qualifier" useFeatures="false" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/smapper.plugin1/icons/128x128.gif"/>
@@ -115,10 +115,6 @@
       <plugin id="org.w3c.dom.svg"/>
       <plugin id="smapper.plugin1"/>
    </plugins>
-
-   <features>
-      <feature id="smapper.feature" version="1.1.0.qualifier"/>
-   </features>
 
    <configurations>
       <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />

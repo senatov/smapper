@@ -26,6 +26,7 @@
 
 	<properties>
 		<tycho-version>0.24.0</tycho-version>
+		<encoding>UTF-8</encoding>
 		<tycho-groupid>org.eclipse.tycho</tycho-groupid>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -104,7 +105,7 @@
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<encoding>UTF-8</encoding>
+					<encoding>${encoding}</encoding>
 					<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 					<source>${maven.compiler.source}</source>
 					<target>${maven.compiler.target}</target>
@@ -115,7 +116,7 @@
 				<artifactId>tycho-packaging-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
-					<encoding>UTF-8</encoding>
+					<encoding>${encoding}</encoding>
 					<archive>
 						<addMavenDescriptor>true</addMavenDescriptor>
 					</archive>
@@ -132,7 +133,7 @@
 				<artifactId>target-platform-configuration</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
-					<encoding>UTF-8</encoding>
+					<encoding>${encoding}</encoding>
 					<environments>
 						<environment>
 							<os>win32</os>
@@ -148,7 +149,7 @@
 				<artifactId>tycho-p2-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
-					<encoding>UTF-8</encoding>
+					<encoding>${encoding}</encoding>
 					<baselineMode>warn</baselineMode>
 					<baselineReplace>none</baselineReplace>
 					<baselineRepositories>
@@ -158,6 +159,27 @@
 					</baselineRepositories>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+			    <!-- Use compiler plugin with tycho as the adapter to the JDT compiler. -->
+			    <artifactId>maven-compiler-plugin</artifactId>
+			    <configuration>
+			        <source>${maven.compiler.source}</source>
+			        <target>${maven.compiler.target}</target>
+			        <compilerId>jdt</compilerId>
+			        <compilerArgument>-err:nullAnnot,null</compilerArgument> <!-- insert your warn/err configuration here -->
+			    </configuration>
+			    <dependencies>
+			        <!-- This dependency provides the implementation of compiler "jdt": -->
+			        <dependency>
+			            <groupId>org.eclipse.tycho</groupId>
+			            <artifactId>tycho-compiler-jdt</artifactId>
+			            <version>${tycho-version}</version>
+			        </dependency>
+			    </dependencies>
+			</plugin>			
+						
+			
 		</plugins>
 	</build>
 	<modules>

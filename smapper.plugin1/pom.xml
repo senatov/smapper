@@ -19,6 +19,8 @@
 	<packaging>eclipse-plugin</packaging>
 	<description>com.senatov.smapper.app plug-in project</description>
 
+
+
 	<parent>
 		<groupId>com.senatov.smapper</groupId>
 		<artifactId>smapper.build</artifactId>

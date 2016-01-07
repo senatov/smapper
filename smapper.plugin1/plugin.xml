@@ -12,7 +12,7 @@
 
 <plugin>
    <extension
-         id="smapper"
+         id="smapper.ext.application"
          point="org.eclipse.core.runtime.applications">
       <application
             cardinality="singleton-global"
@@ -25,7 +25,7 @@
       </application>
    </extension>
    <extension
-         id="perspective"
+         id="smapper.perspective"
          point="org.eclipse.ui.perspectives">
       <perspective
             class="com.senatov.smapper.bundle.PerspectiveFactory1"
@@ -38,7 +38,7 @@
       </perspective>
    </extension>
    <extension
-         id="product"
+         id="products.ext.product"
          point="org.eclipse.core.runtime.products">
       <product
             application="org.eclipse.e4.ui.workbench.swt.E4Application"
@@ -82,6 +82,7 @@
       </product>
    </extension>
    <extension
+         id="smapper.ext.intro"
          point="org.eclipse.ui.intro">
       <intro
             class="org.eclipse.ui.intro.config.CustomizableIntroPart"
@@ -93,6 +94,7 @@
       </introProductBinding>
    </extension>
    <extension
+         id="smapper.ext.intro.config"
          point="org.eclipse.ui.intro.config">
       <config
             content="introContent.xml"
@@ -107,5 +109,93 @@
             </implementation>
          </presentation>
       </config>
+   </extension>
+   <extension
+         id="smapper.ext.runtime.product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            name="Product for smapper">
+         <property
+               name="windowImages"
+               value="icons/16x16.gif,icons/32x32.gif,icons/48x48.gif,icons/64x64.gif,icons/128x128.gif,icons/256x256.gif">
+         </property>
+         <property
+               name="aboutText"
+               value="(c) Iakov Senatov">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/128x128.gif">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="8080FF">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,252,445,20">
+         </property>
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/smapper.plugin1/css/default.css">
+         </property>
+         <property
+               name="appName"
+               value="Product for smapper">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="smapper.plugin1.smapper.ext.application"
+            name="Product for smapper">
+         <property
+               name="windowImages"
+               value="icons/16x16.gif,icons/32x32.gif,icons/48x48.gif,icons/64x64.gif,icons/128x128.gif,icons/256x256.gif">
+         </property>
+         <property
+               name="aboutText"
+               value="(c) Iakov Senatov">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/128x128.gif">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="8080FF">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,252,445,20">
+         </property>
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/smapper.plugin1/css/default.css">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+         <property
+               name="appName"
+               value="Product for smapper">
+         </property>
+      </product>
    </extension>
 </plugin>

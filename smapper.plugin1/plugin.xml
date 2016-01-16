@@ -12,11 +12,11 @@
 
 <plugin>
    <extension
-         id="smapper.ext.application"
+         id="smapper.plugin1"
          point="org.eclipse.core.runtime.applications">
       <application
             cardinality="singleton-global"
-            icon="icons/32x32.gif"
+            icon="$nl$/icons/32x32.gif"
             thread="main"
             visible="true">
          <run
@@ -29,7 +29,7 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             class="com.senatov.smapper.bundle.PerspectiveFactory1"
-            icon="icons/128x128.gif"
+            icon="$nl$/icons/128x128.gif"
             id="com.senatov.smapper.bundle.perspective1"
             name="Just Perspective">
          <description>
@@ -158,7 +158,7 @@
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            application="smapper.plugin1.smapper.ext.application"
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
             name="Product for smapper">
          <property
                name="windowImages"
@@ -189,12 +189,12 @@
                value="platform:/plugin/smapper.plugin1/css/default.css">
          </property>
          <property
-               name="preferenceCustomization"
-               value="plugin_customization.ini">
-         </property>
-         <property
                name="appName"
                value="Product for smapper">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
          </property>
       </product>
    </extension>

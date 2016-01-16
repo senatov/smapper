@@ -45,9 +45,9 @@
 
 	<repositories>
 		<repository>
-			<id>eclipse-neon</id>
+			<id>eclipse-mars</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/eclipse/updates/4.6milestones</url>
+			<url>http://download.eclipse.org/eclipse/updates/4.5</url>
 		</repository>
 	</repositories>
 	<build>

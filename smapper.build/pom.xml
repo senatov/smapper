@@ -17,6 +17,7 @@
 	<properties>
 		<tycho-version>0.24.0</tycho-version>
 		<encoding>UTF-8</encoding>
+		<update.url>http://download.eclipse.org/eclipse/updates/4.5</update.url>
 		<tycho-groupid>org.eclipse.tycho</tycho-groupid>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -37,7 +38,7 @@
 		<repository>
 			<id>eclipse-mars</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/eclipse/updates/4.5</url>
+			<url>${update.url}</url>
 		</repository>
 	</repositories>
 	<build>
@@ -154,7 +155,7 @@
 					<baselineReplace>none</baselineReplace>
 					<baselineRepositories>
 						<repository>
-							<url>http://download.eclipse.org/eclipse/updates/4.6milestones</url>
+							<url>${update.url}</url>
 						</repository>
 					</baselineRepositories>
 				</configuration>

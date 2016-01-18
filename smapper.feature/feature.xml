@@ -12,8 +12,9 @@
 <feature
       id="smapper.feature"
       label="App Feature"
-      version="1.1.0.qualifier"
-      provider-name="Iakov Senatov">
+      version="1.1.0"
+      provider-name="Iakov Senatov"
+      plugin="smapper.plugin1">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]

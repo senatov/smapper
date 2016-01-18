@@ -72,7 +72,7 @@
          </property>
          <property
                name="aboutImage"
-               value="icons/256x256.gif">
+               value="icons/128x128.gif">
          </property>
          <property
                name="aboutText"
@@ -84,5 +84,12 @@
          </property>
       </product>
 
+   </extension>
+   <extension
+         point="org.eclipse.ui.splashHandlers">
+      <splashHandler
+            class="smapper.plugin1.splashHandlers.InteractiveSplashHandler"
+            id="smapper.plugin1.splashHandlers.interactive">
+      </splashHandler>
    </extension>
 </plugin>

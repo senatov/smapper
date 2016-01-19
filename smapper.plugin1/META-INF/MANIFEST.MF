@@ -9,7 +9,17 @@ Bundle-ClassPath: libs/log4j-1.2.16.jar,
  libs/commons-io-2.4.jar
 Bundle-Activator: com.senatov.smapperApp.Activator
 Bundle-Vendor: senatov
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.senatov.smapper.bundle,
+ com.senatov.smapper.commands,
+ com.senatov.smapper.splashHandlers,
+ com.senatov.smapper.util,
+ com.senatov.smapperApp,
+ com.senatov.smapperApp.handlers,
+ com.senatov.smapperApp.parts,
+ com.senatov.smapperApp.parts.model,
+ org.eclipse.ui.intro.config,
+ org.eclipse.ui.navigator,
+ smapper.plugin1.splashHandlers
 Require-Bundle: org.eclipse.ui;bundle-version="3.107.0",
  org.junit;bundle-version="4.12.0",
  org.eclipse.osgi;bundle-version="3.10.101",
@@ -21,3 +31,4 @@ Require-Bundle: org.eclipse.ui;bundle-version="3.107.0",
  org.eclipse.e4.ui.model.workbench;bundle-version="1.1.100",
  org.eclipse.e4.core.services;bundle-version="2.0.0",
  org.eclipse.ui.intro;bundle-version="3.4.300"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

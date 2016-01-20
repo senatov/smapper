@@ -38,6 +38,6 @@ public class AboutHandler {
 	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell) {
 
 		LOG.debug("execute()");
-		MessageDialog.openInformation(shell, "About", "Eclipse 4 Application example.");
+		MessageDialog.openInformation(shell, "About", "!kuku!");
 	}
 }

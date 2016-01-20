@@ -6,7 +6,7 @@
          point="org.eclipse.core.runtime.applications">
       <application
             cardinality="singleton-global"
-            icon="icons/32x32.bmp"
+            icon="$nl$/icons/32x32.bmp"
             thread="main"
             visible="true">
          <run
@@ -19,9 +19,9 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             class="com.senatov.smapper.bundle.PerspectiveFactory1"
-            icon="icons/128x128.gif"
+            icon="$nl$/icons/128x128.gif"
             id="perspective1_id"
-            name="Just Perspective">
+            name="Perspective proveweise">
          <description>
             ssss description body text
          </description>
@@ -32,10 +32,18 @@
          point="org.eclipse.ui.intro">
       <intro
             class="org.eclipse.ui.intro.config.CustomizableIntroPart"
-            icon="icons/16x16-8.bmp"
+            icon="$nl$/icons/16x16-8.bmp"
             id="intro_id"
             label="introduction probeweise">
       </intro>
+      <intro
+            class="org.eclipse.ui.intro.config.CustomizableIntroPart"
+            id="smapper.plugin1.intro">
+      </intro>
+      <introProductBinding
+            introId="smapper.plugin1.intro"
+            productId="smapper.plugin1.product">
+      </introProductBinding>
    </extension>
    <extension
          id="config_id"
@@ -47,6 +55,19 @@
          <presentation
                home-page-id="intro_config_root_id"
                standby-page-id="standby_page_id">
+            <implementation
+                  kind="html"
+                  os="win32,linux,macosx"
+                  style="content/shared.css">
+            </implementation>
+         </presentation>
+      </config>
+      <config
+            content="introContent.xml"
+            id="smapper.plugin1.introConfigId"
+            introId="smapper.plugin1.intro">
+         <presentation
+               home-page-id="root">
             <implementation
                   kind="html"
                   os="win32,linux,macosx"

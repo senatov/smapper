@@ -1,13 +1,11 @@
-/*******************************************************************************
- * Copyright (c) 2016 IBM Corporation and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *     IBM Corporation - initial API and implementation
- *******************************************************************************/
+/*************************************************
+ * Developed under: 1.8.0_60/Windows 10 amd64
+ * @author Iakov
+ * @since Jan 20, 2016 - 1:27:49 PM
+ * PRJ: smapper.plugin1
+ * PACKAGE:  com.senatov.smapperApp.parts
+ * FILE: SamplePart.java / SamplePart
+ *************************************************/
 /*
  * JDK: 1.8.0_45
  * @author I. Senatov (Iakov)

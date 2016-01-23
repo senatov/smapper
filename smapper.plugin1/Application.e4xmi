@@ -51,8 +51,8 @@
     <bindings xmi:id="_X2Dl1poWEeKBDZZACqhG_Q" keySequence="M1+A" command="_X2Dl1JoWEeKBDZZACqhG_Q"/>
   </bindingTables>
   <rootContext xmi:id="_X2Dlx5oWEeKBDZZACqhG_Q" elementId="binding_context_id" name="In Dialog and Windows">
-    <children xmi:id="_X2DlyJoWEeKBDZZACqhG_Q" elementId="binf_contexts_win_id" name="In Windows"/>
-    <children xmi:id="_X2DlyZoWEeKBDZZACqhG_Q" elementId="binf_contexts_dialog_id" name="In Dialogs"/>
+    <children xmi:id="_X2DlyJoWEeKBDZZACqhG_Q" elementId="bind_contexts_win_id" name="In Windows"/>
+    <children xmi:id="_X2DlyZoWEeKBDZZACqhG_Q" elementId="bind_contexts_dialog_id" name="In Dialogs"/>
   </rootContext>
   <commands xmi:id="_X2DlypoWEeKBDZZACqhG_Q" elementId="exit_command_id" commandName="quitCommand"/>
   <commands xmi:id="_X2DlzpoWEeKBDZZACqhG_Q" elementId="open_command_id" commandName="openCommand"/>

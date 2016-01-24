@@ -3,7 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Smapper App
 Bundle-SymbolicName: smapper.plugin1;singleton:=true
 Bundle-Version: 1.1.0
-Bundle-ClassPath: libs/log4j-1.2.16.jar,
+Bundle-ClassPath: target/classes, 
+ libs/log4j-1.2.16.jar,
  libs/slf4j-api-1.6.0.jar,
  libs/slf4j-log4j12-1.6.0.jar,
  libs/commons-io-2.4.jar

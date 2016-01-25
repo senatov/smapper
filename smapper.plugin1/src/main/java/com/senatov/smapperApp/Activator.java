@@ -1,7 +1,7 @@
 /*************************************************
  * Developed under: 1.8.0_60/Windows 10 amd64
  * @author Iakov
- * @since Jan 17, 2016 - 11:58:09 AM
+ * @since Jan 25, 2016 - 4:22:57 PM
  * PRJ: smapper.plugin1
  * PACKAGE:  com.senatov.smapperApp
  * FILE: Activator.java / Activator
@@ -9,25 +9,38 @@
 
 package com.senatov.smapperApp;
 
-import javax.annotation.PostConstruct;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PatternLayout;
+import org.apache.log4j.PropertyConfigurator;
+import org.apache.log4j.RollingFileAppender;
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.ILog;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-
-import com.senatov.smapper.util.Utl;
 
 /**
  * The Class Activator.
  */
 public class Activator extends AbstractUIPlugin implements BundleActivator {
-
+	private static final String LOG2 = ".log";
+	private static final String LOGS = "logs";
+	private static final String LOG4J_FILE_PATTTERN = "%d{ISO8601} [%t] %-5p %c %x - %m%n";
+	private static final String LOG4J_PROPERTIES = "log4j.properties";
 	private static final Logger LOG = Logger.getLogger(Activator.class);
-
 	public static final String PLUGIN_ID = "com.senatov.smapperApp";
+	final private List<PluginLogListener> pluginLogHooks = new ArrayList<PluginLogListener>();
 	private static Activator plugin;
 
 	/**
@@ -35,7 +48,6 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 	 */
 	public Activator() {
 		super();
-		Utl.initLog4j();
 	}
 
 	/*
@@ -46,9 +58,88 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 	 */
 	@Override
 	public void start(BundleContext context) throws Exception {
-		LOG.debug("start()");
 		super.start(context);
+		initLog4j(context);
+		LOG.debug("start()");
 		plugin = this;
+	}
+
+	/**
+	 * Inits the log4j.
+	 *
+	 * @param context
+	 *            the context
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 */
+	private void initLog4j(BundleContext context) throws IOException {
+
+		LOG.info("initLog4j()");
+		final String log4jfile = LOG4J_PROPERTIES;
+		final URL confURL = getBundle().getResource(log4jfile);
+		String strConfigFile = FileLocator.toFileURL(confURL).getFile();
+		BasicConfigurator.configure();
+		PropertyConfigurator.configure(strConfigFile);
+		String strLogPath = getLoggingFileFullPath(getBundle().getSymbolicName());
+		final PatternLayout layout = new PatternLayout(LOG4J_FILE_PATTTERN);
+		final RollingFileAppender fileAppender = new RollingFileAppender(layout, strLogPath);
+		Logger.getRootLogger().addAppender(fileAppender);
+		IPath resolvedURL = Platform.getLocation();
+		LOG.info("Resolved URL " + resolvedURL.toOSString());
+		LOG.info("Log4j initialized with " + confURL);
+		hookPluginLoggers(context); // You need to add this method to hook other
+									// plugins, described later...
+	}
+
+	/**
+	 * <b>author</b> iase27698054 2015-03-16.
+	 *
+	 * @param strLogFileName
+	 *            the str log file name
+	 * @return the logging file full path
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 */
+	private String getLoggingFileFullPath(String strLogFileName) throws IOException {
+
+		LOG.info("getLoggingFileFullPath()");
+		StringBuffer sbRet = new StringBuffer(0xFF);
+		sbRet.append(getRootPath());
+		sbRet.append(LOGS);
+		sbRet.append(File.separator);
+		sbRet.append(strLogFileName);
+		sbRet.append(LOG2);
+		return sbRet.toString();
+	}
+
+	/**
+	 * <br>
+	 * <br>
+	 * <b>author</b> iase27698054 2015-03-16
+	 *
+	 * @return
+	 * @throws IOException
+	 */
+	private String getRootPath() throws IOException {
+
+		LOG.info("getRootPath()");
+		return FileLocator.toFileURL(getBundle().getEntry("/")).getPath();
+	}
+
+	/**
+	 * Hook all loaded bundles into the log4j framework.
+	 *
+	 * @param context
+	 *            the context
+	 */
+	private void hookPluginLoggers(final BundleContext context) {
+
+		LOG.info("hookPluginLoggers()");
+		for (final Bundle bundle : context.getBundles()) {
+			final ILog pluginLogger = Platform.getLog(bundle);
+			pluginLogHooks.add(new PluginLogListener(pluginLogger, Logger.getLogger(bundle.getSymbolicName())));
+			LOG.info("Added logging hook for bundle: " + bundle.getSymbolicName());
+		}
 	}
 
 	/*
@@ -89,15 +180,4 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 		LOG.debug("getImageDescriptor()");
 		return imageDescriptorFromPlugin(PLUGIN_ID, path);
 	}
-
-	/**
-	 * Creates the controls.
-	 *
-	 * @param parent the parent
-	 */
-	@PostConstruct
-	public void createControls(Composite parent) {
-		System.out.println(this.getClass().getSimpleName() + " @PostConstruct method called.");
-	}
-
 }

@@ -2,7 +2,7 @@
 
 <plugin>
    <extension
-         id="cmapper_app_id"
+         id="application"
          point="org.eclipse.core.runtime.applications">
       <application
             cardinality="singleton-global"

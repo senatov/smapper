@@ -3,7 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Smapper App
 Bundle-SymbolicName: smapper.plugin1;singleton:=true
 Bundle-Version: 1.1.1
-Bundle-ClassPath: target/classes, 
+Bundle-ClassPath: .,
+ target/classes, 
  libs/log4j-1.2.16.jar,
  libs/slf4j-api-1.6.0.jar,
  libs/slf4j-log4j12-1.6.0.jar,
@@ -13,7 +14,6 @@ Bundle-Vendor: senatov
 Export-Package: com.senatov.smapper.bundle;uses:="org.eclipse.ui",
  com.senatov.smapper.commands,
  com.senatov.smapper.splashHandlers;uses:="org.eclipse.ui.splash,org.eclipse.swt.widgets",
- com.senatov.smapper.util,
  com.senatov.smapperApp,
  com.senatov.smapperApp.handlers,
  com.senatov.smapperApp.parts,
@@ -28,5 +28,6 @@ Require-Bundle: org.eclipse.ui;bundle-version="3.107.0",
  org.eclipse.e4.ui.di;bundle-version="1.1.0",
  org.eclipse.e4.ui.model.workbench;bundle-version="1.1.100",
  org.eclipse.e4.core.services;bundle-version="2.0.0",
- org.eclipse.e4.ui.workbench.renderers.swt;bundle-version="0.13.0"
+ org.eclipse.e4.ui.workbench.renderers.swt;bundle-version="0.13.0",
+ org.eclipse.core.resources;bundle-version="3.10.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

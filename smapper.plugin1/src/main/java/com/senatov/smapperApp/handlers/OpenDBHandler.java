@@ -32,10 +32,10 @@ import org.eclipse.swt.widgets.Shell;
 /**
  * The Class OpenHandler.
  */
-public class OpenHandler {
+public class OpenDBHandler {
 
 	/** The Constant LOG. */
-	private static final Logger LOG = Logger.getLogger(OpenHandler.class);
+	private static final Logger LOG = Logger.getLogger(OpenDBHandler.class);
 
 
 	/**

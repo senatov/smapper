@@ -1,7 +1,7 @@
 /*************************************************
  * Developed under: 1.8.0_72/Windows 10 amd64
  * @author Iakov
- * @since Feb 1, 2016 - 3:15:25 AM
+ * @since Feb 1, 2016 - 3:30:15 AM
  * PRJ: smapper.plugin1
  * PACKAGE:  com.senatov.smapper.dialogs
  * FILE: AboutDialog.java / AboutDialog
@@ -100,21 +100,21 @@ public class AboutDialog extends Dialog {
 		layout.marginWidth = 5;
 		composite.setLayout(layout);
 
-		Label label01 = new Label(composite, SWT.NONE);
-		label01.setImage(image);
-		label01.setSize(label01.computeSize(10, 10));
+		Label label1 = new Label(composite, SWT.NONE);
+		label1.setImage(image);
+		label1.setSize(label1.computeSize(10, 10));
 
 		FormData formData = new FormData();
 		formData.top = new FormAttachment(20, 0);
-		label01.setLayoutData(formData);
+		label1.setLayoutData(formData);
 
 		Label label2 = new Label(composite, SWT.NONE);
 		label2.setText(PRG_NAME);
 		label2.setFont(new Font(composite.getDisplay(), FONT_NAME, FONT_SIZE, SWT.BOLD));
 
 		FormData formData2 = new FormData();
-		formData2.left = new FormAttachment(label01, 10);
-		formData2.bottom = new FormAttachment(label01, 0, SWT.BOTTOM);
+		formData2.left = new FormAttachment(label1, 10);
+		formData2.bottom = new FormAttachment(label1, 0, SWT.BOTTOM);
 		label2.setLayoutData(formData2);
 
 		Label label3 = new Label(composite, SWT.NONE);
@@ -123,7 +123,7 @@ public class AboutDialog extends Dialog {
 
 		FormData formData3 = new FormData();
 		formData3.left = new FormAttachment(label2, 5);
-		formData3.bottom = new FormAttachment(label01, -5, SWT.BOTTOM);
+		formData3.bottom = new FormAttachment(label1, -5, SWT.BOTTOM);
 		label3.setLayoutData(formData3);
 
 		Composite lower = new Composite(container, SWT.NONE);
@@ -132,13 +132,13 @@ public class AboutDialog extends Dialog {
 		gridData1.horizontalAlignment = SWT.FILL;
 		lower.setLayout(new GridLayout(1, false));
 
+		FormData formData4 = new FormData();
+		formData4.left = new FormAttachment(label3, 5);
+		formData4.bottom = new FormAttachment(label3, -5, SWT.BOTTOM);
 
 		Label label4 = new Label(composite, SWT.NONE);
 		label4.setText(getPath());
 		label4.setFont(new Font(composite.getDisplay(), FONT_NAME, 11, SWT.NONE));
-		FormData formData4 = new FormData();
-		formData4.left = new FormAttachment(label4, 5);
-		formData4.bottom = new FormAttachment(label4, -5, SWT.BOTTOM);
 		label4.setLayoutData(formData4);
 
 		Link link = new Link(lower, SWT.NONE);

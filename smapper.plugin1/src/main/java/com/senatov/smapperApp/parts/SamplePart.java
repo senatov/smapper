@@ -1,7 +1,7 @@
 /*************************************************
- * Developed under: 1.8.0_60/Windows 10 amd64
+ * Developed under: 1.8.0_72/Windows 10 amd64
  * @author Iakov
- * @since Jan 20, 2016 - 1:27:49 PM
+ * @since Feb 1, 2016 - 1:46:15 AM
  * PRJ: smapper.plugin1
  * PACKAGE:  com.senatov.smapperApp.parts
  * FILE: SamplePart.java / SamplePart
@@ -16,8 +16,6 @@
  */
 
 package com.senatov.smapperApp.parts;
-
-
 
 import java.io.IOException;
 
@@ -34,8 +32,6 @@ import org.eclipse.swt.widgets.Composite;
 import com.senatov.smapperApp.parts.model.FileTreeLabelProvider;
 import com.senatov.smapperApp.parts.model.TreeContentProvider;
 
-
-
 /**
  * The Class SamplePart.
  */
@@ -43,11 +39,11 @@ public class SamplePart {
 
 	private static final Logger LOG = Logger.getLogger(SamplePart.class);
 
-
 	/**
 	 * Creates the composite.
 	 *
-	 * @param parent the parent
+	 * @param parent
+	 *            the parent
 	 * @throws IOException
 	 */
 	@PostConstruct
@@ -63,19 +59,17 @@ public class SamplePart {
 		parent.setLayout(gridLayout);
 	}
 
-
 	/**
 	 * Creates the first tree.
 	 *
-	 * @param pParent the parent
+	 * @param pParent
+	 *            the parent
 	 */
 	private void createLTree(Composite pParent) {
-
 		LOG.debug("createTree()");
-		final Composite composite = new Composite(pParent, SWT.BAR);
+		final Composite composite = new Composite(pParent, SWT.BORDER | SWT.WRAP | SWT.V_SCROLL | SWT.MULTI);
 		composite.setLayout(new GridLayout(1, false));
 		final CheckboxTreeViewer pTreeViewer = new CheckboxTreeViewer(composite);
-		pTreeViewer.setAutoExpandLevel(2);
 		pTreeViewer.getTree().setLayoutData(new GridData(GridData.FILL_BOTH));
 		pTreeViewer.setContentProvider(new TreeContentProvider());
 		pTreeViewer.setLabelProvider(new FileTreeLabelProvider());
@@ -88,11 +82,11 @@ public class SamplePart {
 		});
 	}
 
-
 	/**
 	 * Creates the first tree.
 	 *
-	 * @param pParent the parent
+	 * @param pParent
+	 *            the parent
 	 */
 	private void createRTree(Composite pParent) {
 
@@ -112,7 +106,6 @@ public class SamplePart {
 			}
 		});
 	}
-
 
 	/**
 	 * Sets the focus.

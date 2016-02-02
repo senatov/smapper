@@ -1,22 +1,22 @@
 /*************************************************
  * Developed under: 1.8.0_72/Windows 10 amd64
  * @author Iakov
- * @since Feb 1, 2016 - 3:30:15 AM
+ * @since Feb 2, 2016 - 1:16:54 AM
  * PRJ: smapper.plugin1
  * PACKAGE:  com.senatov.smapper.dialogs
  * FILE: AboutDialog.java / AboutDialog
  *************************************************/
 package com.senatov.smapper.dialogs;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-import javax.inject.Inject;
-
+import org.apache.log4j.Logger;
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IProduct;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.e4.ui.workbench.IWorkbench;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
@@ -25,9 +25,6 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.ImageData;
-import org.eclipse.swt.layout.FormAttachment;
-import org.eclipse.swt.layout.FormData;
-import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -41,15 +38,20 @@ import org.osgi.framework.Version;
 
 import com.senatov.smapper.utils.RcpUtils;
 
+import static java.lang.String.format;
+
 public class AboutDialog extends Dialog {
+	private static final String V_POINT = "v.";
+
+	private static final String INSTALLED_ON = "Installed on:";
 
 	private static final String ABOUT_SMAPPER = "About Smapper";
 
-	private static final String VISIT_STR = "Visit our web site at";
+	private static final String VISIT_STR = "Visit our web site at: ";
 
-	private static final int IMG_SCALED_TO = 60;
+	private static final int IMG_SCALED_TO = 64;
 
-	private static final int FONT_SIZE = 18;
+	private static final int FONT_SIZE = 17;
 
 	private static final String PRG_NAME = "Smapper";
 
@@ -59,22 +61,20 @@ public class AboutDialog extends Dialog {
 
 	private Image image = null;
 
-	@Inject
-	IWorkbench workbench;
+	private static final Logger LOG = Logger.getLogger(AboutDialog.class);
 
-	public AboutDialog(Shell parentShell) {
-		super(parentShell);
-
+	public AboutDialog(Shell _parentShell) {
+		super(_parentShell);
+		LOG.debug("AboutDialog()");
 		try {
 			URL url = new URL("platform:/plugin/smapper.plugin1/icons/128x128.gif");
 			InputStream inputStream = url.openConnection().getInputStream();
 			image = new Image(Display.getDefault(), inputStream);
-
 			ImageData imgData = image.getImageData();
 			imgData = imgData.scaledTo(IMG_SCALED_TO, IMG_SCALED_TO);
 			image = new Image(Display.getDefault(), imgData);
 		} catch (IOException e) {
-			e.printStackTrace();
+			LOG.error("error " + e.getMessage());
 		}
 
 	}
@@ -89,61 +89,41 @@ public class AboutDialog extends Dialog {
 
 	@Override
 	protected Control createDialogArea(Composite parentComposite) {
+		LOG.debug("createDialogArea()");
 		final Composite parent = parentComposite;
 		parent.setLayout(new GridLayout(1, false));
 		Composite container = (Composite) super.createDialogArea(parent);
-		container.setLayout(new GridLayout(1, true));
-		Composite composite = new Composite(container, SWT.NONE);
+		GridLayout grid = new GridLayout(3, true);
+		container.setLayout(grid);
 
-		FormLayout layout = new FormLayout();
-		layout.marginHeight = 5;
-		layout.marginWidth = 5;
-		composite.setLayout(layout);
+		// picture-logo
+		Label label = getLabel(container);
+		label.setImage(image);
+		label.setSize(label.computeSize(image.getImageData().height, image.getImageData().width));
+		label.setLayoutData(new GridData(GridData.BEGINNING, GridData.CENTER, true, false, 0, 1));
 
-		Label label1 = new Label(composite, SWT.NONE);
-		label1.setImage(image);
-		label1.setSize(label1.computeSize(10, 10));
+		// programm name
+		label = getLabel(container);
+		label.setText(PRG_NAME);
+		label.setFont(new Font(container.getDisplay(), FONT_NAME, FONT_SIZE, SWT.BOLD));
+		label.setLayoutData(new GridData(GridData.END, GridData.BEGINNING, true, false, 1, 0));
 
-		FormData formData = new FormData();
-		formData.top = new FormAttachment(20, 0);
-		label1.setLayoutData(formData);
+		// ver.
+		label = getLabel(container);
+		label.setText(format("%s %s ", V_POINT, getProductVersion()));
+		label.setFont(new Font(container.getDisplay(), FONT_NAME, FONT_SIZE - 1, SWT.NORMAL));
+		label.setLayoutData(new GridData(GridData.BEGINNING, GridData.BEGINNING, true, false, 1, 1));
 
-		Label label2 = new Label(composite, SWT.NONE);
-		label2.setText(PRG_NAME);
-		label2.setFont(new Font(composite.getDisplay(), FONT_NAME, FONT_SIZE, SWT.BOLD));
+		// path
+		label = getLabel(container);
+		label.setText(format("%s %s", INSTALLED_ON, getPath()));
+		label.setFont(new Font(container.getDisplay(), FONT_NAME, 10, SWT.NORMAL));
+		label.setLayoutData(new GridData(GridData.BEGINNING, GridData.END, true, true, 2, 0));
 
-		FormData formData2 = new FormData();
-		formData2.left = new FormAttachment(label1, 10);
-		formData2.bottom = new FormAttachment(label1, 0, SWT.BOTTOM);
-		label2.setLayoutData(formData2);
-
-		Label label3 = new Label(composite, SWT.NONE);
-		label3.setText(getProductVersion());
-		label3.setFont(new Font(composite.getDisplay(), FONT_NAME, FONT_SIZE, SWT.BOLD));
-
-		FormData formData3 = new FormData();
-		formData3.left = new FormAttachment(label2, 5);
-		formData3.bottom = new FormAttachment(label1, -5, SWT.BOTTOM);
-		label3.setLayoutData(formData3);
-
-		Composite lower = new Composite(container, SWT.NONE);
-		GridData gridData1;
-		gridData1 = new GridData();
-		gridData1.horizontalAlignment = SWT.FILL;
-		lower.setLayout(new GridLayout(1, false));
-
-		FormData formData4 = new FormData();
-		formData4.left = new FormAttachment(label3, 5);
-		formData4.bottom = new FormAttachment(label3, -5, SWT.BOTTOM);
-
-		Label label4 = new Label(composite, SWT.NONE);
-		label4.setText(getPath());
-		label4.setFont(new Font(composite.getDisplay(), FONT_NAME, 11, SWT.NONE));
-		label4.setLayoutData(formData4);
-
-		Link link = new Link(lower, SWT.NONE);
+		Link link = new Link(container, SWT.NONE);
 		link.setText(VISIT_STR + "<a href=\"" + SMAPPER_URL + "\">" + SMAPPER_URL + "</a>");
 		link.setSize(link.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+		link.setLayoutData(new GridData(GridData.BEGINNING, GridData.END, true, true, 3, 0));
 		link.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
@@ -158,10 +138,15 @@ public class AboutDialog extends Dialog {
 		return container;
 	}
 
+	private Label getLabel(Composite container) {
+		return new Label(container, SWT.NONE);
+	}
+
 	@Override
 	protected void configureShell(Shell newShell) {
 		super.configureShell(newShell);
-		newShell.setText(ABOUT_SMAPPER);
+		LOG.debug("configureShell()");
+		newShell.setText(format("%s %s %s", ABOUT_SMAPPER, V_POINT, getProductVersion()));
 	}
 
 	/**
@@ -170,6 +155,7 @@ public class AboutDialog extends Dialog {
 	 * @return version
 	 */
 	public static String getProductVersion() {
+		LOG.debug("getProductVersion()");
 		final IProduct product = Platform.getProduct();
 		final Bundle bundle = product.getDefiningBundle();
 		final Version version = bundle.getVersion();
@@ -177,13 +163,19 @@ public class AboutDialog extends Dialog {
 	}
 
 	/**
-	 * This method returns the bundleversion as a String
+	 * This method returns the bundleversion as a String.
 	 *
 	 * @return version
 	 */
 	public static String getPath() {
-		final URL url = Platform.getInstanceLocation().getURL();
-		return url.getPath();
+		LOG.debug("getPath()");
+		URL url = Platform.getInstanceLocation().getURL();
+		try {
+			url = FileLocator.resolve(url);
+		} catch (IOException e) {
+			LOG.error("error " + e.getMessage());
+		}
+		return new File(url.getFile()).getAbsolutePath();
 	}
 
 }

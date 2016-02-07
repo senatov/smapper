@@ -40,7 +40,7 @@ import com.senatov.smapper.utils.RcpUtils;
 
 import static java.lang.String.format;
 
-public class AboutDialog extends Dialog {
+public class old_AboutDialog extends Dialog {
 	private static final String V_POINT = "v.";
 
 	private static final String INSTALLED_ON = "Installed on:";
@@ -61,9 +61,9 @@ public class AboutDialog extends Dialog {
 
 	private Image image = null;
 
-	private static final Logger LOG = Logger.getLogger(AboutDialog.class);
+	private static final Logger LOG = Logger.getLogger(old_AboutDialog.class);
 
-	public AboutDialog(Shell _parentShell) {
+	public old_AboutDialog(Shell _parentShell) {
 		super(_parentShell);
 		LOG.debug("AboutDialog()");
 		try {

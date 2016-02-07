@@ -1,21 +1,12 @@
-/*******************************************************************************
- * Copyright (c) 2016 IBM Corporation and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+/***********************************************************************************
+ * Developed under: 1.8.0_72/Windows 10 amd64
  *
- * Contributors:
- *     IBM Corporation - initial API and implementation
- *******************************************************************************/
-/*
- * JDK: 1.8.0_45
- * @author I. Senatov (Iakov)
- * DATE: 25.07.2015 18:04:24
- * PRJ: com.senatov.smapperApp
- * PACKAGE:com.senatov.smapperApp.parts.model
- * FILE: FileTreeLabelProvider.java
- */
+ * @author Iakov
+ * @since Feb 8, 2016 - 12:46:39 AM
+ * @project smapper.plugin1
+ * @package com.senatov.smapperApp.parts.model
+ * @file FileTreeLabelProvider.java / FileTreeLabelProvider
+ ***********************************************************************************/
 
 package com.senatov.smapperApp.parts.model;
 
@@ -32,7 +23,6 @@ import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.swt.graphics.Image;
 
-
 /**
  * The Class FileTreeLabelProvider.
  */
@@ -43,6 +33,7 @@ public class FileTreeLabelProvider implements ILabelProvider {
 	private final List<ILabelProviderListener> listeners;
 	private Image file;
 	private Image dir;
+
 
 
 	/**
@@ -59,6 +50,7 @@ public class FileTreeLabelProvider implements ILabelProvider {
 			LOG.error(e.getMessage());
 		}
 	}
+
 
 
 	/**
@@ -82,6 +74,7 @@ public class FileTreeLabelProvider implements ILabelProvider {
 	}
 
 
+
 	/*
 	 * <br><br><b>author</b> iase27698054 2015-03-15
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getImage(java.lang.Object)
@@ -92,6 +85,7 @@ public class FileTreeLabelProvider implements ILabelProvider {
 		LOG.debug("getImage )");
 		return ((File) arg0).isDirectory() ? dir : file;
 	}
+
 
 
 	/*
@@ -110,6 +104,7 @@ public class FileTreeLabelProvider implements ILabelProvider {
 	}
 
 
+
 	/*
 	 * <br><br><b>author</b> iase27698054 2015-03-15
 	 * @see
@@ -121,6 +116,7 @@ public class FileTreeLabelProvider implements ILabelProvider {
 
 		listeners.add(arg0);
 	}
+
 
 
 	/*
@@ -140,6 +136,7 @@ public class FileTreeLabelProvider implements ILabelProvider {
 	}
 
 
+
 	/*
 	 * <br><br><b>author</b> iase27698054 2015-03-15
 	 * @see
@@ -151,6 +148,7 @@ public class FileTreeLabelProvider implements ILabelProvider {
 
 		return false;
 	}
+
 
 
 	/*

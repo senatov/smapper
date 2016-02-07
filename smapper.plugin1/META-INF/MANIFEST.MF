@@ -13,7 +13,6 @@ Bundle-Activator: com.senatov.smapperApp.Activator
 Bundle-Vendor: senatov
 Export-Package: com.senatov.smapper.bundle;uses:="org.eclipse.ui",
  com.senatov.smapper.commands,
- com.senatov.smapper.splashHandlers;uses:="org.eclipse.ui.splash,org.eclipse.swt.widgets",
  com.senatov.smapperApp,
  com.senatov.smapperApp.handlers,
  com.senatov.smapperApp.parts,

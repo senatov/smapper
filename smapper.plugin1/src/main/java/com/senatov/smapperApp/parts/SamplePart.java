@@ -1,21 +1,16 @@
-/*************************************************
+/***********************************************************************************
  * Developed under: 1.8.0_72/Windows 10 amd64
+ *
  * @author Iakov
- * @since Feb 1, 2016 - 1:46:15 AM
- * PRJ: smapper.plugin1
- * PACKAGE:  com.senatov.smapperApp.parts
- * FILE: SamplePart.java / SamplePart
- *************************************************/
-/*
- * JDK: 1.8.0_45
- * @author I. Senatov (Iakov)
- * DATE: 23.07.2015 12:47:52
- * PRJ: com.senatov.smapperApp
- * PACKAGE:com.senatov.smapperApp.parts
- * FILE: SamplePart.java
- */
+ * @since Feb 8, 2016 - 12:46:39 AM
+ * @project smapper.plugin1
+ * @package com.senatov.smapperApp.parts
+ * @file SamplePart.java / SamplePart
+ ***********************************************************************************/
 
 package com.senatov.smapperApp.parts;
+
+
 
 import java.io.IOException;
 
@@ -39,11 +34,12 @@ public class SamplePart {
 
 	private static final Logger LOG = Logger.getLogger(SamplePart.class);
 
+
+
 	/**
 	 * Creates the composite.
 	 *
-	 * @param parent
-	 *            the parent
+	 * @param parent the parent
 	 * @throws IOException
 	 */
 	@PostConstruct
@@ -59,11 +55,12 @@ public class SamplePart {
 		parent.setLayout(gridLayout);
 	}
 
+
+
 	/**
 	 * Creates the first tree.
 	 *
-	 * @param pParent
-	 *            the parent
+	 * @param pParent the parent
 	 */
 	private void createLTree(Composite pParent) {
 		LOG.debug("createTree()");
@@ -82,11 +79,12 @@ public class SamplePart {
 		});
 	}
 
+
+
 	/**
 	 * Creates the first tree.
 	 *
-	 * @param pParent
-	 *            the parent
+	 * @param pParent the parent
 	 */
 	private void createRTree(Composite pParent) {
 
@@ -106,6 +104,8 @@ public class SamplePart {
 			}
 		});
 	}
+
+
 
 	/**
 	 * Sets the focus.

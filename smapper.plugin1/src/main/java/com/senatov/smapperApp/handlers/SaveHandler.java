@@ -1,21 +1,12 @@
-/*******************************************************************************
- * Copyright (c) 2016 IBM Corporation and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+/***********************************************************************************
+ * Developed under: 1.8.0_72/Windows 10 amd64
  *
- * Contributors:
- *     IBM Corporation - initial API and implementation
- *******************************************************************************/
-/*
- * JDK: 1.8.0_45
- * @author I. Senatov (Iakov)
- * DATE: 25.07.2015 13:13:48
- * PRJ: com.senatov.smapperApp
- * PACKAGE:com.senatov.smapperApp.handlers
- * FILE: SaveHandler.java
- */
+ * @author Iakov
+ * @since Feb 8, 2016 - 12:46:39 AM
+ * @project smapper.plugin1
+ * @package com.senatov.smapperApp.handlers
+ * @file SaveHandler.java / SaveHandler
+ ***********************************************************************************/
 
 package com.senatov.smapperApp.handlers;
 
@@ -39,10 +30,10 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.swt.widgets.Shell;
 
-
 public class SaveHandler {
 
 	private static final Logger LOG = Logger.getLogger(SaveHandler.class);
+
 
 
 	@CanExecute
@@ -56,12 +47,14 @@ public class SaveHandler {
 	}
 
 
+
 	@Execute
 	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell) {
 
 		LOG.debug("execute()");
 		MessageDialog.openInformation(shell, "Save command info:", "Save is clicked");
 	}
+
 
 
 	@Execute

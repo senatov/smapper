@@ -1,21 +1,12 @@
-/*******************************************************************************
- * Copyright (c) 2016 IBM Corporation and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+/***********************************************************************************
+ * Developed under: 1.8.0_72/Windows 10 amd64
  *
- * Contributors:
- *     IBM Corporation - initial API and implementation
- *******************************************************************************/
-/*
- * JDK: 1.8.0_45
- * @author I. Senatov (Iakov)
- * DATE: 15.07.2015 01:22:01
- * PRJ: com.senatov.smapperApp
- * PACKAGE:com.senatov.smapperApp.handlers
- * FILE: QuitHandler.java
- */
+ * @author Iakov
+ * @since Feb 8, 2016 - 12:45:03 AM
+ * @project smapper.plugin1
+ * @package com.senatov.smapperApp.handlers
+ * @file QuitHandler.java / QuitHandler
+ ***********************************************************************************/
 
 package com.senatov.smapperApp.handlers;
 
@@ -29,11 +20,10 @@ import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Shell;
 
-
-
 public class QuitHandler {
 
 	private static final Logger LOG = Logger.getLogger(QuitHandler.class);
+
 
 
 	@Execute

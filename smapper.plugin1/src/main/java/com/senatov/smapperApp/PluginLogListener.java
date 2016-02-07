@@ -1,12 +1,15 @@
-/*************************************************
- * Developed under: 1.8.0_60/Windows 10 amd64
+/***********************************************************************************
+ * Developed under: 1.8.0_72/Windows 10 amd64
+ *
  * @author Iakov
- * @since Jan 25, 2016 - 3:26:41 PM
- * PRJ: smapper.plugin1
- * PACKAGE:  com.senatov.smapperApp
- * FILE: PluginLogListener.java / PluginLogListener
- *************************************************/
+ * @since Feb 8, 2016 - 12:44:29 AM
+ * @project smapper.plugin1
+ * @package com.senatov.smapperApp
+ * @file PluginLogListener.java / PluginLogListener
+ ***********************************************************************************/
 package com.senatov.smapperApp;
+
+
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -14,7 +17,6 @@ import org.eclipse.core.runtime.ILog;
 import org.eclipse.core.runtime.ILogListener;
 import org.eclipse.core.runtime.IStatus;
 
-// TODO: Auto-generated Javadoc
 /**
  * PluginLogListener This class is responsible for adding itself to the plug-in
  * logging framework and translating plug-in log requests to Logger events.
@@ -25,20 +27,22 @@ public class PluginLogListener implements ILogListener {
 	private ILog log;
 	private Logger logger;
 
+
+
 	/**
 	 * Creates a new PluginLogListener. Saves the plug-in log and logger
 	 * instance. Adds itself to the plug-in log.
 	 *
-	 * @param log
-	 *            the log
-	 * @param logger
-	 *            logger instance
+	 * @param log the log
+	 * @param logger logger instance
 	 */
 	public PluginLogListener(ILog log, Logger logger) {
 		this.log = log;
 		this.logger = logger;
 		log.addLogListener(this);
 	}
+
+
 
 	/**
 	 * Removes itself from the plug-in log, reset instance variables.
@@ -51,16 +55,16 @@ public class PluginLogListener implements ILogListener {
 		}
 	}
 
+
+
 	/**
 	 * Log event happened. Translates status instance to Logger level and
 	 * message. Status.ERROR - Level.ERROR Status.WARNING - Level.WARN
 	 * Status.INFO - Level.INFO Status.CANCEL - Level.FATAL default -
 	 * Level.DEBUG
 	 *
-	 * @param status
-	 *            Log Status
-	 * @param plugin
-	 *            plug-in id
+	 * @param status Log Status
+	 * @param plugin plug-in id
 	 */
 	@Override
 	public void logging(IStatus status, String plugin) {
@@ -71,13 +75,17 @@ public class PluginLogListener implements ILogListener {
 		Level level = Level.DEBUG;
 		if (severity == IStatus.ERROR) {
 			level = Level.ERROR;
-		} else if (severity == IStatus.WARNING) {
+		}
+		else if (severity == IStatus.WARNING) {
 			level = Level.WARN;
-		} else if (severity == IStatus.INFO) {
+		}
+		else if (severity == IStatus.INFO) {
 			level = Level.INFO;
-		} else if (severity == IStatus.CANCEL) {
+		}
+		else if (severity == IStatus.CANCEL) {
 			level = Level.FATAL;
-		} else {
+		}
+		else {
 			level = Level.DEBUG;
 		}
 		plugin = formatText(plugin);
@@ -100,11 +108,12 @@ public class PluginLogListener implements ILogListener {
 		logger.log(level, message.toString(), status.getException());
 	}
 
+
+
 	/**
 	 * Format text.
 	 *
-	 * @param text
-	 *            the text
+	 * @param text the text
 	 * @return the string
 	 */
 	static private String formatText(String text) {

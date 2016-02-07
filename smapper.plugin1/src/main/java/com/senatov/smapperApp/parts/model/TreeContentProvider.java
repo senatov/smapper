@@ -1,21 +1,12 @@
-/*******************************************************************************
- * Copyright (c) 2016 IBM Corporation and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+/***********************************************************************************
+ * Developed under: 1.8.0_72/Windows 10 amd64
  *
- * Contributors:
- *     IBM Corporation - initial API and implementation
- *******************************************************************************/
-/*
- * JDK: ver. 1.8_51
  * @author Iakov
- * DATE: 11.08.2015 16:21:05 2015
- * PRJ: maingui
- * PACKAGE: com.senatov.smapperApp.parts.model
- * FILE: TreeContentProvider.java
- */
+ * @since Feb 8, 2016 - 12:46:38 AM
+ * @project smapper.plugin1
+ * @package com.senatov.smapperApp.parts.model
+ * @file TreeContentProvider.java / TreeContentProvider
+ ***********************************************************************************/
 
 package com.senatov.smapperApp.parts.model;
 
@@ -27,8 +18,6 @@ import org.apache.log4j.Logger;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
-
-
 /**
  * The Class TreeContentProvider.
  */
@@ -36,6 +25,8 @@ import org.eclipse.jface.viewers.Viewer;
 public class TreeContentProvider implements ITreeContentProvider {
 
 	private static final Logger LOG = Logger.getLogger(TreeContentProvider.class);
+
+
 
 	/*
 	 * <br><br><b>author</b> iase27698054 2015-03-15
@@ -50,6 +41,7 @@ public class TreeContentProvider implements ITreeContentProvider {
 	}
 
 
+
 	/*
 	 * <br><br><b>author</b> iase27698054 2015-03-15
 	 * @see org.eclipse.jface.viewers.ITreeContentProvider#getParent(java.lang.
@@ -60,6 +52,7 @@ public class TreeContentProvider implements ITreeContentProvider {
 		LOG.debug("getParent ()");
 		return ((File) arg0).getParentFile();
 	}
+
 
 
 	/*
@@ -81,6 +74,7 @@ public class TreeContentProvider implements ITreeContentProvider {
 	}
 
 
+
 	/*
 	 * <br><br><b>author</b> iase27698054 2015-03-15
 	 * @see
@@ -95,6 +89,7 @@ public class TreeContentProvider implements ITreeContentProvider {
 	}
 
 
+
 	/*
 	 * <br><br><b>author</b> iase27698054 2015-03-15
 	 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
@@ -103,6 +98,7 @@ public class TreeContentProvider implements ITreeContentProvider {
 	public void dispose() {
 		LOG.debug("dispose ()");
 	}
+
 
 
 	/*

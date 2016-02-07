@@ -1,7 +1,7 @@
 /*************************************************
  * Developed under: 1.8.0_72/Windows 10 amd64
  * @author Iakov
- * @since Feb 1, 2016 - 2:33:26 AM
+ * @since Feb 4, 2016 - 4:49:35 AM
  * PRJ: smapper.plugin1
  * PACKAGE:  com.senatov.smapperApp.handlers
  * FILE: AboutHandler.java / AboutHandler
@@ -24,7 +24,7 @@ import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.widgets.Shell;
 
-import com.senatov.smapper.dialogs.AboutDialog;
+import com.senatov.smapper.dialogs.AboutDialogE4;
 
 public class AboutHandler {
 
@@ -33,7 +33,7 @@ public class AboutHandler {
 	@Execute
 	public void execute(@Named(IServiceConstants.ACTIVE_SHELL) Shell shell) {
 		LOG.debug("execute()");
-		AboutDialog aboutDialog = new AboutDialog(shell);
+		AboutDialogE4 aboutDialog = new AboutDialogE4(shell);
 		aboutDialog.open();
 	}
 }

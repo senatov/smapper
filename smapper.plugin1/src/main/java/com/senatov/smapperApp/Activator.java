@@ -1,13 +1,14 @@
 /*************************************************
- * Developed under: 1.8.0_60/Windows 10 amd64
+ * Developed under: 1.8.0_72/Windows 10 amd64
+ * 
  * @author Iakov
- * @since Jan 25, 2016 - 4:22:57 PM
- * PRJ: smapper.plugin1
- * PACKAGE:  com.senatov.smapperApp
- * FILE: Activator.java / Activator
+ * @since Feb 8, 2016 - 12:33:44 AM PRJ: smapper.plugin1 PACKAGE:
+ *        com.senatov.smapperApp FILE: Activator.java / Activator
  *************************************************/
 
 package com.senatov.smapperApp;
+
+
 
 import java.io.File;
 import java.io.IOException;
@@ -38,17 +39,22 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 	private static final String LOGS = "logs";
 	private static final String LOG4J_FILE_PATTTERN = "%d{ISO8601} [%t] %-5p %c %x - %m%n";
 	private static final String LOG4J_PROPERTIES = "log4j.properties";
-	private static final Logger LOG = Logger.getLogger(Activator.class);
 	public static final String PLUGIN_ID = "com.senatov.smapperApp";
 	final private List<PluginLogListener> pluginLogHooks = new ArrayList<PluginLogListener>();
 	private static Activator plugin;
+	private static final Logger LOG = Logger.getLogger(Activator.class);
+
+
 
 	/**
 	 * The constructor.
 	 */
 	public Activator() {
 		super();
+		LOG.debug("Activator()");
 	}
+
+
 
 	/*
 	 * (non-Javadoc)
@@ -64,16 +70,15 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 		plugin = this;
 	}
 
+
+
 	/**
 	 * Inits the log4j.
 	 *
-	 * @param context
-	 *            the context
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
+	 * @param context the context
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	private void initLog4j(BundleContext context) throws IOException {
-
 		LOG.info("initLog4j()");
 		final String log4jfile = LOG4J_PROPERTIES;
 		final URL confURL = getBundle().getResource(log4jfile);
@@ -91,17 +96,16 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 									// plugins, described later...
 	}
 
+
+
 	/**
 	 * <b>author</b> iase27698054 2015-03-16.
 	 *
-	 * @param strLogFileName
-	 *            the str log file name
+	 * @param strLogFileName the str log file name
 	 * @return the logging file full path
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	private String getLoggingFileFullPath(String strLogFileName) throws IOException {
-
 		LOG.info("getLoggingFileFullPath()");
 		StringBuffer sbRet = new StringBuffer(0xFF);
 		sbRet.append(getRootPath());
@@ -112,9 +116,9 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 		return sbRet.toString();
 	}
 
+
+
 	/**
-	 * <br>
-	 * <br>
 	 * <b>author</b> iase27698054 2015-03-16
 	 *
 	 * @return
@@ -126,11 +130,12 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 		return FileLocator.toFileURL(getBundle().getEntry("/")).getPath();
 	}
 
+
+
 	/**
 	 * Hook all loaded bundles into the log4j framework.
 	 *
-	 * @param context
-	 *            the context
+	 * @param context the context
 	 */
 	private void hookPluginLoggers(final BundleContext context) {
 
@@ -141,6 +146,8 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 			LOG.info("Added logging hook for bundle: " + bundle.getSymbolicName());
 		}
 	}
+
+
 
 	/*
 	 * (non-Javadoc)
@@ -156,6 +163,8 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 		super.stop(context);
 	}
 
+
+
 	/**
 	 * Returns the shared instance.
 	 *
@@ -167,12 +176,13 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 		return plugin;
 	}
 
+
+
 	/**
 	 * Returns an image descriptor for the image file at the given plug-in
 	 * relative path
 	 *
-	 * @param path
-	 *            the path
+	 * @param path the path
 	 * @return the image descriptor
 	 */
 	public static ImageDescriptor getImageDescriptor(String path) {

@@ -1,14 +1,14 @@
-/*******************************************************************************
- * Copyright (c) 2016 IBM Corporation and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+/***********************************************************************************
+ * Developed under: 1.8.0_72/Windows 10 amd64
  *
- * Contributors:
- *     IBM Corporation - initial API and implementation
- *******************************************************************************/
+ * @author Iakov
+ * @since Feb 10, 2016 - 3:01:21 PM
+ * @project smapper.plugin1
+ * @package com.senatov.smapperApp
+ * @file Application.java / Application
+ ***********************************************************************************/
 package com.senatov.smapperApp;
+
 
 
 import org.apache.log4j.Logger;
@@ -18,13 +18,15 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 
-
 /**
  * This class controls all aspects of the application's execution
  */
 public class Application implements IApplication {
 
 	private static final Logger LOG = Logger.getLogger(Application.class);
+
+
+
 	/*
 	 * (non-Javadoc)
 	 *
@@ -36,17 +38,21 @@ public class Application implements IApplication {
 		LOG.debug("start()");
 		Display display = PlatformUI.createDisplay();
 		try {
-			int returnCode = PlatformUI.createAndRunWorkbench(display, new ApplicationWorkbenchAdvisor());
+			int returnCode = PlatformUI.createAndRunWorkbench(display, new SmapperWorkbenchAdvisor());
 			if (returnCode == PlatformUI.RETURN_RESTART) {
 				return IApplication.EXIT_RESTART;
-			} else {
+			}
+			else {
 				return IApplication.EXIT_OK;
 			}
-		} finally {
+		}
+		finally {
 			display.dispose();
 		}
 
 	}
+
+
 
 	/*
 	 * (non-Javadoc)

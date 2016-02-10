@@ -1,12 +1,15 @@
-/*************************************************
+/***********************************************************************************
  * Developed under: 1.8.0_72/Windows 10 amd64
+ *
  * @author Iakov
- * @since Feb 5, 2016 - 3:58:35 AM
- * PRJ: smapper.plugin1
- * PACKAGE:  com.senatov.smapper.dialogs
- * FILE: AboutDialogE4.java / AboutDialogE4
- *************************************************/
+ * @since Feb 9, 2016 - 11:47:54 PM
+ * @project smapper.plugin1
+ * @package com.senatov.smapper.dialogs
+ * @file AboutDialogE4.java / AboutDialogE4
+ ***********************************************************************************/
 package com.senatov.smapper.dialogs;
+
+
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -45,8 +48,10 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchCommandConstants;
 import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.internal.IWorkbenchHelpContextIds;
 import org.eclipse.ui.internal.ProductProperties;
 import org.eclipse.ui.internal.WorkbenchMessages;
@@ -83,11 +88,14 @@ public class AboutDialogE4 extends TrayDialog {
 
 	private IWorkbenchWindow iw = null;
 
+	private IWorkbench iv;
+
+
+
 	/**
 	 * Create an instance of the AboutDialog for the given window.
 	 *
-	 * @param parentShell
-	 *            The parent of the dialog.
+	 * @param parentShell The parent of the dialog.
 	 */
 	public AboutDialogE4(Shell parentShell) {
 		super(parentShell);
@@ -98,6 +106,8 @@ public class AboutDialogE4 extends TrayDialog {
 		if (productName == null) {
 			productName = WorkbenchMessages.AboutDialog_defaultProductName;
 		}
+		iv = PlatformUI.getWorkbench();
+		assert iv != null;
 		// create a descriptive object for each BundleGroup
 		IBundleGroupProvider[] providers = Platform.getBundleGroupProviders();
 		LinkedList<AboutBundleGroupData> groups = new LinkedList<AboutBundleGroupData>();
@@ -111,6 +121,8 @@ public class AboutDialogE4 extends TrayDialog {
 		}
 		bundleGroupInfos = groups.toArray(new AboutBundleGroupData[0]);
 	}
+
+
 
 	@Override
 	protected void buttonPressed(int buttonId) {
@@ -131,6 +143,8 @@ public class AboutDialogE4 extends TrayDialog {
 		}
 	}
 
+
+
 	@Override
 	public boolean close() {
 		// dispose all images
@@ -142,6 +156,8 @@ public class AboutDialogE4 extends TrayDialog {
 		return super.close();
 	}
 
+
+
 	@Override
 	protected void configureShell(Shell newShell) {
 		super.configureShell(newShell);
@@ -149,13 +165,12 @@ public class AboutDialogE4 extends TrayDialog {
 		iw.getWorkbench().getHelpSystem().setHelp(newShell, IWorkbenchHelpContextIds.ABOUT_DIALOG);
 	}
 
+
+
 	/**
-	 * Add buttons to the dialog's button bar.
+	 * Add buttons to the dialog's button bar. Subclasses should override.
 	 *
-	 * Subclasses should override.
-	 *
-	 * @param parent
-	 *            the button bar composite
+	 * @param parent the button bar composite
 	 */
 	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
@@ -172,6 +187,8 @@ public class AboutDialogE4 extends TrayDialog {
 		Button b = createButton(parent, IDialogConstants.OK_ID, IDialogConstants.OK_LABEL, true);
 		b.setFocus();
 	}
+
+
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
@@ -245,7 +262,8 @@ public class AboutDialogE4 extends TrayDialog {
 		try {
 			// default height enough for 6 lines of text
 			topContainerHeightHint = Math.max(topContainerHeightHint, gc.getFontMetrics().getHeight() * 6);
-		} finally {
+		}
+		finally {
 			gc.dispose();
 		}
 
@@ -377,6 +395,8 @@ public class AboutDialogE4 extends TrayDialog {
 		return workArea;
 	}
 
+
+
 	/**
 	 * Create the context menu for the text widget.
 	 *
@@ -399,6 +419,8 @@ public class AboutDialogE4 extends TrayDialog {
 
 	}
 
+
+
 	private void createFeatureImageButtonRow(Composite parent) {
 		Composite featureContainer = new Composite(parent, SWT.NONE);
 		RowLayout rowLayout = new RowLayout();
@@ -412,6 +434,8 @@ public class AboutDialogE4 extends TrayDialog {
 			createFeatureButton(featureContainer, bundleGroupInfo);
 		}
 	}
+
+
 
 	private Button createFeatureButton(Composite parent, final AboutBundleGroupData info) {
 		if (!buttonManager.add(info)) {
@@ -446,6 +470,8 @@ public class AboutDialogE4 extends TrayDialog {
 
 		return button;
 	}
+
+
 
 	@Override
 	protected boolean isResizable() {

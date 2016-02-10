@@ -1,10 +1,12 @@
-/*************************************************
+/***********************************************************************************
  * Developed under: 1.8.0_72/Windows 10 amd64
- * 
+ *
  * @author Iakov
- * @since Feb 8, 2016 - 12:33:44 AM PRJ: smapper.plugin1 PACKAGE:
- *        com.senatov.smapperApp FILE: Activator.java / Activator
- *************************************************/
+ * @since Feb 10, 2016 - 5:01:18 AM
+ * @project smapper.plugin1
+ * @package com.senatov.smapperApp
+ * @file Activator.java / Activator
+ ***********************************************************************************/
 
 package com.senatov.smapperApp;
 
@@ -41,8 +43,8 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 	private static final String LOG4J_PROPERTIES = "log4j.properties";
 	public static final String PLUGIN_ID = "com.senatov.smapperApp";
 	final private List<PluginLogListener> pluginLogHooks = new ArrayList<PluginLogListener>();
-	private static Activator plugin;
 	private static final Logger LOG = Logger.getLogger(Activator.class);
+	private static BundleContext context = null;
 
 
 
@@ -63,11 +65,26 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 	 * BundleContext )
 	 */
 	@Override
-	public void start(BundleContext context) throws Exception {
-		super.start(context);
+	public void start(BundleContext bundleContext) throws Exception {
+		// super.start(context);
+		Activator.context = bundleContext;
 		initLog4j(context);
 		LOG.debug("start()");
-		plugin = this;
+	}
+
+
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.
+	 * BundleContext )
+	 */
+	@Override
+	public void stop(BundleContext context) throws Exception {
+		LOG.debug("stop()");
+		Activator.context = null;
+		// super.stop(context);
 	}
 
 
@@ -145,35 +162,6 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 			pluginLogHooks.add(new PluginLogListener(pluginLogger, Logger.getLogger(bundle.getSymbolicName())));
 			LOG.info("Added logging hook for bundle: " + bundle.getSymbolicName());
 		}
-	}
-
-
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.
-	 * BundleContext )
-	 */
-	@Override
-	public void stop(BundleContext context) throws Exception {
-
-		LOG.debug("stop()");
-		plugin = null;
-		super.stop(context);
-	}
-
-
-
-	/**
-	 * Returns the shared instance.
-	 *
-	 * @return the shared instance
-	 */
-	public static Activator getDefault() {
-
-		LOG.debug("getDefault()");
-		return plugin;
 	}
 
 

@@ -18,7 +18,7 @@
          id="perspective_id"
          point="org.eclipse.ui.perspectives">
       <perspective
-            class="com.senatov.smapper.bundle.PerspectiveFactory1"
+            class="com.senatov.smapperApp.PerspectiveFactory1"
             icon="$nl$/icons/128x128.gif"
             id="perspective1_id"
             name="Perspective proveweise">
@@ -77,11 +77,11 @@
       </config>
    </extension>
    <extension
-         id="products_id"
-         name="products name probeweise"
+         id="product"
+         name="Smapper"
          point="org.eclipse.core.runtime.products">
       <product
-            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            application="smapper.plugin1.application"
             name="Product for smapper">
          <property
                name="appName"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?eclipse version="3.4"?>
 <plugin>
    <extension
          id="application"
@@ -56,31 +56,6 @@
 
    </extension>
    <extension
-         point="org.eclipse.ui.intro">
-      <intro
-            class="org.eclipse.ui.intro.config.CustomizableIntroPart"
-            id="smapper.plugin1.intro1">
-      </intro>
-      <introProductBinding
-            introId="smapper.plugin1.intro1"
-            productId="smapper.plugin1.product">
-      </introProductBinding>
-   </extension>
-   <extension
-         point="org.eclipse.ui.intro.config">
-      <config
-            content="introContent.xml"
-            id="smapper.plugin1.config1"
-            introId="smapper.plugin1.intro1">
-         <presentation
-               home-page-id="smapper.plugin1.presentation1">
-            <implementation
-                  kind="swt">
-            </implementation>
-         </presentation>
-      </config>
-   </extension>
-   <extension
          id="splash_handler_id"
          point="org.eclipse.ui.splashHandlers">
       <splashHandler
@@ -116,11 +91,37 @@
          </property>
       </product>
    </extension>
+ <extension
+         point="org.eclipse.ui.intro">
+      <intro
+            class="org.eclipse.ui.intro.config.CustomizableIntroPart"
+            id="smapper.plugin1.intro">
+      </intro>
+      <introProductBinding
+            introId="smapper.plugin1.intro"
+            productId="smapper.plugin1.product">
+      </introProductBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.config">
+      <config
+            introId="smapper.plugin1.intro"
+            content="introContent.xml"
+            id="smapper.plugin1.configId">
+         <presentation
+               home-page-id="root">
+            <implementation
+                  kind="html"
+                  os="win32,linux,macosx">
+            </implementation>
+         </presentation>
+      </config>
+   </extension>
    <extension
          point="org.eclipse.ui.intro.configExtension">
       <configExtension
-            configId="smapper.plugin1.config1"
-            content="ext.xml">
+            content="ext.xml"
+            configId="smapper.plugin1.configId">
       </configExtension>
-   </extension>
+   </extension>   
 </plugin>

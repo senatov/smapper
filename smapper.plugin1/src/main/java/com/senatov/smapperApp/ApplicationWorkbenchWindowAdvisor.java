@@ -2,7 +2,7 @@
  * Developed under: 1.8.0_72/Windows 10 amd64
  *
  * @author Iakov
- * @since Feb 11, 2016 - 2:34:19 AM
+ * @since Feb 11, 2016 - 7:07:32 PM
  * @project smapper.plugin1
  * @package com.senatov.smapperApp
  * @file ApplicationWorkbenchWindowAdvisor.java /
@@ -58,9 +58,8 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
 	public void preWindowOpen() {
 		LOG.debug("preWindowOpen()");
 		IWorkbenchWindowConfigurer configurer = getWindowConfigurer();
-		configurer.setInitialSize(new Point(700, 550));
+		configurer.setInitialSize(new Point(700, 800));
 		configurer.setShowCoolBar(true);
-		configurer.setShowStatusLine(true);
 		configurer.setShowMenuBar(true);
 		configurer.setShowPerspectiveBar(true);
 		configurer.setShowProgressIndicator(true);

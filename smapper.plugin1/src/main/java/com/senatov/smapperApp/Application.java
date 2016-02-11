@@ -2,7 +2,7 @@
  * Developed under: 1.8.0_72/Windows 10 amd64
  *
  * @author Iakov
- * @since Feb 10, 2016 - 3:01:21 PM
+ * @since Feb 11, 2016 - 12:45:41 AM
  * @project smapper.plugin1
  * @package com.senatov.smapperApp
  * @file Application.java / Application
@@ -36,20 +36,24 @@ public class Application implements IApplication {
 	@Override
 	public Object start(IApplicationContext context) throws Exception {
 		LOG.debug("start()");
+		Integer ret = -1;
 		Display display = PlatformUI.createDisplay();
 		try {
 			int returnCode = PlatformUI.createAndRunWorkbench(display, new SmapperWorkbenchAdvisor());
-			if (returnCode == PlatformUI.RETURN_RESTART) {
-				return IApplication.EXIT_RESTART;
+			switch (returnCode) {
+			case PlatformUI.RETURN_RESTART: {
+				ret = IApplication.EXIT_RESTART;
+				break;
 			}
-			else {
-				return IApplication.EXIT_OK;
+			default: {
+				ret = IApplication.EXIT_OK;
+			}
 			}
 		}
 		finally {
 			display.dispose();
 		}
-
+		return ret;
 	}
 
 

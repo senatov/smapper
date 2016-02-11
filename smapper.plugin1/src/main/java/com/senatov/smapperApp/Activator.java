@@ -2,7 +2,7 @@
  * Developed under: 1.8.0_72/Windows 10 amd64
  *
  * @author Iakov
- * @since Feb 10, 2016 - 5:01:18 AM
+ * @since Feb 10, 2016 - 11:00:11 PM
  * @project smapper.plugin1
  * @package com.senatov.smapperApp
  * @file Activator.java / Activator
@@ -45,6 +45,7 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 	final private List<PluginLogListener> pluginLogHooks = new ArrayList<PluginLogListener>();
 	private static final Logger LOG = Logger.getLogger(Activator.class);
 	private static BundleContext context = null;
+	private static Activator plugin;
 
 
 
@@ -66,10 +67,11 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 	 */
 	@Override
 	public void start(BundleContext bundleContext) throws Exception {
-		// super.start(context);
 		Activator.context = bundleContext;
+		plugin = this;
 		initLog4j(context);
 		LOG.debug("start()");
+		super.start(context);
 	}
 
 
@@ -84,7 +86,19 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 	public void stop(BundleContext context) throws Exception {
 		LOG.debug("stop()");
 		Activator.context = null;
-		// super.stop(context);
+		plugin = null;
+		super.stop(context);
+	}
+
+
+
+	/**
+	 * Returns the shared instance
+	 *
+	 * @return the shared instance
+	 */
+	public static Activator getDefault() {
+		return plugin;
 	}
 
 

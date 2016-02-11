@@ -2,7 +2,7 @@
  * Developed under: 1.8.0_72/Windows 10 amd64
  *
  * @author Iakov
- * @since Feb 8, 2016 - 12:44:29 AM
+ * @since Feb 10, 2016 - 11:38:34 PM
  * @project smapper.plugin1
  * @package com.senatov.smapperApp
  * @file PluginLogListener.java / PluginLogListener
@@ -18,10 +18,13 @@ import org.eclipse.core.runtime.ILogListener;
 import org.eclipse.core.runtime.IStatus;
 
 /**
- * PluginLogListener This class is responsible for adding itself to the plug-in
- * logging framework and translating plug-in log requests to Logger events.
+ * The listener interface for receiving pluginLog events. The class that is
+ * interested in processing a pluginLog event implements this interface, and the
+ * object created with that class is registered with a component using the
+ * component's <code>addPluginLogListener<code> method. When the pluginLog event
+ * occurs, that object's appropriate method is invoked.
  *
- * @author Manoel Marques
+ * @see PluginLogEvent
  */
 public class PluginLogListener implements ILogListener {
 	private ILog log;

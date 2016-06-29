@@ -17,7 +17,7 @@
 	<properties>
 		<tycho-version>0.24.0</tycho-version>
 		<encoding>UTF-8</encoding>
-		<update.url>http://download.eclipse.org/eclipse/updates/4.5</update.url>
+		<update.url>http://download.eclipse.org/eclipse/updates/4.6</update.url>
 		<tycho-groupid>org.eclipse.tycho</tycho-groupid>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>

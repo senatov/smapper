@@ -15,9 +15,9 @@
 	</prerequisites>
 
 	<properties>
-		<tycho-version>0.24.0</tycho-version>
+		<tycho-version>0.25.0</tycho-version>
 		<encoding>UTF-8</encoding>
-		<update.url>http://download.eclipse.org/eclipse/updates/4.6</update.url>
+		<update.url>http://download.eclipse.org/releases/neon</update.url>
 		<tycho-groupid>org.eclipse.tycho</tycho-groupid>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -36,9 +36,25 @@
 
 	<repositories>
 		<repository>
-			<id>eclipse-mars</id>
+			<id>eclipse-neon</id>
 			<layout>p2</layout>
 			<url>${update.url}</url>
+		</repository>
+		<repository>
+			<id>sonatype.release</id>
+			<name>Sonatype maven release repository</name>
+			<url>https://oss.sonatype.org/content/repositories/releases/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>sonatype.snapshot</id>
+			<name>Sonatype maven snapshot repository</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<snapshots>
+				<updatePolicy>daily</updatePolicy>
+			</snapshots>
 		</repository>
 	</repositories>
 	<build>
@@ -64,11 +80,11 @@
 					<artifactId>tycho-compiler-plugin</artifactId>
 					<version>${tycho-version}</version>
 				</plugin>
-		        <plugin>
-		          <groupId>${tycho-groupid}</groupId>
-		          <artifactId>tycho-packaging-plugin</artifactId>
-		          <version>${tycho-version}</version>
-		        </plugin>				
+				<plugin>
+					<groupId>${tycho-groupid}</groupId>
+					<artifactId>tycho-packaging-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>

@@ -95,6 +95,7 @@
          point="org.eclipse.ui.intro">
       <intro
             class="org.eclipse.ui.intro.config.CustomizableIntroPart"
+            icon="icons/16x16.bmp"
             id="smapper.plugin1.intro">
       </intro>
       <introProductBinding

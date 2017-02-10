@@ -20,7 +20,6 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.intro.IIntroPart;
 import org.eclipse.ui.intro.IIntroSite;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class CustomizableIntroPart.
  */

@@ -17,7 +17,6 @@ import java.net.URL;
 
 import org.apache.log4j.Logger;
 
-// TODO: Auto-generated Javadoc
 /**
  * This class provides methods generally useful within the context of RCP user
  * infaces.

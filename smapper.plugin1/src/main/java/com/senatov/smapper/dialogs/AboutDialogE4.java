@@ -14,6 +14,7 @@ package com.senatov.smapper.dialogs;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IBundleGroup;
 import org.eclipse.core.runtime.IBundleGroupProvider;
 import org.eclipse.core.runtime.IProduct;
@@ -64,10 +65,14 @@ import org.eclipse.ui.internal.dialogs.AboutFeaturesDialog;
 import org.eclipse.ui.menus.CommandContributionItem;
 import org.eclipse.ui.menus.CommandContributionItemParameter;
 
+import com.senatov.smapper.utils.RcpUtils;
+
 /**
  * Displays information about the product.
  */
 public class AboutDialogE4 extends TrayDialog {
+	private static final Logger LOG = Logger.getLogger(AboutDialogE4.class);
+
 	private final static int MAX_IMAGE_WIDTH_FOR_TEXT = 250;
 
 	private final static int DETAILS_ID = IDialogConstants.CLIENT_ID + 1;
@@ -99,6 +104,7 @@ public class AboutDialogE4 extends TrayDialog {
 	 */
 	public AboutDialogE4(Shell parentShell) {
 		super(parentShell);
+		LOG.debug("AboutDialogE4()");
 		product = Platform.getProduct();
 		if (product != null) {
 			productName = product.getName();
@@ -126,6 +132,7 @@ public class AboutDialogE4 extends TrayDialog {
 
 	@Override
 	protected void buttonPressed(int buttonId) {
+		LOG.debug("buttonPressed()");
 		switch (buttonId) {
 		case DETAILS_ID:
 			BusyIndicator.showWhile(getShell().getDisplay(), new Runnable() {
@@ -147,6 +154,7 @@ public class AboutDialogE4 extends TrayDialog {
 
 	@Override
 	public boolean close() {
+		LOG.debug("close()");
 		// dispose all images
 		for (int i = 0; i < images.size(); ++i) {
 			Image image = images.get(i);
@@ -160,6 +168,7 @@ public class AboutDialogE4 extends TrayDialog {
 
 	@Override
 	protected void configureShell(Shell newShell) {
+		LOG.debug("configureShell()");
 		super.configureShell(newShell);
 		newShell.setText(NLS.bind(WorkbenchMessages.AboutDialog_shellTitle, productName));
 		iw.getWorkbench().getHelpSystem().setHelp(newShell, IWorkbenchHelpContextIds.ABOUT_DIALOG);
@@ -174,16 +183,14 @@ public class AboutDialogE4 extends TrayDialog {
 	 */
 	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
+		LOG.debug("createButtonsForButtonBar()");
 		parent.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-
 		createButton(parent, DETAILS_ID, WorkbenchMessages.AboutDialog_DetailsButton, false);
-
 		Label l = new Label(parent, SWT.NONE);
 		l.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		GridLayout layout = (GridLayout) parent.getLayout();
 		layout.numColumns++;
 		layout.makeColumnsEqualWidth = false;
-
 		Button b = createButton(parent, IDialogConstants.OK_ID, IDialogConstants.OK_LABEL, true);
 		b.setFocus();
 	}
@@ -192,6 +199,7 @@ public class AboutDialogE4 extends TrayDialog {
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
+		LOG.debug("createDialogArea()");
 		// brand the about box if there is product info
 		Image aboutImage = null;
 		AboutItem item = null;
@@ -403,6 +411,7 @@ public class AboutDialogE4 extends TrayDialog {
 	 * @since 3.4
 	 */
 	private void createTextMenu() {
+		LOG.debug("createTextMenu()");
 		final MenuManager textManager = new MenuManager();
 		textManager.add(new CommandContributionItem(new CommandContributionItemParameter(iw.getWorkbench(), null,
 				IWorkbenchCommandConstants.EDIT_COPY, CommandContributionItem.STYLE_PUSH)));
@@ -422,6 +431,7 @@ public class AboutDialogE4 extends TrayDialog {
 
 
 	private void createFeatureImageButtonRow(Composite parent) {
+		LOG.debug("createFeatureImageButtonRow()");
 		Composite featureContainer = new Composite(parent, SWT.NONE);
 		RowLayout rowLayout = new RowLayout();
 		rowLayout.wrap = true;
@@ -438,6 +448,7 @@ public class AboutDialogE4 extends TrayDialog {
 
 
 	private Button createFeatureButton(Composite parent, final AboutBundleGroupData info) {
+		LOG.debug("createFeatureButton()");
 		if (!buttonManager.add(info)) {
 			return null;
 		}

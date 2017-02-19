@@ -67,6 +67,7 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 	 */
 	@Override
 	public void start(BundleContext bundleContext) throws Exception {
+		LOG.debug("start()");
 		Activator.context = bundleContext;
 		plugin = this;
 		initLog4j(context);

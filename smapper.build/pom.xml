@@ -15,13 +15,13 @@
 	</prerequisites>
 
 	<properties>
-		<tycho-version>0.25.0</tycho-version>
+		<tycho-version>0.26.0</tycho-version>
 		<encoding>UTF-8</encoding>
 		<update.url>http://download.eclipse.org/releases/neon</update.url>
 		<tycho-groupid>org.eclipse.tycho</tycho-groupid>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
-		<сbi.version>1.1.0</сbi.version>
+		<cbi.version>1.1.0</cbi.version>
 	</properties>
 
 	<developers>
@@ -61,6 +61,11 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-versions-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
 					<groupId>${tycho-groupid}</groupId>
 					<artifactId>tycho-surefire-plugin</artifactId>
 					<version>${tycho-version}</version>
@@ -87,8 +92,12 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+		<!-- build plugins -->
 		<plugins>
-
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-versions-plugin</artifactId>
+			</plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

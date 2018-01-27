@@ -17,7 +17,7 @@
 	<properties>
 		<tycho-version>0.26.0</tycho-version>
 		<encoding>UTF-8</encoding>
-		<update.url>http://download.eclipse.org/releases/neon</update.url>
+		<update.url>http://download.eclipse.org/releases/oxygen</update.url>
 		<tycho-groupid>org.eclipse.tycho</tycho-groupid>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -102,7 +102,29 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-enforcer-plugin</artifactId>
-				<version>1.4.1</version>
+				<version>3.0.0-M1</version>
+				<executions>
+				  <execution>
+					<id>enforce-maven</id>
+					<goals>
+					  <goal>enforce</goal>
+					</goals>
+					<configuration>
+					  <rules>
+						<requireMavenVersion>
+						  <version>3.0</version>
+						</requireMavenVersion>
+					  </rules>    
+					</configuration>
+				  </execution>
+				</executions>
+			</plugin>
+		
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>3.0.0-M1</version>
 				<executions>
 					<execution>
 						<id>enforce-versions</id>
@@ -112,7 +134,7 @@
 						<configuration>
 							<rules>
 								<requireMavenVersion>
-									<version>3.3.9</version>
+									<version>3.5.2</version>
 								</requireMavenVersion>
 								<requireJavaVersion>
 									<version>${maven.compiler.source}</version>
@@ -137,6 +159,7 @@
 					<target>${maven.compiler.target}</target>
 				</configuration>
 			</plugin>
+			
 			<plugin>
 				<groupId>${tycho-groupid}</groupId>
 				<artifactId>tycho-packaging-plugin</artifactId>
